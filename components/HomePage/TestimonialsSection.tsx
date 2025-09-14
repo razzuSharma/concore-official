@@ -1,39 +1,34 @@
-import React from 'react';
-import { Star, Quote } from 'lucide-react';
+import React from "react";
+import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    role: "CEO, TechStart Inc.",
-    content: "Concore Technologies transformed our digital infrastructure completely. Their expertise in cloud solutions helped us scale 300% in just 6 months.",
+    name: "Sujan Subedi",
+    role: "Founder, ARS Barista Training Institute",
+    content:
+      "Concore Technologies transformed our digital infrastructure completely. Their expertise in cloud solutions helped us scale 300% in just 6 months.",
     rating: 5,
-    avatar: "SJ"
+    avatar: "SJ",
   },
   {
     id: 2,
-    name: "Michael Chen",
-    role: "CTO, InnovateCorp",
-    content: "The AI solutions provided by Concore are game-changing. Their team's technical depth and innovative approach exceeded all our expectations.",
+    name: "Sujan Adhikari",
+    role: "Co-Founder, Tourgasm Travels",
+    content:
+      "The AI solutions provided by Concore are game-changing. Their team's technical depth and innovative approach exceeded all our expectations.",
     rating: 5,
-    avatar: "MC"
+    avatar: "MC",
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
-    role: "Product Manager, DataFlow",
-    content: "Outstanding service and support. Concore delivered our project ahead of schedule with exceptional quality. Highly recommended!",
+    name: "Suraj Shah",
+    role: "Assistant Manager, Shibam Marble & Furniture",
+    content:
+      "Outstanding service and support. Concore delivered our project ahead of schedule with exceptional quality. Highly recommended!",
     rating: 5,
-    avatar: "ER"
+    avatar: "ER",
   },
-  {
-    id: 4,
-    name: "David Thompson",
-    role: "Founder, NextGen Solutions",
-    content: "Working with Concore has been a fantastic experience. Their attention to detail and commitment to excellence is unmatched in the industry.",
-    rating: 5,
-    avatar: "DT"
-  }
 ];
 
 const TestimonialsSection = () => {
@@ -45,11 +40,12 @@ const TestimonialsSection = () => {
             What Our Clients Say
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what industry leaders have to say about working with Concore Technologies.
+            Don't just take our word for it. Here's what industry leaders have
+            to say about working with Concore Technologies.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
@@ -71,7 +67,10 @@ const TestimonialsSection = () => {
 
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                  <Star
+                    key={i}
+                    className="h-4 w-4 text-yellow-400 fill-current"
+                  />
                 ))}
               </div>
 

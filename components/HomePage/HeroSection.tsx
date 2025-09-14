@@ -8,7 +8,7 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900" />
       {/* Content */}
-      <div className="relative mb-auto z-10 max-w-6xl px-6 py-20 text-center">
+      <div className="relative z-10 max-w-6xl px-6 py-20 text-center">
         <div className="mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium mb-6">
             <Sparkles className="h-4 w-4" />
@@ -49,40 +49,6 @@ const HeroSection = () => {
           >
             <Link href="/contact-us">Get Started Today</Link>
           </Button>
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
-              50+
-            </div>
-            <div className="text-gray-600 dark:text-gray-300">
-              Projects Completed
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">
-              25+
-            </div>
-            <div className="text-gray-600 dark:text-gray-300">
-              Happy Clients
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-green-600 dark:text-green-400 mb-2">
-              5+
-            </div>
-            <div className="text-gray-600 dark:text-gray-300">
-              Years Experience
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">
-              24/7
-            </div>
-            <div className="text-gray-600 dark:text-gray-300">Support</div>
-          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
-import HeroSection from "@/components/HeroSection";
-import ServicesPreview from "@/components/ServicesPreview";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import HeroSection from "@/components/HomePage/HeroSection";
+import ServicesPreview from "@/components/HomePage/ServicesPreview";
+import TestimonialsSection from "@/components/HomePage/TestimonialsSection";
 
 export default function Home() {
   return (

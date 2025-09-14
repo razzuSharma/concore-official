@@ -1,9 +1,9 @@
-import React from 'react';
-import AboutHero from '@/components/AboutHero';
-import OurMission from '@/components/OurMission';
-import TeamSection from '@/components/TeamSection';
-import CompanyStats from '@/components/CompanyStats';
-import CompanyTimeline from '@/components/CompanyTimeline';
+import React from "react";
+import AboutHero from "@/components/AboutPage/AboutHero";
+import OurMission from "@/components/AboutPage/OurMission";
+import TeamSection from "@/components/AboutPage/TeamSection";
+import CompanyStats from "@/components/AboutPage/CompanyStats";
+import CompanyTimeline from "@/components/AboutPage/CompanyTimeline";
 
 const AboutPage = () => {
   return (
