@@ -11,7 +11,7 @@ const AboutPage = () => {
       <AboutHero />
       <OurMission />
       <TeamSection />
-      <CompanyStats />
+      {/* <CompanyStats /> */}
       <CompanyTimeline />
     </div>
   );
