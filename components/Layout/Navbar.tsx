@@ -2,10 +2,10 @@
 
 import React, { useState } from "react";
 import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon, Computer } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "./ui/button";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
