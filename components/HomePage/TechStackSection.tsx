@@ -32,9 +32,9 @@ export default function TechStackSection() {
   return (
     <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold mb-10 text-gray-800 dark:text-white">
+        <h1 className="text-5xl font-bold mb-10 text-gray-800 dark:text-white">
           Our Tech Stack
-        </h2>
+        </h1>
         <h3 className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
           We use the latest and greatest technologies to build our projects. We
           are a team of passionate{" "}
