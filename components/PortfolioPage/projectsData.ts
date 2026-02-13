@@ -108,4 +108,62 @@ export const projects: Project[] = [
     ],
     tech: ["Next.js", "Tailwind CSS", "Shadcn UI", "Supabase", "Vercel"],
   },
+  {
+    id: 4,
+    title: "Dipak Suppliers - Purifying Life",
+    category: "Manufacturing & Hardware",
+    description:
+      "A modern promotional platform for a business specializing in water purification and agricultural tools.",
+    image: "🛠️",
+    color: "from-emerald-500 to-teal-600",
+    tags: ["HTML", "CSS", "JavaScript", "Responsive Design", "Social Proof"],
+    problem:
+      "Dipak Suppliers needed a professional digital presence to showcase their high-quality water filters and agricultural equipment to a wider audience, moving beyond traditional regional marketing.",
+    solution:
+      "Developed a clean, high-performance promotional site featuring bilingual support, dark mode, and a modular layout that highlights product categories and customer trust markers.",
+    features: [
+      "Bilingual support (English and Nepali)",
+      "Dark mode and light mode toggle",
+      "Interactive product showcases for filters and tools",
+      "Dynamic statistical counters for business milestones",
+      "Contact integration for direct lead generation",
+      "Responsive layout for mobile and desktop access",
+    ],
+    results: [
+      "Showcased products to a digital audience of 5,000+ potential clients",
+      "Improved brand professionality with a modern web presence",
+      "Streamlined customer inquiries through clear calls to action",
+      "Successfully integrated multilingual content for local accessibility",
+    ],
+    tech: ["HTML5", "CSS3", "JavaScript", "Framer Motion"],
+  },
+  {
+    id: 5,
+    title: "Yatharoop Construction - Building Excellence",
+    category: "Real Estate & Construction",
+    description:
+      "A premium digital portfolio for a leading real estate and construction firm in Nepal.",
+    image: "🏗️",
+    color: "from-sky-500 to-indigo-600",
+    tags: ["Real Estate", "Architecture", "Construction", "Lead Gen", "Vite"],
+    problem:
+      "Yatharoop Realstate and Construction needed a way to present their architectural designs and construction projects in a premium manner to attract high-end residential and commercial clients.",
+    solution:
+      "Created a sophisticated digital portfolio that focuses on visual storytelling, showcasing featured projects through immersive galleries and providing expert consultation gateways.",
+    features: [
+      "High-resolution project galleries for 'The Azure Heights'",
+      "Detailed service breakdown for architecture and design",
+      "Expert consultation booking interface",
+      "Real estate list integration for property sales",
+      "Corporate identity-focused design language",
+      "Fast-loading optimized image assets",
+    ],
+    results: [
+      "Enhanced brand credibility in the competitive real estate market",
+      "Increased digital inquiries for architectural consultation",
+      "Provided a professional platform for showcasing completed projects",
+      "Improved accessibility to real estate listings and services",
+    ],
+    tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
+  },
 ];
