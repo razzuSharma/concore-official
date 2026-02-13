@@ -14,25 +14,25 @@ const AboutHero = () => {
               </span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-              We are a team of passionate innovators dedicated to transforming
-              ideas into cutting-edge digital solutions. Our mission is to
-              empower businesses with technology that drives growth and creates
-              lasting impact.
+              We help businesses design, build, and scale reliable digital
+              products. Our team combines product strategy, engineering, and
+              design to deliver solutions that are practical, measurable, and
+              built for long-term growth.
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="bg-white dark:bg-gray-800 px-6 py-3 rounded-full shadow-lg">
                 <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                  🚀 Founded 2025
+                  Founded in 2025
                 </span>
               </div>
               <div className="bg-white dark:bg-gray-800 px-6 py-3 rounded-full shadow-lg">
                 <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                  🌍 Innovation First
+                  Product-First Execution
                 </span>
               </div>
               <div className="bg-white dark:bg-gray-800 px-6 py-3 rounded-full shadow-lg">
                 <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                  🌝 Quality Over Quantity
+                  Quality Over Quantity
                 </span>
               </div>
             </div>

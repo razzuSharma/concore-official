@@ -8,7 +8,7 @@ const TeamSection = () => {
       role: "CEO & Founder",
       image: "/about/team/sarah-johnson.jpg",
       description:
-        "Visionary leader with 5+ years in tech innovation and business development",
+        "Leads company strategy and client partnerships with a focus on sustainable digital growth.",
       social: { linkedin: "#", twitter: "#" },
     },  
     {
@@ -16,7 +16,7 @@ const TeamSection = () => {
       role: "CTO",
       image: "/about/team/michael-chen.jpg",
       description:
-        "Technical architect passionate about scalable solutions and business development",
+        "Owns technical direction, architecture, and engineering quality across product delivery.",
       social: { linkedin: "#", twitter: "#" },
     },
     {
@@ -24,14 +24,15 @@ const TeamSection = () => {
       role: "Lead Marketing",
       image: "/about/team/emily-rodriguez.jpg",
       description:
-        "Marketing expert with a passion for growth and business development",
+        "Drives brand, communication, and go-to-market execution for new and existing services.",
       social: { linkedin: "#", twitter: "#" },
     },
     {
       name: "Binita Shrestha",
       role: "Head of HR & Operations",
       image: "/about/team/david-thompson.jpg",
-      description: "HR & Operations expert with a passion for growth",
+      description:
+        "Leads people operations and internal systems to keep teams effective and aligned.",
       social: { linkedin: "#", twitter: "#" },
     },
   ];
@@ -41,12 +42,11 @@ const TeamSection = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Meet Our Team
+            Leadership Team
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            The brilliant minds behind our success. We're a diverse team of
-            innovators, creators, and problem-solvers united by our passion for
-            technology.
+            The people responsible for strategy, delivery, and operations at
+            Concore Technologies.
           </p>
         </div>
 

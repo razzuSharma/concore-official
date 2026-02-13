@@ -36,10 +36,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="min-h-screen bg-white dark:bg-gray-950">
-            <div className="fixed top-4 left-0 right-0 z-50 px-4">
+            <div className="fixed inset-x-0 top-0 z-50">
               <Navbar />
             </div>
-            <main className="relative pt-20">{children}</main>
+            <main className="relative pt-16">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>
