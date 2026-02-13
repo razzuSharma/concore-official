@@ -2,15 +2,25 @@
 
 import React, { useState } from "react";
 import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon, Computer } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme, resolvedTheme } = useTheme();
+
+  const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/services", label: "Services" },
+    { href: "/our-portfolio", label: "Portfolio" },
+    { href: "/about", label: "About" },
+    { href: "/contact-us", label: "Contact" },
+  ];
 
   React.useEffect(() => {
     setMounted(true);
@@ -49,137 +59,102 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="max-w-4xl mx-auto px-6 ">
-      <div className="flex justify-between items-center  h-14 backdrop-blur-lg rounded-2xl px-6">
-        {/* Logo */}
-        <div className="flex-shrink-0">
-          <div className="flex items-center">
-            {mounted ? (
-              <Image
-                src={
-                  resolvedTheme === "dark"
-                    ? "/logos/only-logo-white.png"
-                    : "/logos/only-logo-black.png"
-                }
-                alt="Concore Technologies"
-                width={48}
-                height={48}
-                className="h-12 w-auto"
-                priority
-              />
-            ) : (
-              <div className="h-12 w-12 bg-gray-300 dark:bg-gray-600 rounded animate-pulse" />
-            )}
-            <span className="ml-4 text-xl font-bold text-gray-900 dark:text-white hidden sm:block">
-              Concore Technologies
-            </span>
-          </div>
+    <header className="border-b border-gray-200/80 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 dark:border-gray-800 dark:bg-gray-950/95 dark:supports-[backdrop-filter]:bg-gray-950/90">
+      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
+        <Link href="/" className="flex items-center">
+          {mounted ? (
+            <Image
+              src={
+                resolvedTheme === "dark"
+                  ? "/logos/only-logo-white.png"
+                  : "/logos/only-logo-black.png"
+              }
+              alt="Concore Technologies"
+              width={36}
+              height={36}
+              className="h-9 w-auto"
+              priority
+            />
+          ) : (
+            <div className="h-9 w-9 animate-pulse rounded bg-gray-300 dark:bg-gray-600" />
+          )}
+          <span className="ml-3 hidden text-sm font-semibold tracking-wide text-gray-900 dark:text-white sm:block">
+            Concore Technologies
+          </span>
+        </Link>
+
+        <div className="hidden items-center gap-8 md:flex">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`text-sm font-medium transition ${
+                  isActive
+                    ? "text-blue-600 dark:text-blue-400"
+                    : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:block">
-          <div className="ml-10 flex items-baseline space-x-4">
-            <Link
-              href="/"
-              className="text-gray-700 dark:text-white/90 hover:bg-gray-200 dark:hover:bg-white/20 hover:text-gray-900 dark:hover:text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 backdrop-blur-sm"
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="text-gray-700 dark:text-white/90 hover:bg-gray-200 dark:hover:bg-white/20 hover:text-gray-900 dark:hover:text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 backdrop-blur-sm"
-            >
-              About
-            </Link>
-            <Link
-              href="/services"
-              className="text-gray-700 dark:text-white/90 hover:bg-gray-200 dark:hover:bg-white/20 hover:text-gray-900 dark:hover:text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 backdrop-blur-sm"
-            >
-              Services
-            </Link>
-            <Link
-              href="/our-portfolio"
-              className="text-gray-700 dark:text-white/90 hover:bg-gray-200 dark:hover:bg-white/20 hover:text-gray-900 dark:hover:text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 backdrop-blur-sm"
-            >
-            Portfolio
-            </Link>
-            <Link
-              href="/contact-us"
-              className="text-gray-700 dark:text-white/90 hover:bg-gray-200 dark:hover:bg-white/20 hover:text-gray-900 dark:hover:text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 backdrop-blur-sm"
-            >
-              Contact
-            </Link>
-          </div>
-        </div>
-
-        {/* Theme Toggle and Mobile Menu Button */}
-        <div className="flex items-center space-x-2">
-          {/* Theme Toggle */}
+        <div className="flex items-center gap-2">
           <Button
             variant="ghost"
             size="sm"
             onClick={toggleTheme}
-            className="text-gray-700 dark:text-white/90 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-white/20 rounded-xl transition-all duration-200 backdrop-blur-sm"
+            className="rounded-md text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
             title={`Switch to ${getThemeLabel()} theme`}
           >
             {getThemeIcon()}
-            <span className="hidden sm:inline ml-2">{getThemeLabel()}</span>
           </Button>
+          <Button asChild className="hidden rounded-md md:inline-flex">
+            <Link href="/contact-us">Book Call</Link>
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="rounded-md text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white md:hidden"
+          >
+            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </Button>
+        </div>
+      </nav>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 dark:text-white/90 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-white/20 rounded-xl transition-all duration-200 backdrop-blur-sm"
-            >
-              {isMenuOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
+      {isMenuOpen && (
+        <div className="border-t border-gray-200 bg-white px-4 py-3 dark:border-gray-800 dark:bg-gray-950 md:hidden">
+          <div className="mx-auto flex max-w-7xl flex-col gap-1">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`rounded-md px-3 py-2 text-sm font-medium ${
+                    isActive
+                      ? "bg-blue-50 text-blue-700 dark:bg-blue-950/30 dark:text-blue-300"
+                      : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+            <Button asChild className="mt-2 rounded-md">
+              <Link href="/contact-us" onClick={() => setIsMenuOpen(false)}>
+                Book Call
+              </Link>
             </Button>
           </div>
         </div>
-      </div>
-
-      {/* Mobile Navigation Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden mt-3">
-          <div className="px-4 pt-4 pb-4 space-y-2 backdrop-blur-lg rounded-2xl shadow-xl">
-            <Link
-              href="/"
-              className="text-gray-700 dark:text-white/90 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-white/20 block px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 backdrop-blur-sm"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="text-gray-700 dark:text-white/90 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-white/20 block px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 backdrop-blur-sm"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              href="/services"
-              className="text-gray-700 dark:text-white/90 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-white/20 block px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 backdrop-blur-sm"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Services
-            </Link>
-            <Link
-              href="/contact"
-              className="text-gray-700 dark:text-white/90 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-white/20 block px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 backdrop-blur-sm"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </Link>
-          </div>
-        </div>
       )}
-    </nav>
+    </header>
   );
 };
 

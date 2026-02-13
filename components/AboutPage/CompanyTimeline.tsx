@@ -4,47 +4,40 @@ import Image from 'next/image';
 const CompanyTimeline = () => {
   const milestones = [
     {
-      year: "2019",
+      year: "2025",
       title: "Company Founded",
-      description: "Started with a vision to revolutionize digital solutions",
-      image: "/about/timeline/2019-founding.jpg",
+      description: "Concore Technologies was established to deliver modern, outcome-driven software solutions.",
+      image: "/about/timeline/2020-first-client.jpg",
       highlight: true
     },
     {
-      year: "2020",
-      title: "First Major Client",
-      description: "Secured our first enterprise client, marking our entry into the market",
+      year: "2025",
+      title: "Initial Client Partnerships",
+      description: "Delivered the first production projects and built long-term relationships with early partners.",
       image: "/about/timeline/2020-first-client.jpg",
       highlight: false
     },
     {
-      year: "2021",
-      title: "Team Expansion",
-      description: "Grew from 5 to 25 team members, expanding our capabilities",
+      year: "2026",
+      title: "Service Expansion",
+      description: "Expanded services across product design, engineering, and digital marketing.",
       image: "/about/timeline/2021-team-expansion.jpg",
       highlight: false
     },
     {
-      year: "2022",
-      title: "AI Integration",
-      description: "Launched our AI-powered solutions division",
+      year: "2026",
+      title: "Process Maturity",
+      description: "Standardized delivery workflows to improve speed, quality, and predictability.",
       image: "/about/timeline/2022-ai-launch.jpg",
       highlight: true
     },
     {
-      year: "2023",
-      title: "Global Expansion",
-      description: "Opened offices in 3 new countries",
+      year: "Today",
+      title: "Continuous Improvement",
+      description: "We continue to refine our craft and support clients through every stage of digital growth.",
       image: "/about/timeline/2023-global-expansion.jpg",
       highlight: false
     },
-    {
-      year: "2024",
-      title: "Future Vision",
-      description: "Continuing to innovate and shape the future of technology",
-      image: "/about/timeline/2024-future.jpg",
-      highlight: true
-    }
   ];
 
   return (
@@ -55,8 +48,7 @@ const CompanyTimeline = () => {
             Our Journey
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            From humble beginnings to industry leadership, here's how we've grown 
-            and evolved over the years.
+            A quick look at the milestones that shaped Concore Technologies.
           </p>
         </div>
 

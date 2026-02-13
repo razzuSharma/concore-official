@@ -1,5 +1,7 @@
 import React from "react";
 import { Star, Quote } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
@@ -7,7 +9,7 @@ const testimonials = [
     name: "Sujan Subedi",
     role: "Founder, ARS Barista Training Institute",
     content:
-      "Concore Technologies transformed our digital infrastructure completely. Their expertise in cloud solutions helped us scale 300% in just 6 months.",
+      "Concore rebuilt our booking and internal operations flow. The new system is faster, easier to manage, and our team now saves hours every week.",
     rating: 5,
     avatar: "SJ",
   },
@@ -16,7 +18,7 @@ const testimonials = [
     name: "Sujan Adhikari",
     role: "Co-Founder, Tourgasm Travels",
     content:
-      "The AI solutions provided by Concore are game-changing. Their team's technical depth and innovative approach exceeded all our expectations.",
+      "Their team moved quickly, communicated clearly, and delivered features exactly when promised. We finally have a platform we can scale confidently.",
     rating: 5,
     avatar: "MC",
   },
@@ -25,7 +27,7 @@ const testimonials = [
     name: "Suraj Shah",
     role: "Assistant Manager, Shibam Marble & Furniture",
     content:
-      "Outstanding service and support. Concore delivered our project ahead of schedule with exceptional quality. Highly recommended!",
+      "From planning to launch, the process was structured and transparent. The final product matched our goals and significantly improved operations.",
     rating: 5,
     avatar: "ER",
   },
@@ -37,11 +39,11 @@ const TestimonialsSection = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            What Our Clients Say
+            Teams Trust Us to Deliver
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what industry leaders have
-            to say about working with Concore Technologies.
+            We work closely with founders and business teams to ship dependable
+            software on time.
           </p>
         </div>
 
@@ -85,10 +87,14 @@ const TestimonialsSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <div className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400">
+          <div className="mb-6 inline-flex items-center gap-2 text-gray-600 dark:text-gray-400">
             <Star className="h-5 w-5 text-yellow-400 fill-current" />
-            <span className="text-lg font-semibold">4.9/5</span>
-            <span className="text-sm">Average Rating</span>
+            <span className="text-lg font-semibold">4.9/5 client rating</span>
+          </div>
+          <div>
+            <Button asChild size="lg" className="rounded-xl px-8 py-6 text-lg">
+              <Link href="/contact-us">Start Your Project</Link>
+            </Button>
           </div>
         </div>
       </div>
