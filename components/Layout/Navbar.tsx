@@ -2,29 +2,23 @@
 
 import React, { useState } from "react";
 import { useTheme } from "next-themes";
-import { usePathname } from "next/navigation";
-import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon, Computer } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
-const Navbar = () => {
-  const pathname = usePathname();
+const navItems = [
+  { href: "/#services", label: "Services" },
+  { href: "/#work", label: "Work" },
+  { href: "/our-portfolio", label: "Portfolio" },
+  { href: "/#process", label: "Process" },
+  { href: "/about", label: "About" },
+  { href: "/contact-us", label: "Contact" },
+];
+
+export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
-
-  const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
-    { href: "/our-portfolio", label: "Portfolio" },
-    { href: "/about", label: "About" },
-    { href: "/contact-us", label: "Contact" },
-  ];
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
+  const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {
     if (theme === "light") {
@@ -47,79 +41,62 @@ const Navbar = () => {
     }
   };
 
-  const getThemeLabel = () => {
-    switch (theme) {
-      case "light":
-        return "Light";
-      case "dark":
-        return "Dark";
-      default:
-        return "System";
-    }
-  };
-
   return (
-    <header className="border-b border-gray-200/80 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 dark:border-gray-800 dark:bg-gray-950/95 dark:supports-[backdrop-filter]:bg-gray-950/90">
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="flex items-center">
-          {mounted ? (
-            <Image
-              src={
-                resolvedTheme === "dark"
-                  ? "/logos/only-logo-white.png"
-                  : "/logos/only-logo-black.png"
-              }
-              alt="Concore Technologies"
-              width={36}
-              height={36}
-              className="h-9 w-auto"
-              priority
-            />
-          ) : (
-            <div className="h-9 w-9 animate-pulse rounded bg-gray-300 dark:bg-gray-600" />
-          )}
-          <span className="ml-3 hidden text-sm font-semibold tracking-wide text-gray-900 dark:text-white sm:block">
-            Concore Technologies
+    <header className="border-b border-gray-800/80 bg-gray-950/95 backdrop-blur supports-[backdrop-filter]:bg-gray-950/90">
+      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6" aria-label="Main navigation">
+        <Link href="/" className="flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300">
+          <Image
+            src="/logos/only-logo-white.png"
+            alt="Concore Technologies logo"
+            width={30}
+            height={30}
+            className="h-7 w-7 rounded-sm object-contain"
+            priority
+          />
+          <span className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-white sm:text-base">
+            CONCORE TECHNOLOGIES
           </span>
         </Link>
 
-        <div className="hidden items-center gap-8 md:flex">
-          {navItems.map((item) => {
-            const isActive = pathname === item.href;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-sm font-medium transition ${
-                  isActive
-                    ? "text-blue-600 dark:text-blue-400"
-                    : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
+        <div className="hidden items-center gap-6 md:flex">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-sm font-medium tracking-wide text-gray-300 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
 
         <div className="flex items-center gap-2">
+          <Link
+            href="/contact-us"
+            className="hidden text-sm font-medium tracking-wide text-gray-300 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 lg:inline"
+          >
+            Get Estimate
+          </Link>
           <Button
             variant="ghost"
             size="sm"
             onClick={toggleTheme}
-            className="rounded-md text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
-            title={`Switch to ${getThemeLabel()} theme`}
+            className="rounded-md text-gray-300 hover:bg-gray-800 hover:text-white"
+            title="Toggle theme"
+            aria-label="Toggle theme"
           >
             {getThemeIcon()}
           </Button>
-          <Button asChild className="hidden rounded-md md:inline-flex">
-            <Link href="/contact-us">Book Call</Link>
+          <Button asChild className="hidden bg-blue-600 text-white hover:bg-blue-500 md:inline-flex">
+            <Link href="/contact-us">Book a Call</Link>
           </Button>
           <Button
             variant="ghost"
             size="sm"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="rounded-md text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white md:hidden"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="rounded-md text-gray-300 hover:bg-gray-800 hover:text-white md:hidden"
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
@@ -127,35 +104,33 @@ const Navbar = () => {
       </nav>
 
       {isMenuOpen && (
-        <div className="border-t border-gray-200 bg-white px-4 py-3 dark:border-gray-800 dark:bg-gray-950 md:hidden">
+        <div className="border-t border-gray-800 bg-gray-950 px-4 py-3 md:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-1">
-            {navItems.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`rounded-md px-3 py-2 text-sm font-medium ${
-                    isActive
-                      ? "bg-blue-50 text-blue-700 dark:bg-blue-950/30 dark:text-blue-300"
-                      : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-            <Button asChild className="mt-2 rounded-md">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="rounded-md px-3 py-2 text-sm font-medium tracking-wide text-gray-200 hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Button asChild className="mt-2 bg-blue-600 text-white hover:bg-blue-500">
               <Link href="/contact-us" onClick={() => setIsMenuOpen(false)}>
-                Book Call
+                Book a Call
               </Link>
             </Button>
+            <Link
+              href="/contact-us"
+              onClick={() => setIsMenuOpen(false)}
+              className="mt-2 rounded-md px-3 py-2 text-sm font-medium tracking-wide text-gray-300 hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+            >
+              Get Estimate
+            </Link>
           </div>
         </div>
       )}
     </header>
   );
-};
-
-export default Navbar;
+}
