@@ -1,8 +1,16 @@
 import React from "react";
+import Link from "next/link";
 import {
   ChevronLeft,
   ExternalLink,
   Github,
+  CheckCircle2,
+  ShieldCheck,
+  Layers,
+  Wrench,
+  Target,
+  TrendingUp,
+  Lightbulb,
 } from "lucide-react";
 import { Project } from "./projectsData";
 
@@ -13,120 +21,247 @@ interface CaseStudyViewProps {
 
 const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, onBack }) => {
   return (
-    <div className="max-w-4xl mx-auto">
+    <section className="mx-auto max-w-6xl pb-16">
       <button
         onClick={onBack}
-        className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 mb-6 transition-colors"
+        className="font-mono mb-7 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-[0.08em] text-blue-300 transition hover:text-blue-200"
       >
-        <ChevronLeft className="w-4 h-4" />
+        <ChevronLeft className="h-4 w-4" />
         Back to Portfolio
       </button>
 
-      <div
-        className={`h-48 bg-gradient-to-br ${project.color} rounded-2xl flex items-center justify-center mb-8`}
-      >
-        <span className="text-8xl">{project.image}</span>
-      </div>
-
-      <div className="space-y-8">
-        <div>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-            {project.title}
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-4">
-            {project.description}
-          </p>
-          <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
-            {project.category}
-          </span>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-red-50 dark:bg-red-900/20 p-6 rounded-xl">
-            <h3 className="text-xl font-bold text-red-800 dark:text-red-300 mb-3">
-              Problem
-            </h3>
-            <p className="text-red-700 dark:text-red-200">{project.problem}</p>
-          </div>
-
-          <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl">
-            <h3 className="text-xl font-bold text-green-800 dark:text-green-300 mb-3">
-              Solution
-            </h3>
-            <p className="text-green-700 dark:text-green-200">
-              {project.solution}
+      <div className={`mb-8 rounded-2xl border border-gray-800 bg-gradient-to-br ${project.color} p-8`}>
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-white/80">
+              {project.category}
+            </p>
+            <h1 className="font-display mt-3 text-4xl font-semibold leading-[1.05] tracking-[-0.02em] text-white md:text-5xl">
+              {project.title}
+            </h1>
+            <p className="mt-4 max-w-3xl font-sans text-lg leading-relaxed text-white/90">
+              {project.description}
             </p>
           </div>
+          <div className="text-7xl" aria-hidden="true">
+            {project.image}
+          </div>
         </div>
+      </div>
 
-        <div>
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Key Features
-          </h3>
-          <div className="grid md:grid-cols-2 gap-3">
-            {project.features.map((feature: string, index: number) => (
-              <div
-                key={index}
-                className="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg"
-              >
-                <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-gray-700 dark:text-gray-300">
-                  {feature}
-                </span>
+      <div className="grid gap-4 md:grid-cols-3">
+        <div className="rounded-xl border border-gray-800 bg-gray-900 p-5">
+          <p className="font-mono text-xs uppercase tracking-[0.1em] text-white/50">Client Profile</p>
+          <p className="mt-2 font-sans text-sm leading-relaxed text-white/80">{project.clientProfile}</p>
+        </div>
+        <div className="rounded-xl border border-gray-800 bg-gray-900 p-5">
+          <p className="font-mono text-xs uppercase tracking-[0.1em] text-white/50">Timeline</p>
+          <p className="mt-2 font-sans text-sm leading-relaxed text-white/80">{project.timeline}</p>
+        </div>
+        <div className="rounded-xl border border-gray-800 bg-gray-900 p-5">
+          <p className="font-mono text-xs uppercase tracking-[0.1em] text-white/50">Delivery Team</p>
+          <p className="mt-2 font-sans text-sm leading-relaxed text-white/80">{project.team}</p>
+        </div>
+      </div>
+
+      <div className="mt-8 rounded-2xl border border-gray-800 bg-gray-900 p-7">
+        <h2 className="font-display text-2xl font-semibold tracking-[-0.02em] text-white">Project Overview</h2>
+        <p className="mt-4 font-sans text-base leading-relaxed text-white/75">{project.overview}</p>
+        <p className="mt-4 font-sans text-base leading-relaxed text-white/75">{project.projectScope}</p>
+      </div>
+
+      <div className="mt-8 grid gap-8 lg:grid-cols-2">
+        <article className="rounded-2xl border border-red-500/30 bg-red-500/5 p-7">
+          <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-red-200">Problem Context</h3>
+          <p className="mt-4 font-sans text-base leading-relaxed text-red-100/90">{project.problem}</p>
+        </article>
+
+        <article className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-7">
+          <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-emerald-200">Solution Approach</h3>
+          <p className="mt-4 font-sans text-base leading-relaxed text-emerald-100/90">{project.solution}</p>
+        </article>
+      </div>
+
+      <div className="mt-8 rounded-2xl border border-gray-800 bg-gray-900 p-7">
+        <div className="mb-5 flex items-center gap-2 text-blue-200">
+          <Target className="h-5 w-5" aria-hidden="true" />
+          <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-white">Project Objectives</h3>
+        </div>
+        <div className="grid gap-3 md:grid-cols-2">
+          {project.objectives.map((objective, index) => (
+            <div key={index} className="flex items-start gap-3 rounded-lg border border-gray-800 bg-gray-950 p-4">
+              <CheckCircle2 className="mt-0.5 h-4 w-4 text-blue-300" aria-hidden="true" />
+              <p className="font-sans text-sm leading-relaxed text-white/75">{objective}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-8 rounded-2xl border border-gray-800 bg-gray-900 p-7">
+        <div className="mb-5 flex items-center gap-2 text-cyan-200">
+          <Wrench className="h-5 w-5" aria-hidden="true" />
+          <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-white">Delivery Workflow</h3>
+        </div>
+        <div className="space-y-4">
+          {project.deliveryPhases.map((phase) => (
+            <div key={phase.phase} className="rounded-xl border border-gray-800 bg-gray-950 p-5">
+              <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-cyan-300">{phase.phase}</p>
+              <p className="mt-2 font-sans text-sm leading-relaxed text-white/75">{phase.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-8 grid gap-8 lg:grid-cols-2">
+        <article className="rounded-2xl border border-gray-800 bg-gray-900 p-7">
+          <div className="mb-5 flex items-center gap-2 text-violet-200">
+            <Layers className="h-5 w-5" aria-hidden="true" />
+            <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-white">Architecture Decisions</h3>
+          </div>
+          <div className="space-y-3">
+            {project.architecture.map((item, index) => (
+              <div key={index} className="flex items-start gap-3 rounded-lg border border-gray-800 bg-gray-950 p-4">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-violet-300" aria-hidden="true" />
+                <p className="font-sans text-sm leading-relaxed text-white/75">{item}</p>
               </div>
             ))}
           </div>
-        </div>
+        </article>
 
-        <div>
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Results & Impact
-          </h3>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {project.results.map((result: string, index: number) => (
-              <div
-                key={index}
-                className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg"
-              >
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                  <span className="text-blue-800 dark:text-blue-200 font-medium">
-                    {result}
-                  </span>
-                </div>
+        <article className="rounded-2xl border border-gray-800 bg-gray-900 p-7">
+          <div className="mb-5 flex items-center gap-2 text-emerald-200">
+            <ShieldCheck className="h-5 w-5" aria-hidden="true" />
+            <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-white">Quality & Security</h3>
+          </div>
+          <div className="space-y-3">
+            {project.qualityAndSecurity.map((item, index) => (
+              <div key={index} className="flex items-start gap-3 rounded-lg border border-gray-800 bg-gray-950 p-4">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden="true" />
+                <p className="font-sans text-sm leading-relaxed text-white/75">{item}</p>
               </div>
             ))}
           </div>
-        </div>
+        </article>
+      </div>
 
-        <div>
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Technology Stack
-          </h3>
-          <div className="flex flex-wrap gap-2">
+      <div className="mt-8 grid gap-8 lg:grid-cols-2">
+        <article className="rounded-2xl border border-amber-500/25 bg-amber-500/5 p-7">
+          <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-amber-100">Key Challenges Addressed</h3>
+          <div className="mt-4 space-y-3">
+            {project.challenges.map((challenge, index) => (
+              <p key={index} className="font-sans text-sm leading-relaxed text-amber-100/90">
+                {challenge}
+              </p>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-blue-500/25 bg-blue-500/5 p-7">
+          <div className="mb-4 flex items-center gap-2 text-blue-200">
+            <TrendingUp className="h-5 w-5" aria-hidden="true" />
+            <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-blue-100">Business Impact</h3>
+          </div>
+          <div className="space-y-3">
+            {project.businessImpact.map((impact, index) => (
+              <p key={index} className="font-sans text-sm leading-relaxed text-blue-100/90">
+                {impact}
+              </p>
+            ))}
+          </div>
+        </article>
+      </div>
+
+      <div className="mt-8 rounded-2xl border border-gray-800 bg-gray-900 p-7">
+        <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-white">Core Features Delivered</h3>
+        <div className="mt-5 grid gap-3 md:grid-cols-2">
+          {project.features.map((feature: string, index: number) => (
+            <div
+              key={index}
+              className="flex items-start gap-3 rounded-lg border border-gray-800 bg-gray-950 p-4"
+            >
+              <div className="mt-2 h-2 w-2 rounded-full bg-blue-400" />
+              <span className="font-sans text-sm leading-relaxed text-white/75">{feature}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-8 rounded-2xl border border-gray-800 bg-gray-900 p-7">
+        <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-white">Results & Metrics</h3>
+        <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          {project.results.map((result: string, index: number) => (
+            <div
+              key={index}
+              className="rounded-xl border border-blue-500/30 bg-blue-500/10 p-4"
+            >
+              <p className="font-sans text-sm font-medium leading-relaxed text-blue-100">{result}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-8 grid gap-8 lg:grid-cols-2">
+        <article className="rounded-2xl border border-gray-800 bg-gray-900 p-7">
+          <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-white">Technology Stack</h3>
+          <div className="mt-4 flex flex-wrap gap-2">
             {project.tech.map((tech: string, index: number) => (
               <span
                 key={index}
-                className="px-3 py-2 bg-gray-800 dark:bg-gray-700 text-white text-sm rounded-lg font-medium"
+                className="font-mono rounded-md border border-gray-700 bg-gray-950 px-3 py-1.5 text-xs font-medium text-white/75"
               >
                 {tech}
               </span>
             ))}
           </div>
-        </div>
+        </article>
 
-        <div className="flex gap-4 pt-4">
-          <button className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-            <ExternalLink className="w-4 h-4" />
-            View Live Project
-          </button>
-          <button className="flex items-center gap-2 px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors">
-            <Github className="w-4 h-4" />
-            View Code
-          </button>
-        </div>
+        <article className="rounded-2xl border border-gray-800 bg-gray-900 p-7">
+          <div className="mb-4 flex items-center gap-2 text-yellow-200">
+            <Lightbulb className="h-5 w-5" aria-hidden="true" />
+            <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-white">Key Delivery Learnings</h3>
+          </div>
+          <div className="space-y-3">
+            {project.lessons.map((lesson, index) => (
+              <p key={index} className="font-sans text-sm leading-relaxed text-white/75">
+                {lesson}
+              </p>
+            ))}
+          </div>
+        </article>
       </div>
-    </div>
+
+      <div className="mt-10 flex flex-wrap gap-4">
+        {project.liveUrl ? (
+          <Link
+            href={project.liveUrl}
+            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-500"
+          >
+            <ExternalLink className="h-4 w-4" />
+            View Live Project
+          </Link>
+        ) : (
+          <button className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white opacity-80" disabled>
+            <ExternalLink className="h-4 w-4" />
+            Live Project Available on Request
+          </button>
+        )}
+
+        {project.codeUrl ? (
+          <Link
+            href={project.codeUrl}
+            className="inline-flex items-center gap-2 rounded-lg bg-gray-800 px-6 py-3 font-medium text-white transition hover:bg-gray-700"
+          >
+            <Github className="h-4 w-4" />
+            View Code
+          </Link>
+        ) : (
+          <button className="inline-flex items-center gap-2 rounded-lg bg-gray-800 px-6 py-3 font-medium text-white opacity-80" disabled>
+            <Github className="h-4 w-4" />
+            Code Access Restricted
+          </button>
+        )}
+      </div>
+    </section>
   );
 };
 

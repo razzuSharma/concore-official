@@ -10,16 +10,16 @@ export default function Footer() {
       <Container>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <h2 className="text-xl font-semibold uppercase tracking-[0.12em] text-white">CONCORE TECHNOLOGIES</h2>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-gray-300">
+            <h2 className="font-display text-xl font-semibold uppercase tracking-[0.14em] text-white">CONCORE TECHNOLOGIES</h2>
+            <p className="mt-3 max-w-md font-sans text-sm leading-relaxed text-white/70">
               Software development partner for web, mobile, AI, and cloud delivery focused on speed,
               quality, and long-term support.
             </p>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Links</h3>
-            <ul className="mt-4 space-y-2 text-sm text-gray-300">
+            <h3 className="font-mono text-sm font-semibold uppercase tracking-[0.12em] text-white">Links</h3>
+            <ul className="mt-4 space-y-2 font-sans text-sm text-white/70">
               <li>
                 <Link href="/#services" className="transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300">
                   Services
@@ -44,8 +44,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Contact</h3>
-            <ul className="mt-4 space-y-3 text-sm text-gray-300">
+            <h3 className="font-mono text-sm font-semibold uppercase tracking-[0.12em] text-white">Contact</h3>
+            <ul className="mt-4 space-y-3 font-sans text-sm text-white/70">
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-blue-300" aria-hidden="true" />
                 contact@concoretechnologies.com
@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-gray-800 pt-6 text-sm text-gray-400">
+        <div className="font-mono mt-10 border-t border-gray-800 pt-6 text-sm tracking-wide text-white/60">
           © {year} CONCORE TECHNOLOGIES. All rights reserved.
         </div>
       </Container>
