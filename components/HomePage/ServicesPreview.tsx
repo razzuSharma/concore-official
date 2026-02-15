@@ -1,102 +1,77 @@
-import React from 'react';
-import { Code, Cloud, Smartphone, Database, Shield, Zap } from 'lucide-react';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import Link from "next/link";
+import { ArrowRight, Bot, CloudCog, Layers, Palette, ShieldCheck, Smartphone } from "lucide-react";
+import Container from "@/components/HomePage/Container";
+import Section from "@/components/HomePage/Section";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const services = [
   {
-    icon: Code,
-    title: "Custom Software Development",
-    description:
-      "End-to-end product development from discovery and architecture to delivery and support.",
-    color: "from-blue-500 to-blue-600"
-  },
-  {
-    icon: Cloud,
-    title: "Cloud Solutions",
-    description:
-      "Cloud architecture, migration, and optimization designed for reliability, security, and cost control.",
-    color: "from-purple-500 to-purple-600"
+    icon: Layers,
+    title: "Custom Web Development",
+    description: "Build scalable web applications that support growth, internal operations, and revenue goals.",
   },
   {
     icon: Smartphone,
     title: "Mobile App Development",
-    description:
-      "High-performance iOS and Android apps with clean UX and maintainable codebases.",
-    color: "from-green-500 to-green-600"
+    description: "Launch high-performance mobile experiences that users adopt quickly and teams can maintain.",
   },
   {
-    icon: Database,
-    title: "Data Platforms",
-    description:
-      "Data pipelines, dashboards, and reporting systems that turn raw data into decisions.",
-    color: "from-orange-500 to-orange-600"
+    icon: Palette,
+    title: "UI/UX Design",
+    description: "Design clear product flows and interfaces that improve conversion and reduce onboarding friction.",
   },
   {
-    icon: Shield,
-    title: "Security Engineering",
-    description:
-      "Secure development practices, vulnerability hardening, and compliance-ready implementation.",
-    color: "from-red-500 to-red-600"
+    icon: Bot,
+    title: "AI Integrations & Automation",
+    description: "Integrate AI features and automation workflows that reduce repetitive work across teams.",
   },
   {
-    icon: Zap,
-    title: "AI Integrations",
-    description:
-      "Applied AI features and workflow automation that improve productivity and customer experience.",
-    color: "from-pink-500 to-pink-600"
-  }
+    icon: CloudCog,
+    title: "Cloud & DevOps",
+    description: "Set up resilient cloud infrastructure, deployment pipelines, and monitoring for safe releases.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Maintenance & Scaling",
+    description: "Stabilize and evolve existing products with performance, security, and long-term support plans.",
+  },
 ];
 
-const ServicesPreview = () => {
+export default function ServicesPreview() {
   return (
-    <section className="py-20 bg-white dark:bg-gray-950">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Services Built for Real Outcomes
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            We partner with teams to design, build, and scale software that
-            supports growth, operations, and long-term product success.
+    <Section id="services" className="bg-gray-950">
+      <Container>
+        <div className="mb-12 max-w-3xl">
+          <h2 className="text-3xl font-semibold text-white md:text-4xl">Commercial Software Services</h2>
+          <p className="mt-4 text-lg text-gray-300">
+            CONCORE TECHNOLOGIES delivers full-cycle engineering for companies that need reliable execution,
+            transparent communication, and measurable outcomes.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600"
-            >
-              <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${service.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <service.icon className="h-8 w-8 text-white" />
-              </div>
-              
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                {service.title}
-              </h3>
-              
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                {service.description}
-              </p>
-
-              <div className="text-blue-600 dark:text-blue-400 font-medium group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
-                Learn more
-              </div>
-            </div>
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
+            <Card key={service.title} className="border-gray-800 bg-gray-900 py-0 text-white">
+              <CardHeader className="px-5 pt-5 pb-3">
+                <div className="mb-3 inline-flex w-fit rounded-md border border-blue-400/30 bg-blue-500/10 p-2">
+                  <service.icon className="h-5 w-5 text-blue-200" aria-hidden="true" />
+                </div>
+                <CardTitle className="text-xl leading-snug">{service.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="px-5 pb-5">
+                <p className="text-sm leading-relaxed text-gray-300">{service.description}</p>
+                <Link
+                  href="/services"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blue-300 transition hover:text-blue-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+                >
+                  Learn more
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </CardContent>
+            </Card>
           ))}
         </div>
-
-        <div className="text-center">
-          <Button asChild size="lg" className="text-lg px-8 py-6 rounded-xl">
-            <Link href="/services">
-              View All Services
-            </Link>
-          </Button>
-        </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
-};
-
-export default ServicesPreview;
+}
