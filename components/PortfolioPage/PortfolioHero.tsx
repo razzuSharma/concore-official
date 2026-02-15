@@ -2,24 +2,24 @@ import React from "react";
 
 const PortfolioHero = () => {
   return (
-    <div className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-950 dark:to-blue-950"></div>
-      <div className="relative max-w-7xl mx-auto px-8 py-20">
-        <div className="text-center mb-16">
-          <h1 className="text-6xl font-bold text-gray-900 dark:text-white mb-6">
-            Our{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Portfolio
-            </span>
+    <section className="relative overflow-hidden border-b border-gray-800 bg-gray-950">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.3),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(16,185,129,0.2),transparent_38%)]" />
+      <div className="relative mx-auto max-w-7xl px-8 py-20">
+        <div className="max-w-4xl">
+          <p className="font-mono inline-flex rounded-full border border-blue-400/30 bg-blue-500/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] text-blue-200">
+            CONCORE TECHNOLOGIES PORTFOLIO
+          </p>
+          <h1 className="font-display mt-5 text-5xl font-semibold leading-[1.05] tracking-[-0.02em] text-white md:text-6xl">
+            Detailed Case Studies From Real Product Delivery
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Discover our innovative solutions that have transformed businesses
-            and created exceptional user experiences across various
-            industries.
+          <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/70">
+            Explore in-depth project work across education, travel, commerce, manufacturing,
+            and construction. Each case study covers the business context, engineering approach,
+            delivery workflow, technical architecture, and measurable outcomes.
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

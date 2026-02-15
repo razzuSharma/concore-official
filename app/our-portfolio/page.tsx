@@ -12,7 +12,7 @@ const PortfolioPage = () => {
 
   if (selectedProject) {
     return (
-      <div className="min-h-screen bg-white dark:bg-gray-950 p-8">
+      <div className="min-h-screen bg-gray-950 px-6 py-10 md:px-8">
         <CaseStudyView 
           project={selectedProject} 
           onBack={() => setSelectedProject(null)} 
@@ -22,7 +22,7 @@ const PortfolioPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950">
+    <div className="min-h-screen bg-gray-950">
       <PortfolioHero />
       <ProjectsGrid 
         projects={projects} 

@@ -9,8 +9,10 @@ export default function FinalCTA() {
     <Section className="bg-gray-950 pt-8">
       <Container>
         <div className="rounded-2xl border border-gray-800 bg-gradient-to-r from-blue-900/50 via-gray-900 to-emerald-900/30 p-8 sm:p-10">
-          <h2 className="text-3xl font-semibold text-white md:text-4xl">Ready to build with CONCORE TECHNOLOGIES?</h2>
-          <p className="mt-4 max-w-2xl text-lg text-gray-300">
+          <h2 className="font-display text-3xl font-semibold leading-[1.1] tracking-[-0.02em] text-white md:text-4xl">
+            Ready to build with CONCORE TECHNOLOGIES?
+          </h2>
+          <p className="mt-4 max-w-2xl font-sans text-lg leading-relaxed text-white/70">
             Tell us what you are building. We offer a free discovery call and a clear next-step plan.
           </p>
 
@@ -33,7 +35,7 @@ export default function FinalCTA() {
             </Button>
           </div>
 
-          <p className="mt-4 text-sm text-gray-300">Usually replies within 24 hours.</p>
+          <p className="font-mono mt-4 text-sm tracking-wide text-white/70">Usually replies within 24 hours.</p>
         </div>
       </Container>
     </Section>

@@ -25,8 +25,10 @@ export default function ProcessSection() {
     <Section id="process" className="bg-gray-950">
       <Container>
         <div className="mb-10 max-w-3xl">
-          <h2 className="text-3xl font-semibold text-white md:text-4xl">Delivery Process: Discover → Build → Launch</h2>
-          <p className="mt-4 text-lg text-gray-300">
+          <h2 className="font-display text-3xl font-semibold leading-[1.1] tracking-[-0.02em] text-white md:text-4xl">
+            Delivery Process: Discover → Build → Launch
+          </h2>
+          <p className="mt-4 font-sans text-lg leading-relaxed text-white/70">
             CONCORE TECHNOLOGIES uses a structured workflow so teams always know what is shipping, when, and why.
           </p>
         </div>
@@ -35,10 +37,10 @@ export default function ProcessSection() {
           {workflow.map((step) => (
             <Card key={step.title} className="border-gray-800 bg-gray-900 py-0">
               <CardHeader className="px-5 pt-5 pb-3">
-                <CardTitle className="text-xl text-white">{step.title}</CardTitle>
+                <CardTitle className="font-display text-xl tracking-[-0.02em] text-white">{step.title}</CardTitle>
               </CardHeader>
               <CardContent className="px-5 pb-5">
-                <ul className="space-y-2 text-sm text-gray-300">
+                <ul className="space-y-2 font-sans text-sm text-white/70">
                   {step.points.map((point) => (
                     <li key={point} className="flex gap-2">
                       <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-300" aria-hidden="true" />

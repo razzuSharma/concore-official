@@ -42,8 +42,10 @@ export default function ServicesPreview() {
     <Section id="services" className="bg-gray-950">
       <Container>
         <div className="mb-12 max-w-3xl">
-          <h2 className="text-3xl font-semibold text-white md:text-4xl">Commercial Software Services</h2>
-          <p className="mt-4 text-lg text-gray-300">
+          <h2 className="font-display text-3xl font-semibold leading-[1.1] tracking-[-0.02em] text-white md:text-4xl">
+            Commercial Software Services
+          </h2>
+          <p className="mt-4 font-sans text-lg leading-relaxed text-white/70">
             CONCORE TECHNOLOGIES delivers full-cycle engineering for companies that need reliable execution,
             transparent communication, and measurable outcomes.
           </p>
@@ -56,13 +58,13 @@ export default function ServicesPreview() {
                 <div className="mb-3 inline-flex w-fit rounded-md border border-blue-400/30 bg-blue-500/10 p-2">
                   <service.icon className="h-5 w-5 text-blue-200" aria-hidden="true" />
                 </div>
-                <CardTitle className="text-xl leading-snug">{service.title}</CardTitle>
+                <CardTitle className="font-display text-xl leading-[1.1] tracking-[-0.02em]">{service.title}</CardTitle>
               </CardHeader>
               <CardContent className="px-5 pb-5">
-                <p className="text-sm leading-relaxed text-gray-300">{service.description}</p>
+                <p className="font-sans text-sm leading-relaxed text-white/70">{service.description}</p>
                 <Link
                   href="/services"
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blue-300 transition hover:text-blue-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+                  className="mt-4 inline-flex items-center gap-2 font-mono text-sm font-medium tracking-wide text-blue-300 transition hover:text-blue-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
                 >
                   Learn more
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />

@@ -29,8 +29,10 @@ export default function CaseStudiesPreview() {
       <Container>
         <div className="mb-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold text-white md:text-4xl">Work by CONCORE TECHNOLOGIES</h2>
-            <p className="mt-4 text-lg text-gray-300">
+            <h2 className="font-display text-3xl font-semibold leading-[1.1] tracking-[-0.02em] text-white md:text-4xl">
+              Work by CONCORE TECHNOLOGIES
+            </h2>
+            <p className="mt-4 font-sans text-lg leading-relaxed text-white/70">
               Selected builds focused on business impact, speed to delivery, and stable long-term operations.
             </p>
           </div>
@@ -46,11 +48,11 @@ export default function CaseStudiesPreview() {
           {caseStudies.map((study) => (
             <Card key={study.type} className="border-gray-800 bg-gray-900 py-0">
               <CardContent className="p-6">
-                <p className="text-sm font-semibold uppercase tracking-wider text-blue-300">{study.type}</p>
-                <p className="mt-2 inline-flex rounded-full border border-gray-700 px-3 py-1 text-xs font-medium text-gray-300">
+                <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-blue-300">{study.type}</p>
+                <p className="font-mono mt-2 inline-flex rounded-full border border-gray-700 px-3 py-1 text-xs font-medium tracking-wide text-white/70">
                   {study.industry}
                 </p>
-                <p className="mt-4 text-sm leading-relaxed text-gray-300">{study.result}</p>
+                <p className="mt-4 font-sans text-sm leading-relaxed text-white/70">{study.result}</p>
               </CardContent>
             </Card>
           ))}

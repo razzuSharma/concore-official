@@ -48,10 +48,10 @@ export default function TestimonialsSection() {
     <Section className="bg-gray-950">
       <Container>
         <div className="mb-12 max-w-4xl">
-          <h2 className="text-3xl font-semibold text-white md:text-4xl">
+          <h2 className="font-display text-3xl font-semibold leading-[1.1] tracking-[-0.02em] text-white md:text-4xl">
             Client Stories: Why Teams Keep Choosing CONCORE TECHNOLOGIES
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-gray-300">
+          <p className="mt-4 font-sans text-lg leading-relaxed text-white/70">
             Detailed feedback from founders and operators on how we handle delivery, communication,
             and real business outcomes.
           </p>
@@ -77,11 +77,11 @@ export default function TestimonialsSection() {
                     </div>
 
                     <div className="mt-5 text-center lg:text-left">
-                      <p className="text-base font-semibold text-white">{testimonial.name}</p>
-                      <p className="text-sm text-gray-400">
+                      <p className="font-display text-base font-semibold tracking-[-0.02em] text-white">{testimonial.name}</p>
+                      <p className="font-sans text-sm text-white/60">
                         {testimonial.role}, {testimonial.company}
                       </p>
-                      <p className="mt-3 inline-flex rounded-full border border-blue-400/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-200">
+                      <p className="font-mono mt-3 inline-flex rounded-full border border-blue-400/30 bg-blue-500/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.08em] text-blue-200">
                         {testimonial.engagement}
                       </p>
                     </div>
@@ -97,17 +97,17 @@ export default function TestimonialsSection() {
                       <Quote className="h-5 w-5 text-blue-300" aria-hidden="true" />
                     </div>
 
-                    <p className="text-sm leading-relaxed text-gray-300">
+                    <p className="font-sans text-sm leading-relaxed text-white/70">
                       <span className="font-semibold text-gray-100">Challenge:</span> {testimonial.challenge}
                     </p>
 
-                    <p className="mt-4 text-base leading-relaxed text-gray-100">"{testimonial.quote}"</p>
+                    <p className="mt-4 font-sans text-base leading-relaxed text-white/90">"{testimonial.quote}"</p>
 
                     <div className="mt-5 flex flex-wrap gap-2">
                       {testimonial.impact.map((item) => (
                         <span
                           key={item}
-                          className="rounded-md border border-emerald-400/25 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-200"
+                          className="font-mono rounded-md border border-emerald-400/25 bg-emerald-500/10 px-3 py-1 text-xs font-medium tracking-wide text-emerald-200"
                         >
                           {item}
                         </span>
