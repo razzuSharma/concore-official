@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Calendar, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+export const metadata: Metadata = {
+  title: "Contact Concore Technologies",
+  description:
+    "Contact Concore Technologies for business website development, custom web apps, and software consulting. Share your project and get a tailored execution plan.",
+  alternates: {
+    canonical: "/contact-us",
+  },
+};
 
 const serviceOptions = [
   "Custom Software Development",

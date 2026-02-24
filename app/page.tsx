@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import HeroSection from "@/components/HomePage/HeroSection";
 import TrustStrip from "@/components/HomePage/TrustStrip";
 import WhyChooseUsSection from "@/components/HomePage/WhyChooseUsSection";
@@ -6,6 +7,15 @@ import CaseStudiesPreview from "@/components/HomePage/CaseStudiesPreview";
 import ProcessSection from "@/components/HomePage/ProcessSection";
 import TestimonialsSection from "@/components/HomePage/TestimonialsSection";
 import FinalCTA from "@/components/HomePage/FinalCTA";
+
+export const metadata: Metadata = {
+  title: "Custom Web Development for Business Growth",
+  description:
+    "Concore Technologies delivers business websites and custom web applications with fast execution, strong UX, and long-term support.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   return (
