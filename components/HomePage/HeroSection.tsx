@@ -3,12 +3,13 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Container from "@/components/HomePage/Container";
 import Section from "@/components/HomePage/Section";
+import ScribbleWord from "@/components/HomePage/ScribbleWord";
 
 const team = ["RD", "NB", "DB", "SN"];
 
 export default function HeroSection() {
   return (
-    <Section className="relative overflow-hidden bg-[#070b12] pb-12 pt-20 md:pt-24">
+    <Section className="relative overflow-hidden bg-[#070b12] pb-4 pt-20 md:pt-24">
       <div className="blueprint-grid pointer-events-none absolute inset-0 opacity-35" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(40,114,255,0.16),transparent_38%),radial-gradient(circle_at_80%_20%,rgba(232,213,163,0.09),transparent_32%)]" />
       <div className="noise-layer pointer-events-none absolute inset-0" />
@@ -22,16 +23,20 @@ export default function HeroSection() {
           <h1 className="mt-6 text-6xl leading-[0.9] text-white md:text-7xl lg:text-8xl">
             SOFTWARE
             <span className="block text-[#e8d5a3]">THAT HOLDS UP</span>
-            <span className="block text-[#6f7586]">IN PRODUCTION.</span>
+            <span className="block text-[#6f7586]">
+              IN{" "}
+              <ScribbleWord className="inline-block mb-2 pb-2" strokeClassName="stroke-[#e8d5a3]/85">
+                PRODUCTION.
+              </ScribbleWord>
+            </span>
           </h1>
 
-          <p className="mx-auto mt-7 max-w-3xl text-base leading-relaxed text-[#b6c4de] md:text-lg">
-            We design, build, and ship web apps, mobile products, and AI systems with architecture decisions documented,
-            sprint progress visible, and long-term maintainability planned from week one.
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#b6c4de] md:text-lg">
+            Web, mobile, and AI systems built with documented architecture, visible delivery, and long-term maintainability.
           </p>
 
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <Button asChild size="lg" className="rounded-none bg-[#c3a462] text-[#111721] hover:bg-[#d6b673]">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Button asChild size="lg" className="rounded-none bg-[#f0cf8a] text-[#0b1020] hover:bg-[#f7dda8]">
               <Link href="/contact-us">
                 Start a Project
                 <ArrowRight className="h-4 w-4" />
@@ -47,7 +52,7 @@ export default function HeroSection() {
             </Button>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
             <div className="flex -space-x-2">
               {team.map((member) => (
                 <span
@@ -59,13 +64,13 @@ export default function HeroSection() {
               ))}
             </div>
             <p className="text-sm text-[#cedaf1]">Raju Sharma Dahal · Ngamesh Bhandari · Dipesh Bhanadari · Saurav Niroula</p>
-            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-[#8da9d8]">
-              Founder & Lead Engineers • You talk to us, not account managers
+            <p className="font-mono text-xs uppercase tracking-[0.12em] text-[#9ab5e0]">
+              Talk directly to founder and lead engineers • No account-manager layer
             </p>
           </div>
         </div>
 
-        <div className="mx-auto mt-14 max-w-6xl">
+        <div className="mx-auto mt-6 max-w-6xl">
           <div className="relative overflow-hidden border border-[#2a436b] bg-[#090f1b]">
             <div className="flex items-center justify-between border-b border-[#213456] bg-[#0b1424] px-4 py-2">
               <div className="flex items-center gap-2">
@@ -120,14 +125,34 @@ export default function HeroSection() {
                   </div>
                 </div>
 
-                <div className="mt-4 h-28 border border-[#27406a] bg-[linear-gradient(180deg,rgba(24,44,77,0.45),rgba(7,11,18,0.2))]" />
-                <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-[#8da9d8]">
-                  Product preview placeholder. Replace this frame with a real screenshot when approved.
-                </p>
+                <div className="mt-4 overflow-hidden border border-[#27406a] bg-[#0a1222]">
+                  <div className="grid grid-cols-4 border-b border-[#27406a] bg-[#0d1a2f] px-3 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-[#8fa9d6]">
+                    <span>Student</span>
+                    <span>Batch</span>
+                    <span>Attendance</span>
+                    <span>Assessment</span>
+                  </div>
+                  {[
+                    { name: "A. Shrestha", batch: "Thamel-Q1", attendance: "92%", score: "A-" },
+                    { name: "R. Karki", batch: "Thamel-Q1", attendance: "88%", score: "B+" },
+                    { name: "M. Gurung", batch: "Lalitpur-Q2", attendance: "95%", score: "A" },
+                    { name: "S. Adhikari", batch: "Lalitpur-Q2", attendance: "90%", score: "A-" },
+                  ].map((row) => (
+                    <div
+                      key={row.name}
+                      className="grid grid-cols-4 border-b border-[#1f3252] px-3 py-2 text-sm text-[#d7e4fc] last:border-b-0"
+                    >
+                      <span>{row.name}</span>
+                      <span className="text-[#b8c9e7]">{row.batch}</span>
+                      <span>{row.attendance}</span>
+                      <span>{row.score}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#070b12] to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-[#070b12] to-transparent" />
           </div>
         </div>
       </Container>
