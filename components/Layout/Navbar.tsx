@@ -29,7 +29,10 @@ export default function Navbar() {
             className="h-8 w-8 object-contain"
             priority
           />
-          <span className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[#d9e4fb]">Concore</span>
+          <span className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[#d9e4fb] md:hidden">Concore</span>
+          <span className="hidden font-mono text-sm font-semibold uppercase tracking-[0.08em] text-[#e4edff] md:inline">
+            CONCORE TECHNOLOGIES
+          </span>
         </Link>
 
         <div className="hidden items-center gap-7 md:flex">
