@@ -1,38 +1,15 @@
-"use client";
+import type { Metadata } from "next";
+import PortfolioPageClient from "@/components/PortfolioPage/PortfolioPageClient";
 
-import React, { useState } from "react";
-import PortfolioHero from "@/components/PortfolioPage/PortfolioHero";
-import ProjectsGrid from "@/components/PortfolioPage/ProjectsGrid";
-import CaseStudyView from "@/components/PortfolioPage/CaseStudyView";
-import PortfolioCTA from "@/components/PortfolioPage/PortfolioCTA";
-import { projects, Project } from "@/components/PortfolioPage/projectsData";
-
-const PortfolioPage = () => {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
-  if (selectedProject) {
-    return (
-      <div className="min-h-screen bg-gray-950 px-6 py-10 md:px-8">
-        <CaseStudyView 
-          project={selectedProject} 
-          onBack={() => setSelectedProject(null)} 
-        />
-      </div>
-    );
-  }
-
-  return (
-    <div className="min-h-screen bg-gray-950">
-      <PortfolioHero />
-      <ProjectsGrid 
-        projects={projects} 
-        onProjectClick={setSelectedProject} 
-      />
-      <div className="max-w-7xl mx-auto px-8">
-        <PortfolioCTA />
-      </div>
-    </div>
-  );
+export const metadata: Metadata = {
+  title: "Portfolio of Custom Web Application Projects",
+  description:
+    "Review real client case studies by Concore Technologies, including business websites, operations platforms, and scalable custom web app builds.",
+  alternates: {
+    canonical: "/our-portfolio",
+  },
 };
 
-export default PortfolioPage;
+export default function PortfolioPage() {
+  return <PortfolioPageClient />;
+}

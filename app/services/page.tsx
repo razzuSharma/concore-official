@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import React from "react";
 
+export const metadata: Metadata = {
+  title: "Web Development and Custom Software Services",
+  description:
+    "Explore Concore Technologies services: custom web development, UI/UX design, cloud engineering, and long-term software maintenance for growth-focused businesses.",
+  alternates: {
+    canonical: "/services",
+  },
+};
 
 const ServicesPage = () => {
   return (

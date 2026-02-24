@@ -5,6 +5,14 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
 
+const siteName = "Concore Technologies";
+const siteUrl = "https://www.concoretechnologies.com";
+const defaultTitle = "Concore Technologies | Web Development Company in Nepal";
+const defaultDescription =
+  "Concore Technologies builds custom web applications, business websites, and scalable software for startups and growing companies.";
+const defaultOgImage = "/opengraph-image";
+const defaultTwitterImage = "/twitter-image";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -27,8 +35,45 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Concore Technologies",
-  description: "Building the Future of Digital Innovation",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: defaultTitle,
+    template: `%s | ${siteName}`,
+  },
+  description: defaultDescription,
+  applicationName: siteName,
+  keywords: [
+    "web development company Nepal",
+    "custom web app development",
+    "business website development",
+    "software development company Kathmandu",
+    "Concore Technologies",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName,
+    title: defaultTitle,
+    description: defaultDescription,
+    images: [
+      {
+        url: defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: `${siteName} preview`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: defaultDescription,
+    images: [defaultTwitterImage],
+  },
 };
 
 export default function RootLayout({
