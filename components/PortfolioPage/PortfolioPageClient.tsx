@@ -12,7 +12,7 @@ export default function PortfolioPageClient() {
 
   if (selectedProject) {
     return (
-      <div className="min-h-screen bg-gray-950 px-6 py-10 md:px-8">
+      <div className="min-h-screen bg-gray-950 px-5 py-8 sm:px-6 md:px-8 md:py-10">
         <CaseStudyView
           project={selectedProject}
           onBack={() => setSelectedProject(null)}
