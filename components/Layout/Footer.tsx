@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import Container from "@/components/HomePage/Container";
 
 export default function Footer() {
@@ -49,10 +49,6 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-blue-300" aria-hidden="true" />
                 contact@concoretechnologies.com
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-blue-300" aria-hidden="true" />
-                +977-000-000-0000
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-blue-300" aria-hidden="true" />

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Sora } from "next/font/google";
+import { Bebas_Neue, DM_Mono, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Layout/Navbar";
@@ -13,22 +13,22 @@ const defaultDescription =
 const defaultOgImage = "/opengraph-image";
 const defaultTwitterImage = "/twitter-image";
 
-const inter = Inter({
-  variable: "--font-inter",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
-const sora = Sora({
-  variable: "--font-sora",
+const bebasNeue = Bebas_Neue({
+  variable: "--font-bebas-neue",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400"],
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const dmMono = DM_Mono({
+  variable: "--font-dm-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
   display: "swap",
@@ -83,20 +83,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${sora.variable} ${jetbrainsMono.variable} font-sans antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="min-h-screen bg-white dark:bg-gray-950">
+      <body className={`${dmSans.variable} ${bebasNeue.variable} ${dmMono.variable} font-sans antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          <div className="min-h-screen bg-[#070b12]">
             <div className="fixed inset-x-0 top-0 z-50">
               <Navbar />
             </div>
-            <main className="relative pt-16">{children}</main>
+            <main className="relative pt-28">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>

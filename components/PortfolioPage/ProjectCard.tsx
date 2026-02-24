@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Project } from "./projectsData";
 
@@ -19,11 +20,31 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
     >
       <article className="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 shadow-xl transition-all duration-300 group-hover:border-blue-400/40 group-hover:shadow-2xl">
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(59,130,246,0.08),transparent_26%)] opacity-0 transition group-hover:opacity-100" />
-        <div
-          className={`flex h-36 items-center justify-between bg-gradient-to-br px-6 ${project.color}`}
-        >
-          <span className="text-6xl" aria-hidden="true">{project.image}</span>
-          <ArrowRight className="h-5 w-5 text-white/90 transition-transform duration-200 group-hover:translate-x-1" />
+        <div className={`relative h-36 bg-gradient-to-br ${project.color}`}>
+          {project.previewImage ? (
+            <Image
+              src={project.previewImage}
+              alt={`${project.title} product preview`}
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-cover"
+            />
+          ) : (
+            <div className="h-full px-6 py-5">
+              <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/80">
+                Snapshot pending client approval
+              </p>
+              <p className="mt-2 max-w-[16rem] text-sm font-medium leading-snug text-white/90">{project.title}</p>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {project.tech.slice(0, 3).map((item) => (
+                  <span key={item} className="font-mono rounded border border-white/25 bg-black/20 px-2 py-0.5 text-[10px] text-white/85">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+          <ArrowRight className="absolute right-5 top-5 h-5 w-5 text-white/90 transition-transform duration-200 group-hover:translate-x-1" />
         </div>
 
         <div className="relative p-6">
@@ -44,13 +65,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
             {project.description}
           </p>
 
-          <div className="mt-5 rounded-lg border border-blue-500/25 bg-blue-500/10 p-3">
-            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-blue-200/90">Business Impact</p>
-            <p className="mt-1 font-sans text-sm font-medium leading-relaxed text-blue-100">{primaryResult}</p>
-          </div>
+          <p className="mt-5 border-l-2 border-blue-400 pl-3 font-sans text-sm font-medium leading-relaxed text-blue-100">
+            {primaryResult}
+          </p>
 
           <div className="mt-5 flex flex-wrap gap-2">
-            {project.tags.slice(0, 3).map((tag: string, index: number) => (
+            {project.tags.map((tag: string, index: number) => (
               <span
                 key={index}
                 className="font-mono rounded-md border border-gray-700 bg-gray-800 px-2.5 py-1 text-xs font-medium text-white/70"
@@ -58,11 +78,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
                 {tag}
               </span>
             ))}
-            {project.tags.length > 3 && (
-              <span className="font-mono rounded-md border border-gray-700 bg-gray-800 px-2.5 py-1 text-xs font-medium text-white/50">
-                +{project.tags.length - 3} more
-              </span>
-            )}
           </div>
 
           <div className="mt-5 grid grid-cols-2 gap-3">

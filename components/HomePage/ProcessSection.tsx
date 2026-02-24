@@ -1,65 +1,50 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import Container from "@/components/HomePage/Container";
 import Section from "@/components/HomePage/Section";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const workflow = [
+const timeline = [
   {
-    title: "Discover",
-    points: ["Scope requirements and constraints", "Define milestones and delivery plan", "Align success metrics and timelines"],
+    week: "Week 1",
+    title: "Discovery + System Framing",
+    detail: "Workshops, scope mapping, technical constraints, and initial architecture direction.",
   },
   {
-    title: "Build",
-    points: ["Execute in focused weekly sprints", "Run QA and code reviews continuously", "Share demos and decisions with stakeholders"],
+    week: "Week 2",
+    title: "UX + Technical Blueprint",
+    detail: "Workflow wireframes, data model, API contracts, sprint plan, and acceptance criteria.",
   },
   {
-    title: "Launch",
-    points: ["Deploy with release checklists", "Monitor performance and reliability", "Provide handover and post-launch support"],
+    week: "Week 3-4",
+    title: "Build + QA Loops",
+    detail: "Feature delivery in short cycles with demos, code review, and continuous QA coverage.",
+  },
+  {
+    week: "Week 5",
+    title: "Launch + Enablement",
+    detail: "Production deployment, handover docs, monitoring setup, and post-launch support channel.",
   },
 ];
 
 export default function ProcessSection() {
   return (
-    <Section id="process" className="bg-gray-950">
+    <Section id="process" className="bg-[#070b12]">
       <Container>
         <div className="mb-10 max-w-3xl">
-          <h2 className="font-display text-3xl font-semibold leading-[1.1] tracking-[-0.02em] text-white md:text-4xl">
-            Delivery Process: Discover → Build → Launch
-          </h2>
-          <p className="mt-4 font-sans text-lg leading-relaxed text-white/70">
-            CONCORE TECHNOLOGIES uses a structured workflow so teams always know what is shipping, when, and why.
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8eabdb]">Engagement model</p>
+          <h2 className="mt-3 text-5xl leading-[0.95] text-white md:text-6xl">WHAT WEEK 1-5 LOOKS LIKE</h2>
+          <p className="mt-4 text-base leading-relaxed text-[#b4c3df] md:text-lg">
+            No black box. You see scope, progress, risks, and decisions in writing every week.
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-3">
-          {workflow.map((step) => (
-            <Card key={step.title} className="border-gray-800 bg-gray-900 py-0">
-              <CardHeader className="px-5 pt-5 pb-3">
-                <CardTitle className="font-display text-xl tracking-[-0.02em] text-white">{step.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="px-5 pb-5">
-                <ul className="space-y-2 font-sans text-sm text-white/70">
-                  {step.points.map((point) => (
-                    <li key={point} className="flex gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-300" aria-hidden="true" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+        <div className="relative border-l border-[#2e4b79] pl-6">
+          {timeline.map((step) => (
+            <article key={step.week} className="relative mb-8 last:mb-0">
+              <span className="absolute -left-[30px] top-1 h-3 w-3 border border-[#5d7eb0] bg-[#0a1222]" />
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-[#8eabdb]">{step.week}</p>
+              <h3 className="mt-2 text-3xl leading-[0.95] text-white">{step.title}</h3>
+              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[#c1d1ec]">{step.detail}</p>
+            </article>
           ))}
-        </div>
-
-        <div className="mt-8">
-          <Button asChild size="lg" className="bg-blue-600 text-white hover:bg-blue-500">
-            <Link href="/contact-us" aria-label="Start a software project with CONCORE TECHNOLOGIES">
-              Start a Project
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </Button>
         </div>
       </Container>
     </Section>

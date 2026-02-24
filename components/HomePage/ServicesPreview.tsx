@@ -1,76 +1,48 @@
-import Link from "next/link";
-import { ArrowRight, Bot, CloudCog, Layers, Palette, ShieldCheck, Smartphone } from "lucide-react";
 import Container from "@/components/HomePage/Container";
 import Section from "@/components/HomePage/Section";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const services = [
   {
-    icon: Layers,
-    title: "Custom Web Development",
-    description: "Build scalable web applications that support growth, internal operations, and revenue goals.",
+    title: "Web Product Engineering",
+    scope: "SaaS dashboards, operations systems, internal tooling",
+    output: "Architecture decisions, API contracts, CI pipeline, and deployment checklist.",
   },
   {
-    icon: Smartphone,
-    title: "Mobile App Development",
-    description: "Launch high-performance mobile experiences that users adopt quickly and teams can maintain.",
+    title: "Mobile Delivery",
+    scope: "React Native products with offline sync and release automation",
+    output: "Store-ready mobile app with telemetry, crash reporting, and handover docs.",
   },
   {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "Design clear product flows and interfaces that improve conversion and reduce onboarding friction.",
+    title: "AI Workflow Systems",
+    scope: "Ops copilots, screening pipelines, and task automation",
+    output: "Measured reduction in repetitive operations and faster internal response cycles.",
   },
   {
-    icon: Bot,
-    title: "AI Integrations & Automation",
-    description: "Integrate AI features and automation workflows that reduce repetitive work across teams.",
-  },
-  {
-    icon: CloudCog,
-    title: "Cloud & DevOps",
-    description: "Set up resilient cloud infrastructure, deployment pipelines, and monitoring for safe releases.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Maintenance & Scaling",
-    description: "Stabilize and evolve existing products with performance, security, and long-term support plans.",
+    title: "Rescue + Scale",
+    scope: "Legacy stabilization, migration, and performance hardening",
+    output: "Reliable baseline architecture teams can safely ship on every sprint.",
   },
 ];
 
 export default function ServicesPreview() {
   return (
-    <Section id="services" className="bg-gray-950">
+    <Section id="services" className="bg-[#070b12]">
       <Container>
-        <div className="mb-12 max-w-3xl">
-          <h2 className="font-display text-3xl font-semibold leading-[1.1] tracking-[-0.02em] text-white md:text-4xl">
-            Commercial Software Services
-          </h2>
-          <p className="mt-4 font-sans text-lg leading-relaxed text-white/70">
-            CONCORE TECHNOLOGIES delivers full-cycle engineering for companies that need reliable execution,
-            transparent communication, and measurable outcomes.
+        <div className="mb-10 max-w-3xl">
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8eabdb]">Capability</p>
+          <h2 className="mt-3 text-5xl leading-[0.95] text-white md:text-6xl">WHAT WE BUILD</h2>
+          <p className="mt-4 text-base leading-relaxed text-[#b4c3df] md:text-lg">
+            Focused engineering engagements with clearly defined scope, delivery artifacts, and business outcomes.
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="divide-y divide-[#253d64] border-y border-[#253d64]">
           {services.map((service) => (
-            <Card key={service.title} className="border-gray-800 bg-gray-900 py-0 text-white">
-              <CardHeader className="px-5 pt-5 pb-3">
-                <div className="mb-3 inline-flex w-fit rounded-md border border-blue-400/30 bg-blue-500/10 p-2">
-                  <service.icon className="h-5 w-5 text-blue-200" aria-hidden="true" />
-                </div>
-                <CardTitle className="font-display text-xl leading-[1.1] tracking-[-0.02em]">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="px-5 pb-5">
-                <p className="font-sans text-sm leading-relaxed text-white/70">{service.description}</p>
-                <Link
-                  href="/services"
-                  className="mt-4 inline-flex items-center gap-2 font-mono text-sm font-medium tracking-wide text-blue-300 transition hover:text-blue-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
-                >
-                  Learn more
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </CardContent>
-            </Card>
+            <article key={service.title} className="grid gap-3 py-6 md:grid-cols-12 md:gap-6">
+              <h3 className="text-3xl leading-[0.95] text-white md:col-span-4">{service.title}</h3>
+              <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#88a8de] md:col-span-3">{service.scope}</p>
+              <p className="text-sm leading-relaxed text-[#c7d5ee] md:col-span-5">{service.output}</p>
+            </article>
           ))}
         </div>
       </Container>

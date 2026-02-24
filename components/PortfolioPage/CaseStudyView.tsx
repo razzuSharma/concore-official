@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ChevronLeft,
   ExternalLink,
@@ -179,8 +180,32 @@ const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, onBack }) => {
               {readTimeMinutes} min read
             </div>
           </div>
-          <div className="text-7xl" aria-hidden="true">
-            {project.image}
+          <div className="w-full max-w-sm overflow-hidden rounded-lg border border-white/30 bg-black/20">
+            {project.previewImage ? (
+              <div className="relative h-40">
+                <Image
+                  src={project.previewImage}
+                  alt={`${project.title} product preview`}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 400px"
+                  className="object-cover"
+                />
+              </div>
+            ) : (
+              <div className="h-40 p-4">
+                <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-white/75">
+                  Snapshot pending client approval
+                </p>
+                <p className="mt-2 text-base font-medium leading-snug text-white/90">{project.title}</p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {project.tech.slice(0, 4).map((item) => (
+                    <span key={item} className="font-mono rounded border border-white/25 bg-black/25 px-2 py-0.5 text-[10px] text-white/80">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -378,6 +403,14 @@ const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, onBack }) => {
           ))}
         </div>
       </div>
+
+      {project.testimonialQuote && project.testimonialAuthor && (
+        <div className="mt-8 rounded-2xl border border-emerald-500/25 bg-emerald-500/5 p-7">
+          <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-emerald-100">Client Feedback</h3>
+          <p className="mt-4 font-sans text-base leading-relaxed text-emerald-100/90">"{project.testimonialQuote}"</p>
+          <p className="font-mono mt-3 text-xs uppercase tracking-[0.12em] text-emerald-200/90">{project.testimonialAuthor}</p>
+        </div>
+      )}
 
       <div className="mt-8 grid gap-8 lg:grid-cols-2">
         <article id="stack" className="scroll-mt-28 rounded-2xl border border-gray-800 bg-gray-900 p-7">
