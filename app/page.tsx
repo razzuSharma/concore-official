@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/HomePage/HeroSection";
 import TrustStrip from "@/components/HomePage/TrustStrip";
-import WhyChooseUsSection from "@/components/HomePage/WhyChooseUsSection";
 import ServicesPreview from "@/components/HomePage/ServicesPreview";
+import EngineeringEvidenceSection from "@/components/HomePage/EngineeringEvidenceSection";
 import CaseStudiesPreview from "@/components/HomePage/CaseStudiesPreview";
+import ProjectsShowcase from "@/components/HomePage/ProjectsShowcase";
 import ProcessSection from "@/components/HomePage/ProcessSection";
+import OffshoreComparisonSection from "@/components/HomePage/OffshoreComparisonSection";
+import TeamCredibilitySection from "@/components/HomePage/TeamCredibilitySection";
 import TestimonialsSection from "@/components/HomePage/TestimonialsSection";
 import FinalCTA from "@/components/HomePage/FinalCTA";
 
 export const metadata: Metadata = {
-  title: "Custom Web Development for Business Growth",
+  title: "Production-Grade Web, Mobile, and AI Engineering",
   description:
-    "Concore Technologies delivers business websites and custom web applications with fast execution, strong UX, and long-term support.",
+    "Concore Technologies builds production-grade web, mobile, and AI systems for teams that ship fast.",
   alternates: {
     canonical: "/",
   },
@@ -23,10 +26,13 @@ export default function Home() {
       <main>
         <HeroSection />
         <TrustStrip />
-        <WhyChooseUsSection />
         <ServicesPreview />
+        <EngineeringEvidenceSection />
         <CaseStudiesPreview />
+        <ProjectsShowcase />
         <ProcessSection />
+        <OffshoreComparisonSection />
+        <TeamCredibilitySection />
         <TestimonialsSection />
         <FinalCTA />
       </main>

@@ -12,7 +12,7 @@ const TeamSection = () => {
       social: { linkedin: "#", twitter: "#" },
     },  
     {
-      name: "Projjwal Kharel",
+      name: "Ngamesh Bhandari",
       role: "CTO",
       image: "/about/team/michael-chen.jpg",
       description:
@@ -20,19 +20,19 @@ const TeamSection = () => {
       social: { linkedin: "#", twitter: "#" },
     },
     {
-      name: "Rohit Kumar Poddar",
-      role: "Lead Marketing",
+      name: "Dipesh Bhanadari",
+      role: "Lead Engineer",
       image: "/about/team/emily-rodriguez.jpg",
       description:
-        "Drives brand, communication, and go-to-market execution for new and existing services.",
+        "Leads delivery execution and engineering implementation quality across client systems.",
       social: { linkedin: "#", twitter: "#" },
     },
     {
-      name: "Binita Shrestha",
-      role: "Head of HR & Operations",
+      name: "Saurav Niroula",
+      role: "Engineering Operations",
       image: "/about/team/david-thompson.jpg",
       description:
-        "Leads people operations and internal systems to keep teams effective and aligned.",
+        "Coordinates engineering operations, delivery communication, and workflow reliability.",
       social: { linkedin: "#", twitter: "#" },
     },
   ];

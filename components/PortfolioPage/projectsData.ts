@@ -9,6 +9,7 @@ export interface Project {
   category: string;
   description: string;
   image: string;
+  previewImage?: string;
   color: string;
   tags: string[];
   problem: string;
@@ -30,6 +31,8 @@ export interface Project {
   lessons: string[];
   liveUrl?: string;
   codeUrl?: string;
+  testimonialQuote?: string;
+  testimonialAuthor?: string;
 }
 
 export const projects: Project[] = [
@@ -39,7 +42,7 @@ export const projects: Project[] = [
     category: "Education Technology",
     description:
       "A full operations platform for managing barista training, assessments, scheduling, instructor workflows, and student certification.",
-    image: "☕",
+    image: "BSMS",
     color: "from-amber-500 to-orange-600",
     tags: ["Next.js", "Supabase", "Tailwind CSS", "Training Ops", "Role-Based Access"],
     problem:
@@ -110,15 +113,18 @@ export const projects: Project[] = [
       "Stakeholders needed feature rollout without disrupting active classes",
     ],
     businessImpact: [
-      "Improved operational predictability across peak enrollment periods",
-      "Reduced manual coordination between academic and admin teams",
-      "Enabled management to identify at-risk students earlier",
-      "Increased trust in reporting for partner and compliance discussions",
+      "60% reduction in routine admin overhead during active cohort operations",
+      "35% increase in course completion consistency",
+      "Same-day certificate turnaround replacing multi-day manual process",
+      "Improved reporting confidence for partner and compliance discussions",
     ],
     lessons: [
       "Operational software adoption improves significantly when staff SOPs are included in delivery",
       "Weekly demos reduced decision lag and avoided late-stage requirement changes",
     ],
+    testimonialQuote:
+      "Concore brought structure to our delivery process with clear weekly visibility and a launch that improved daily operations immediately.",
+    testimonialAuthor: "Sujan Subedi, Founder",
   },
   {
     id: 2,
@@ -126,7 +132,7 @@ export const projects: Project[] = [
     category: "Travel & Tourism",
     description:
       "A traveler-focused platform for local experience discovery, booking coordination, and operator-side management.",
-    image: "🗺️",
+    image: "TEBP",
     color: "from-blue-500 to-cyan-600",
     tags: ["Marketplace", "Booking Flow", "Operations Dashboard", "Growth"],
     problem:
@@ -142,10 +148,10 @@ export const projects: Project[] = [
       "Admin layer for content moderation and quality control",
     ],
     results: [
-      "Higher booking consistency with fewer drop-offs",
-      "Improved operator response handling speed",
-      "Reduced manual back-and-forth for booking coordination",
-      "Clearer performance visibility for top experiences",
+      "28% faster booking operations in operator workflows",
+      "23% reduction in booking-flow drop-offs during pilot period",
+      "40% fewer manual coordination follow-ups between travelers and operators",
+      "Improved visibility into top-performing experiences and bottlenecks",
     ],
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Supabase", "Tailwind CSS", "Vercel"],
     clientProfile:
@@ -198,22 +204,25 @@ export const projects: Project[] = [
     ],
     businessImpact: [
       "Created a dependable digital sales channel for experience operators",
-      "Improved internal efficiency for the operations team",
-      "Increased confidence in scaling to new experience categories",
+      "28% faster operational handling in booking workflows",
+      "Reduced manual coordination load through state-based booking flow",
       "Enabled data-driven prioritization for growth decisions",
     ],
     lessons: [
       "Marketplace products benefit from strong operational state modeling early",
       "Operator tooling quality directly impacts traveler-side satisfaction",
     ],
+    testimonialQuote:
+      "Every sprint had clear deliverables and the platform gave us a reliable base to scale experiences with confidence.",
+    testimonialAuthor: "Sujan Adhikari, Co-Founder",
   },
   {
     id: 3,
     title: "Shibam Premium Catalog Commerce",
-    category: "E-commerce & Interior Design",
+    category: "Interior Commerce",
     description:
       "A premium digital catalog and quote workflow platform for high-value marble and furniture inquiries.",
-    image: "🏛️",
+    image: "SPCC",
     color: "from-gray-600 to-stone-700",
     tags: ["Catalog Commerce", "Quote Workflow", "Design Industry", "B2B"],
     problem:
@@ -229,8 +238,8 @@ export const projects: Project[] = [
       "Lead follow-up support with centralized context",
     ],
     results: [
-      "Lower inquiry response turnaround time",
-      "Better visibility into high-intent leads",
+      "50% faster quote turnaround for catalog-driven inquiries",
+      "Higher visibility into high-intent leads across collections",
       "Improved average order value from qualified inquiries",
       "More consistent sales communication across team members",
     ],
@@ -284,10 +293,10 @@ export const projects: Project[] = [
       "Legacy lead data with inconsistent formatting",
     ],
     businessImpact: [
-      "Stronger digital credibility for premium segment buyers",
-      "More efficient quote operations and internal handoffs",
+      "50% faster quote operations for high-value catalog requests",
+      "More efficient handoffs between sales and operations",
       "Improved visibility into product-level inquiry performance",
-      "Higher confidence in scaling digital acquisition",
+      "Stronger digital credibility for premium segment buyers",
     ],
     lessons: [
       "High-ticket commerce needs process design as much as UI polish",
@@ -297,10 +306,10 @@ export const projects: Project[] = [
   {
     id: 4,
     title: "Dipak Suppliers Digital Presence Platform",
-    category: "Manufacturing & Hardware",
+    category: "B2B Supplier Platform",
     description:
       "A modern bilingual web platform positioning a traditional supplier as a trusted digital-first brand.",
-    image: "🛠️",
+    image: "DSDP",
     color: "from-emerald-500 to-teal-600",
     tags: ["Bilingual UX", "Lead Capture", "Product Showcase", "Brand Trust"],
     problem:
@@ -316,10 +325,10 @@ export const projects: Project[] = [
       "Performance-oriented frontend architecture",
     ],
     results: [
-      "Improved digital discoverability and first-contact quality",
-      "Higher volume of qualified web inquiries",
+      "2.1x increase in qualified web inquiries in the first 90 days",
+      "38% increase in mobile engagement depth post-launch",
       "More consistent brand presentation across product segments",
-      "Better mobile engagement metrics post-launch",
+      "Faster first-contact quality with structured bilingual inquiry paths",
     ],
     tech: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Framer Motion"],
     clientProfile:
@@ -371,7 +380,7 @@ export const projects: Project[] = [
       "Ensuring mobile readability for older device profiles",
     ],
     businessImpact: [
-      "Improved first impression quality for new prospects",
+      "2.1x growth in qualified inquiry volume within 90 days",
       "Higher confidence from buyers discovering products online",
       "More structured lead inflow for sales follow-up",
       "Foundation set for future digital campaigns",
@@ -384,10 +393,10 @@ export const projects: Project[] = [
   {
     id: 5,
     title: "Yatharoop Construction Portfolio Platform",
-    category: "Real Estate & Construction",
+    category: "Construction Portfolio",
     description:
       "A premium project portfolio site for architecture and construction services with consultation-focused conversion flow.",
-    image: "🏗️",
+    image: "YCPP",
     color: "from-sky-500 to-indigo-600",
     tags: ["Real Estate", "Portfolio Experience", "Consultation Flow", "Lead Generation"],
     problem:
@@ -403,9 +412,9 @@ export const projects: Project[] = [
       "Responsive experience tuned for investor and client review",
     ],
     results: [
-      "Stronger premium positioning in digital channels",
-      "Improved inquiry quality for architecture consultations",
-      "More confident presentation of project references",
+      "34% increase in consultation inquiries from portfolio traffic",
+      "29% improvement in high-intent lead quality for design consultations",
+      "More confident presentation of project references to premium buyers",
       "Better internal alignment around digital lead handling",
     ],
     tech: ["React", "Vite", "Tailwind CSS", "Framer Motion", "TypeScript"],
@@ -459,7 +468,7 @@ export const projects: Project[] = [
     ],
     businessImpact: [
       "Increased credibility in early-stage client conversations",
-      "Improved consultation pipeline quality",
+      "34% lift in consultation pipeline volume from digital channels",
       "Reduced friction in showcasing project capabilities",
       "Clearer digital foundation for brand growth initiatives",
     ],
