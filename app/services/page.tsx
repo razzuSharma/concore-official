@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import React from "react";
+import Container from "@/components/HomePage/Container";
+import Section from "@/components/HomePage/Section";
 
 export const metadata: Metadata = {
   title: "Web Development and Custom Software Services",
@@ -12,20 +14,27 @@ export const metadata: Metadata = {
 
 const ServicesPage = () => {
   return (
-    <div className="min-h-screen bg-[#F8F9F5]">
-      <div className="mx-auto grid min-h-screen max-w-5xl place-items-center px-6 py-16">
-        <div className="text-center">
-          <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#475569]">
-            Concore Services
-          </p>
-          <h1 className="mt-3 text-4xl font-bold text-[#0F172A] md:text-5xl">
-            Services Page
-          </h1>
-          <p className="mt-4 text-base text-[#475569] md:text-lg">
-            Detailed service breakdown is being finalized.
-          </p>
-        </div>
-      </div>
+    <div className="min-h-screen bg-transparent">
+      <Section className="py-24 md:py-28">
+        <Container>
+          <div className="mx-auto max-w-4xl">
+            <span className="mb-3 block h-1.5 w-14 bg-[#14B8A6]" />
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#475569]">Concore services</p>
+            <h1 className="mt-3 text-[clamp(3.1rem,7vw,5rem)] leading-[0.94] text-[#0F172A]">Services page</h1>
+            <p className="mt-5 text-base leading-relaxed text-[#334155] md:text-lg">
+              Detailed service breakdown is being finalized. We are preparing full scope models, delivery artifacts, and engagement options.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {["Product Engineering", "Delivery Systems", "Scale & Stabilization"].map((item) => (
+              <div key={item} className="rounded-xl border border-[#D9E2E0] bg-[#FFFFFF]/85 p-5 backdrop-blur-sm">
+                <p className="font-mono text-xs uppercase tracking-[0.12em] text-[#475569]">{item}</p>
+                <p className="mt-2 text-sm leading-relaxed text-[#334155]">Full details are being prepared for this service track.</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
     </div>
   );
 };
