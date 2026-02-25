@@ -92,12 +92,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${dmSans.variable} ${bebasNeue.variable} ${dmMono.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
-          <div className="min-h-screen bg-[#F8F9F5]">
+          <div className="relative min-h-screen overflow-hidden bg-[#F8F9F5]">
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(203,213,225,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(203,213,225,0.3)_1px,transparent_1px)] bg-[size:42px_42px] opacity-40" />
             <div className="fixed inset-x-0 top-0 z-50">
               <Navbar />
             </div>
-            <main className="relative pt-28">{children}</main>
-            <Footer />
+            <main className="relative z-10 pt-28">{children}</main>
+            <div className="relative z-10">
+              <Footer />
+            </div>
           </div>
         </ThemeProvider>
       </body>
