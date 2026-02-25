@@ -1,5 +1,5 @@
-import React from 'react';
-import { TrendingUp, Users, Award, Globe } from 'lucide-react';
+import React from "react";
+import { TrendingUp, Users, Award, Globe } from "lucide-react";
 
 const CompanyStats = () => {
   const stats = [
@@ -8,63 +8,63 @@ const CompanyStats = () => {
       number: "300%",
       label: "Average Growth",
       description: "Client revenue growth after our solutions",
-      color: "text-green-500"
+      color: "text-[#14B8A6]"
     },
     {
       icon: Users,
       number: "50+",
       label: "Team Members",
       description: "Dedicated professionals worldwide",
-      color: "text-blue-500"
+      color: "text-[#14B8A6]"
     },
     {
       icon: Award,
       number: "25+",
       label: "Awards Won",
       description: "Industry recognition and excellence",
-      color: "text-purple-500"
+      color: "text-[#14B8A6]"
     },
     {
       icon: Globe,
       number: "15+",
       label: "Countries",
       description: "Global presence and reach",
-      color: "text-orange-500"
-    }
+      color: "text-[#14B8A6]"
+    },
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+    <section className="bg-[#0F172A] py-16 md:py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-16 text-center">
+          <h2 className="mb-6 text-3xl font-bold text-[#F8F9F5] md:text-4xl">
             Our Impact in Numbers
           </h2>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-base text-[#F8F9F5]/75 md:text-lg">
             The results speak for themselves. Here's how we've made a difference 
             for our clients and the industry.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <div
               key={index}
               className="text-center group"
             >
-              <div className="inline-flex p-4 bg-white/20 backdrop-blur-sm rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="mb-6 inline-flex rounded-2xl bg-[#334155] p-4 transition-transform duration-300 group-hover:scale-110">
                 <stat.icon className={`h-8 w-8 ${stat.color}`} />
               </div>
               
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+              <div className="mb-2 text-4xl font-bold text-[#F8F9F5] md:text-5xl">
                 {stat.number}
               </div>
               
-              <div className="text-xl font-semibold text-white mb-2">
+              <div className="mb-2 text-lg font-semibold text-[#F8F9F5] md:text-xl">
                 {stat.label}
               </div>
               
-              <div className="text-blue-100 text-sm">
+              <div className="text-sm text-[#F8F9F5]/75">
                 {stat.description}
               </div>
             </div>

@@ -38,23 +38,23 @@ const TeamSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+    <section className="bg-[#F8F9F5] py-16 md:py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-16 text-center">
+          <h2 className="mb-6 text-3xl font-bold text-[#0F172A] md:text-4xl">
             Leadership Team
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-base text-[#475569] md:text-lg">
             The people responsible for strategy, delivery, and operations at
             Concore Technologies.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="group bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600"
+              className="group rounded-2xl border border-[#E2E8F0] bg-[#FFFFFF] p-6 shadow-sm transition-all duration-300 hover:shadow-md"
             >
               <div className="relative w-full h-64 mb-6 rounded-xl overflow-hidden">
                 <Image
@@ -65,22 +65,22 @@ const TeamSection = () => {
                 />
               </div>
 
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+              <h3 className="mb-2 text-xl font-bold text-[#0F172A]">
                 {member.name}
               </h3>
 
-              <p className="text-blue-600 dark:text-blue-400 font-semibold mb-3">
+              <p className="mb-3 font-semibold text-[#14B8A6]">
                 {member.role}
               </p>
 
-              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+              <p className="mb-4 text-sm leading-relaxed text-[#475569]">
                 {member.description}
               </p>
 
               <div className="flex space-x-3">
                 <a
                   href={member.social.linkedin}
-                  className="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="text-[#475569] transition-colors hover:text-[#14B8A6]"
                 >
                   <svg
                     className="h-5 w-5"
@@ -92,7 +92,7 @@ const TeamSection = () => {
                 </a>
                 <a
                   href={member.social.twitter}
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                  className="text-[#475569] transition-colors hover:text-[#14B8A6]"
                 >
                   <svg
                     className="h-5 w-5"

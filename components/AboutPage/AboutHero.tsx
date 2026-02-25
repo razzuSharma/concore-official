@@ -3,35 +3,35 @@ import Image from "next/image";
 
 const AboutHero = () => {
   return (
-    <section className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="relative bg-[#F8F9F5] py-16 md:py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1 className="mb-6 text-4xl font-bold text-[#0F172A] md:text-5xl">
               About
-              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="block text-[#14B8A6]">
                 Concore Technologies
               </span>
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+            <p className="mb-8 text-base leading-relaxed text-[#475569] md:text-lg">
               We help businesses design, build, and scale reliable digital
               products. Our team combines product strategy, engineering, and
               design to deliver solutions that are practical, measurable, and
               built for long-term growth.
             </p>
             <div className="flex flex-wrap gap-4">
-              <div className="bg-white dark:bg-gray-800 px-6 py-3 rounded-full shadow-lg">
-                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+              <div className="rounded-full border border-[#E2E8F0] bg-[#FFFFFF] px-6 py-3 shadow-sm">
+                <span className="text-sm font-semibold text-[#475569]">
                   Founded in 2025
                 </span>
               </div>
-              <div className="bg-white dark:bg-gray-800 px-6 py-3 rounded-full shadow-lg">
-                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+              <div className="rounded-full border border-[#E2E8F0] bg-[#FFFFFF] px-6 py-3 shadow-sm">
+                <span className="text-sm font-semibold text-[#475569]">
                   Product-First Execution
                 </span>
               </div>
-              <div className="bg-white dark:bg-gray-800 px-6 py-3 rounded-full shadow-lg">
-                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+              <div className="rounded-full border border-[#E2E8F0] bg-[#FFFFFF] px-6 py-3 shadow-sm">
+                <span className="text-sm font-semibold text-[#475569]">
                   Quality Over Quantity
                 </span>
               </div>
@@ -39,7 +39,7 @@ const AboutHero = () => {
           </div>
 
           <div className="relative">
-            <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative h-96 w-full overflow-hidden rounded-2xl border border-[#E2E8F0] shadow-sm">
               <Image
                 src="/about/team-meeting.png"
                 alt="Our team in a collaborative meeting"
@@ -48,7 +48,6 @@ const AboutHero = () => {
                 priority
               />
             </div>
-            {/* <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl shadow-xl opacity-20"></div> */}
           </div>
         </div>
       </div>

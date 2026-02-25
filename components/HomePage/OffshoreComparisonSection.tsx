@@ -26,16 +26,16 @@ const rows = [
 
 export default function OffshoreComparisonSection() {
   return (
-    <Section className="bg-[#070b12]">
+    <Section className="bg-[#F8F9F5]">
       <Container>
         <div className="mb-8 max-w-4xl">
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8eabdb]">Differentiation</p>
-          <h2 className="mt-3 text-5xl leading-[0.95] text-white md:text-6xl">WHY TEAMS PICK CONCORE OVER GENERIC OFFSHORE</h2>
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#475569]">Differentiation</p>
+          <h2 className="mt-3 text-5xl leading-[0.95] text-[#0F172A] md:text-6xl">WHY TEAMS PICK CONCORE OVER GENERIC OFFSHORE</h2>
         </div>
 
-        <div className="overflow-hidden border border-[#26406b]">
+        <div className="overflow-hidden border border-[#E2E8F0]">
           <table className="w-full border-collapse text-left">
-            <thead className="bg-[#0c1629] font-mono text-xs uppercase tracking-[0.14em] text-[#89a8dc]">
+            <thead className="bg-[#F0FDFA] font-mono text-xs uppercase tracking-[0.14em] text-[#475569]">
               <tr>
                 <th className="px-4 py-3">Criteria</th>
                 <th className="px-4 py-3">Concore</th>
@@ -44,10 +44,10 @@ export default function OffshoreComparisonSection() {
             </thead>
             <tbody>
               {rows.map((row) => (
-                <tr key={row.label} className="border-t border-[#213456] bg-[#0a1222] align-top text-sm">
-                  <td className="px-4 py-4 font-medium text-[#e8eefc]">{row.label}</td>
-                  <td className="px-4 py-4 text-[#c9d8f2]">{row.concore}</td>
-                  <td className="px-4 py-4 text-[#aebfdd]">{row.typical}</td>
+                <tr key={row.label} className="border-t border-[#E2E8F0] bg-[#FFFFFF] align-top text-sm">
+                  <td className="px-4 py-4 font-medium text-[#0F172A]">{row.label}</td>
+                  <td className="px-4 py-4 text-[#475569]">{row.concore}</td>
+                  <td className="px-4 py-4 text-[#475569]">{row.typical}</td>
                 </tr>
               ))}
             </tbody>

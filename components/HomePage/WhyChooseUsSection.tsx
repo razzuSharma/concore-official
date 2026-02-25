@@ -39,27 +39,27 @@ const outcomes = [
 
 export default function WhyChooseUsSection() {
   return (
-    <Section className="bg-gray-950">
+    <Section className="bg-[#F8F9F5]">
       <Container>
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
           <div>
-            <h2 className="font-display text-3xl font-semibold leading-[1.1] tracking-[-0.02em] text-white md:text-4xl">
+            <h2 className="font-display text-3xl font-semibold leading-[1.1] tracking-[-0.02em] text-[#0F172A] md:text-4xl">
               Why Teams Choose CONCORE TECHNOLOGIES
             </h2>
-            <p className="mt-4 font-sans text-lg leading-relaxed text-white/70">
+            <p className="mt-4 font-sans text-lg leading-relaxed text-[#0F172A]/70">
               We are a commercial software development company focused on execution quality,
               delivery speed, and long-term maintainability. Our process is designed to reduce
               risk while keeping momentum high.
             </p>
-            <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
+            <p className="mt-4 font-sans text-base leading-relaxed text-[#0F172A]/70">
               Instead of one-off builds, we help companies ship dependable digital products that
               continue to perform as customer demand and internal complexity grow.
             </p>
 
             <ul className="mt-7 space-y-3">
               {outcomes.map((outcome) => (
-                <li key={outcome} className="flex items-start gap-3 font-sans text-sm text-white/80">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-blue-300" aria-hidden="true" />
+                <li key={outcome} className="flex items-start gap-3 font-sans text-sm text-[#0F172A]/80">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#14B8A6]" aria-hidden="true" />
                   <span>{outcome}</span>
                 </li>
               ))}
@@ -68,15 +68,15 @@ export default function WhyChooseUsSection() {
 
           <div className="grid gap-4 sm:grid-cols-2">
             {differentiators.map((item) => (
-              <Card key={item.title} className="border-gray-800 bg-gray-900 py-0">
+              <Card key={item.title} className="border-[#E2E8F0] bg-[#FFFFFF] py-0">
                 <CardContent className="p-5">
-                  <div className="mb-3 inline-flex rounded-md border border-blue-400/30 bg-blue-500/10 p-2">
-                    <item.icon className="h-5 w-5 text-blue-200" aria-hidden="true" />
+                  <div className="mb-3 inline-flex rounded-md border border-[#E2E8F0] bg-[#F0FDFA] p-2">
+                    <item.icon className="h-5 w-5 text-[#14B8A6]" aria-hidden="true" />
                   </div>
-                  <h3 className="font-display text-lg font-semibold leading-[1.1] tracking-[-0.02em] text-white">
+                  <h3 className="font-display text-lg font-semibold leading-[1.1] tracking-[-0.02em] text-[#0F172A]">
                     {item.title}
                   </h3>
-                  <p className="mt-2 font-sans text-sm leading-relaxed text-white/70">{item.description}</p>
+                  <p className="mt-2 font-sans text-sm leading-relaxed text-[#0F172A]/70">{item.description}</p>
                 </CardContent>
               </Card>
             ))}

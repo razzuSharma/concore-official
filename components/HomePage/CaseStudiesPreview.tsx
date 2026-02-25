@@ -33,17 +33,17 @@ const caseStudies = [
 
 export default function CaseStudiesPreview() {
   return (
-    <Section id="work" className="bg-[#070b12]">
+    <Section id="work" className="bg-[#F8F9F5]">
       <Container>
         <div className="mb-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-3xl">
-            <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8eabdb]">Proof</p>
-            <h2 className="mt-3 text-5xl leading-[0.95] text-white md:text-6xl">CASE STUDIES</h2>
-            <p className="mt-4 text-base leading-relaxed text-[#b4c3df] md:text-lg">
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#475569]">Proof</p>
+            <h2 className="mt-3 text-5xl leading-[0.95] text-[#0F172A] md:text-6xl">CASE STUDIES</h2>
+            <p className="mt-4 text-base leading-relaxed text-[#475569] md:text-lg">
               Each case includes client context, constraints, delivery timeline, and measurable result.
             </p>
           </div>
-          <Button asChild variant="outline" className="rounded-none border-[#355889] bg-transparent text-[#dce8ff] hover:bg-[#0d1a2f]">
+          <Button asChild variant="outline" className="rounded-none border-[#475569] bg-transparent text-[#475569] hover:bg-[#F0FDFA]">
             <Link href="/our-portfolio">
               View All Case Studies
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -51,15 +51,15 @@ export default function CaseStudiesPreview() {
           </Button>
         </div>
 
-        <div className="divide-y divide-[#253d64] border-y border-[#253d64]">
+        <div className="divide-y divide-[#E2E8F0] border-y border-[#E2E8F0]">
           {caseStudies.map((study) => (
             <article key={study.client} className="grid gap-3 py-6 md:grid-cols-12 md:gap-6">
               <div className="md:col-span-3">
                 <p className="font-mono text-xs uppercase tracking-[0.14em] accent-text">{study.client}</p>
-                <h3 className="mt-2 text-3xl leading-[0.95] text-white">{study.build}</h3>
+                <h3 className="mt-2 text-3xl leading-[0.95] text-[#0F172A]">{study.build}</h3>
               </div>
-              <p className="text-sm leading-relaxed text-[#c2d0ea] md:col-span-4">Challenge: {study.challenge}</p>
-              <div className="text-sm text-[#d8e4fb] md:col-span-5">
+              <p className="text-sm leading-relaxed text-[#475569] md:col-span-4">Challenge: {study.challenge}</p>
+              <div className="text-sm text-[#0F172A] md:col-span-5">
                 <p>Result: {study.result}</p>
                 <p className="mt-1">Timeline: {study.timeline}</p>
                 <p className="mt-1">Stack: {study.stack}</p>

@@ -26,22 +26,22 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <Section className="bg-[#070b12] py-8 md:py-10">
+    <Section className="bg-[#F8F9F5] py-8 md:py-10">
       <Container>
         <div className="mb-10 max-w-3xl">
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8eabdb]">Client voice</p>
-          <h2 className="mt-3 text-5xl leading-[0.95] text-white md:text-6xl">WHAT CLIENTS SAY</h2>
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#475569]">Client voice</p>
+          <h2 className="mt-3 text-5xl leading-[0.95] text-[#0F172A] md:text-6xl">WHAT CLIENTS SAY</h2>
         </div>
 
         <div className="space-y-12">
           {testimonials.map((testimonial, index) => (
             <article
               key={testimonial.client}
-              className="group relative border-b border-[#253d64] pb-12 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1"
+              className="group relative border-b border-[#E2E8F0] pb-12 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1"
             >
               <div className="grid gap-8 md:grid-cols-[46%_54%] md:items-center">
                 <div className={`relative ${index % 2 === 1 ? "md:order-2" : ""}`}>
-                  <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_40%_45%,rgba(232,207,138,0.16),transparent_60%)] blur-2xl transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:bg-[radial-gradient(circle_at_40%_45%,rgba(232,207,138,0.24),transparent_62%)] group-hover:blur-3xl" />
+                  <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_40%_45%,rgba(20,184,166,0.12),transparent_60%)] blur-2xl transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:bg-[radial-gradient(circle_at_40%_45%,rgba(20,184,166,0.18),transparent_62%)] group-hover:blur-3xl" />
                   <div className="relative h-[360px] overflow-hidden md:h-[420px]">
                     <Image
                       src={testimonial.image}
@@ -54,21 +54,21 @@ export default function TestimonialsSection() {
                 </div>
 
                 <div className={`relative ${index % 2 === 1 ? "md:order-1" : ""}`}>
-                  <span className="pointer-events-none absolute -left-4 -top-16 text-[190px] leading-none text-[#f0cf8a]/[0.06] blur-[1px] md:-left-6 md:-top-20 md:text-[250px]">
+                  <span className="pointer-events-none absolute -left-4 -top-16 text-[190px] leading-none text-[#14B8A6] blur-[1px] md:-left-6 md:-top-20 md:text-[250px]">
                     “
                   </span>
 
-                  <p className="font-quote relative max-w-[41ch] text-[30px] leading-[1.28] text-[#e9d8ae] md:text-[40px] md:leading-[1.24]">
+                  <p className="font-quote relative max-w-[41ch] text-[30px] leading-[1.28] text-[#0F172A] md:text-[40px] md:leading-[1.24]">
                     {testimonial.quote}
                   </p>
 
                   <div className="mt-6">
-                    <p className="text-base font-semibold text-[#d9e4fb]">{testimonial.person}</p>
-                    <p className="font-mono text-xs uppercase tracking-[0.12em] text-[#7594bf]">{testimonial.role}</p>
-                    <p className="font-mono mt-1 text-[11px] uppercase tracking-[0.12em] text-[#6f8cb6]">{testimonial.client}</p>
+                    <p className="text-base font-semibold text-[#0F172A]">{testimonial.person}</p>
+                    <p className="font-mono text-xs uppercase tracking-[0.12em] text-[#475569]">{testimonial.role}</p>
+                    <p className="font-mono mt-1 text-[11px] uppercase tracking-[0.12em] text-[#475569]">{testimonial.client}</p>
                     <Link
                       href={testimonial.caseStudyHref}
-                      className="font-mono mt-3 inline-block text-[11px] uppercase tracking-[0.14em] text-[#c6ae79] transition hover:text-[#e9cf93]"
+                      className="font-mono mt-3 inline-block text-[11px] uppercase tracking-[0.14em] text-[#14B8A6] transition hover:text-[#14B8A6]"
                     >
                       ↗ Case Study
                     </Link>

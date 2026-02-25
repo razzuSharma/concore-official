@@ -12,11 +12,19 @@ export const metadata: Metadata = {
 
 const ServicesPage = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950">
-      <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
-          Services
-        </h1>
+    <div className="min-h-screen bg-[#F8F9F5]">
+      <div className="mx-auto grid min-h-screen max-w-5xl place-items-center px-6 py-16">
+        <div className="text-center">
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#475569]">
+            Concore Services
+          </p>
+          <h1 className="mt-3 text-4xl font-bold text-[#0F172A] md:text-5xl">
+            Services Page
+          </h1>
+          <p className="mt-4 text-base text-[#475569] md:text-lg">
+            Detailed service breakdown is being finalized.
+          </p>
+        </div>
       </div>
     </div>
   );

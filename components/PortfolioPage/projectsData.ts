@@ -43,7 +43,7 @@ export const projects: Project[] = [
     description:
       "A full operations platform for managing barista training, assessments, scheduling, instructor workflows, and student certification.",
     image: "BSMS",
-    color: "from-amber-500 to-orange-600",
+    color: "from-[#14B8A6] to-[#0F172A]",
     tags: ["Next.js", "Supabase", "Tailwind CSS", "Training Ops", "Role-Based Access"],
     problem:
       "The institute relied on spreadsheets, chat threads, and manual checklists to run admissions, class schedules, attendance, practical evaluations, and certificate issuance. This created delays, inconsistent records, and no real-time visibility into student performance.",
@@ -133,7 +133,7 @@ export const projects: Project[] = [
     description:
       "A traveler-focused platform for local experience discovery, booking coordination, and operator-side management.",
     image: "TEBP",
-    color: "from-blue-500 to-cyan-600",
+    color: "from-[#14B8A6] to-[#0F172A]",
     tags: ["Marketplace", "Booking Flow", "Operations Dashboard", "Growth"],
     problem:
       "The team had demand from travelers but lacked a robust digital flow for discovery, booking, availability management, and operator coordination. Existing processes depended on manual chat follow-ups and ad-hoc confirmations.",
@@ -223,7 +223,7 @@ export const projects: Project[] = [
     description:
       "A premium digital catalog and quote workflow platform for high-value marble and furniture inquiries.",
     image: "SPCC",
-    color: "from-gray-600 to-stone-700",
+    color: "from-[#334155] to-[#0F172A]",
     tags: ["Catalog Commerce", "Quote Workflow", "Design Industry", "B2B"],
     problem:
       "The business handled high-value catalog requests through fragmented channels, leading to inconsistent responses, weak lead tracking, and limited visibility into which products converted best.",
@@ -310,7 +310,7 @@ export const projects: Project[] = [
     description:
       "A modern bilingual web platform positioning a traditional supplier as a trusted digital-first brand.",
     image: "DSDP",
-    color: "from-emerald-500 to-teal-600",
+    color: "from-[#14B8A6] to-[#334155]",
     tags: ["Bilingual UX", "Lead Capture", "Product Showcase", "Brand Trust"],
     problem:
       "The business had strong offline trust but limited online visibility. Product discovery and lead capture were inconsistent, especially across language preferences and mobile devices.",
@@ -397,7 +397,7 @@ export const projects: Project[] = [
     description:
       "A premium project portfolio site for architecture and construction services with consultation-focused conversion flow.",
     image: "YCPP",
-    color: "from-sky-500 to-indigo-600",
+    color: "from-[#14B8A6] to-[#0F172A]",
     tags: ["Real Estate", "Portfolio Experience", "Consultation Flow", "Lead Generation"],
     problem:
       "The firm had a strong project track record but lacked a digital platform capable of communicating project quality, service depth, and consultation pathways to premium clients.",

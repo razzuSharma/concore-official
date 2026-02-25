@@ -10,17 +10,16 @@ const clients = [
 
 export default function TrustStrip() {
   return (
-    <Section className="border-y border-[#1e3151] bg-[#070b12] py-5 md:py-6">
+    <Section className="border-y border-[#E2E8F0] bg-[#F8F9F5] py-5 md:py-6">
       <Container>
-        <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#91addb]">Trusted by recently shipped clients</p>
-          <div className="flex flex-wrap gap-2 text-sm text-[#e7eefc]">
-            {clients.map((client) => (
-              <span key={client} className="border border-[#2a456f] bg-[#0a1222] px-3 py-1.5">
-                {client}
-              </span>
-            ))}
-          </div>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#475569]">Trusted by recently shipped clients</p>
+          {clients.map((client, idx) => (
+            <span key={client} className="inline-flex items-center gap-2 text-sm text-[#334155]">
+              <span>{client}</span>
+              {idx < clients.length - 1 ? <span className="text-[#94A3B8]">|</span> : null}
+            </span>
+          ))}
         </div>
       </Container>
     </Section>

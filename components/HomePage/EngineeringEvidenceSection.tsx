@@ -35,53 +35,60 @@ await db.booking.update({
 
 export default function EngineeringEvidenceSection() {
   return (
-    <Section className="bg-[#070b12]">
+    <Section className="bg-[#F8F9F5]">
       <Container>
         <div className="mb-10 max-w-4xl">
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8eabdb]">Engineering evidence</p>
-          <h2 className="mt-3 text-5xl leading-[0.95] text-white md:text-6xl">HOW WE PROVE QUALITY</h2>
-          <p className="mt-4 text-base leading-relaxed text-[#b4c3df] md:text-lg">
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#475569]">Engineering evidence</p>
+          <h2 className="mt-3 text-5xl leading-[0.95] text-[#0F172A] md:text-6xl">HOW WE PROVE QUALITY</h2>
+          <p className="mt-4 text-base leading-relaxed text-[#475569] md:text-lg">
             Precision is not a tagline. It is the delivery artifacts, quality gates, and architecture rules we enforce on every project.
           </p>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <div className="divide-y divide-[#253d64] border-y border-[#253d64]">
-              {deliveryArtifacts.map((item) => (
-                <article key={item.title} className="py-5">
-                  <h3 className="text-3xl leading-[0.95] text-white">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#c2d0ea]">{item.detail}</p>
+            <div className="divide-y divide-[#E2E8F0] border-y border-[#E2E8F0]">
+              {deliveryArtifacts.map((item, idx) => (
+                <article key={item.title} className="py-6">
+                  <div className="mb-3 flex items-center gap-3">
+                    <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#64748B]">{`0${idx + 1}`}</span>
+                    <h3 className="text-3xl leading-[0.95] text-[#0F172A]">{item.title}</h3>
+                  </div>
+                  <p className="text-sm leading-relaxed text-[#334155]">{item.detail}</p>
+
+                  {item.title === "Release Checklist + QA Gates" ? (
+                    <div className="mt-5 overflow-hidden rounded-md border border-[#E2E8F0]">
+                      <table className="w-full border-collapse text-left">
+                        <thead className="bg-[#0F2E45] font-mono text-xs uppercase tracking-[0.14em] text-[#EAF3FF]">
+                          <tr>
+                            <th className="px-4 py-3">Quality gate</th>
+                            <th className="px-4 py-3">Enforcement rule</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {qualityGates.map((row) => (
+                            <tr key={row.gate} className="border-t border-[#E2E8F0] bg-[#FFFFFF] text-sm text-[#0F172A]">
+                              <td className="px-4 py-3">{row.gate}</td>
+                              <td className="px-4 py-3 text-[#334155]">{row.rule}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : null}
                 </article>
               ))}
-            </div>
-
-            <div className="mt-8 overflow-hidden border border-[#26406b]">
-              <table className="w-full border-collapse text-left">
-                <thead className="bg-[#0c1629] font-mono text-xs uppercase tracking-[0.14em] text-[#89a8dc]">
-                  <tr>
-                    <th className="px-4 py-3">Quality gate</th>
-                    <th className="px-4 py-3">Enforcement rule</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {qualityGates.map((row) => (
-                    <tr key={row.gate} className="border-t border-[#213456] bg-[#0a1222] text-sm text-[#d7e4fc]">
-                      <td className="px-4 py-3">{row.gate}</td>
-                      <td className="px-4 py-3 text-[#b7c9e7]">{row.rule}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
             </div>
           </div>
 
           <div className="lg:col-span-5">
-            <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#8eaadb]">Guardrail example</p>
-            <pre className="mt-3 overflow-x-auto border border-[#27406a] bg-[#0a1222] p-4 text-xs leading-relaxed text-[#d6e4fd]">
+            <p className="font-mono inline-flex items-center border-l-2 border-[#14B8A6] pl-3 text-xs uppercase tracking-[0.14em] text-[#334155]">
+              Guardrail example
+            </p>
+            <pre className="mt-3 overflow-x-auto whitespace-pre-wrap break-words border border-[#E2E8F0] bg-[#FFFFFF] p-4 text-[13px] leading-relaxed text-[#334155]">
               <code>{architectureExample}</code>
             </pre>
-            <p className="mt-3 text-sm leading-relaxed text-[#afc2e4]">
+            <p className="mt-3 text-sm leading-relaxed text-[#334155]">
               Example logic from our delivery approach: encode domain rules directly in code to prevent invalid state transitions in production.
             </p>
           </div>

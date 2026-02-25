@@ -41,17 +41,17 @@ const processItems = [
 
 export default function ContactUsPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950">
-      <section className="relative overflow-hidden border-b border-gray-200 bg-gradient-to-br from-slate-50 via-white to-blue-50 py-20 dark:border-gray-800 dark:from-gray-950 dark:via-gray-950 dark:to-blue-950/30">
+    <div className="min-h-screen bg-[#F8F9F5]">
+      <section className="relative overflow-hidden border-b border-[#E2E8F0] bg-[#F8F9F5] py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-4 py-2 text-sm font-medium text-blue-700 dark:border-blue-900 dark:bg-gray-900/80 dark:text-blue-300">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#E2E8F0] bg-[#FFFFFF] px-4 py-2 text-sm font-medium text-[#14B8A6]">
             <ShieldCheck className="h-4 w-4" />
             Trusted product engineering partner
           </div>
-          <h1 className="max-w-3xl text-5xl font-bold tracking-tight text-gray-900 dark:text-white md:text-6xl">
+          <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-[#0F172A] md:text-5xl">
             Let&apos;s Build Your Next Software Product
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#475569] md:text-lg">
             Share your business goals and project requirements. We&apos;ll respond
             with a practical plan, timeline, and engagement model tailored to
             your team.
@@ -62,16 +62,16 @@ export default function ContactUsPage() {
       <section className="py-16">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 lg:grid-cols-3">
           <div className="lg:col-span-2">
-            <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 dark:bg-gray-900">
+            <div className="rounded-2xl border border-[#E2E8F0] bg-[#FFFFFF] p-8 shadow-sm">
               <div className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                <h2 className="text-2xl font-bold text-[#0F172A] md:text-3xl">
                   Project Inquiry Form
                 </h2>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                <p className="mt-2 text-sm text-[#475569]">
                   Fill out the details below. For urgent inquiries, email us at{" "}
                   <a
                     href="mailto:hello@concoretech.com"
-                    className="font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                    className="font-medium text-[#14B8A6] hover:text-[#14B8A6]"
                   >
                     hello@concoretech.com
                   </a>
@@ -82,43 +82,43 @@ export default function ContactUsPage() {
               <form className="space-y-6">
                 <div className="grid gap-5 md:grid-cols-2">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                    <label className="text-sm font-medium text-[#0F172A]">
                       Full Name
                     </label>
                     <input
                       type="text"
                       placeholder="John Smith"
-                      className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:border-gray-700 dark:bg-gray-950 dark:text-white dark:focus:border-blue-400 dark:focus:ring-blue-900/40"
+                      className="w-full rounded-lg border border-[#E2E8F0] bg-[#FFFFFF] px-4 py-3 text-sm text-[#0F172A] outline-none transition focus:border-[#14B8A6] focus:ring-2 focus:ring-[#14B8A6]/20"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                    <label className="text-sm font-medium text-[#0F172A]">
                       Work Email
                     </label>
                     <input
                       type="email"
                       placeholder="you@company.com"
-                      className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:border-gray-700 dark:bg-gray-950 dark:text-white dark:focus:border-blue-400 dark:focus:ring-blue-900/40"
+                      className="w-full rounded-lg border border-[#E2E8F0] bg-[#FFFFFF] px-4 py-3 text-sm text-[#0F172A] outline-none transition focus:border-[#14B8A6] focus:ring-2 focus:ring-[#14B8A6]/20"
                     />
                   </div>
                 </div>
 
                 <div className="grid gap-5 md:grid-cols-2">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                    <label className="text-sm font-medium text-[#0F172A]">
                       Company
                     </label>
                     <input
                       type="text"
                       placeholder="Company name"
-                      className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:border-gray-700 dark:bg-gray-950 dark:text-white dark:focus:border-blue-400 dark:focus:ring-blue-900/40"
+                      className="w-full rounded-lg border border-[#E2E8F0] bg-[#FFFFFF] px-4 py-3 text-sm text-[#0F172A] outline-none transition focus:border-[#14B8A6] focus:ring-2 focus:ring-[#14B8A6]/20"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                    <label className="text-sm font-medium text-[#0F172A]">
                       Project Type
                     </label>
-                    <select className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:border-gray-700 dark:bg-gray-950 dark:text-white dark:focus:border-blue-400 dark:focus:ring-blue-900/40">
+                    <select className="w-full rounded-lg border border-[#E2E8F0] bg-[#FFFFFF] px-4 py-3 text-sm text-[#0F172A] outline-none transition focus:border-[#14B8A6] focus:ring-2 focus:ring-[#14B8A6]/20">
                       <option value="">Select a service</option>
                       {serviceOptions.map((option) => (
                         <option key={option} value={option}>
@@ -131,10 +131,10 @@ export default function ContactUsPage() {
 
                 <div className="grid gap-5 md:grid-cols-2">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                    <label className="text-sm font-medium text-[#0F172A]">
                       Estimated Budget
                     </label>
-                    <select className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:border-gray-700 dark:bg-gray-950 dark:text-white dark:focus:border-blue-400 dark:focus:ring-blue-900/40">
+                    <select className="w-full rounded-lg border border-[#E2E8F0] bg-[#FFFFFF] px-4 py-3 text-sm text-[#0F172A] outline-none transition focus:border-[#14B8A6] focus:ring-2 focus:ring-[#14B8A6]/20">
                       <option value="">Select budget range</option>
                       <option value="10k-25k">$10k - $25k</option>
                       <option value="25k-50k">$25k - $50k</option>
@@ -143,10 +143,10 @@ export default function ContactUsPage() {
                     </select>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                    <label className="text-sm font-medium text-[#0F172A]">
                       Timeline
                     </label>
-                    <select className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:border-gray-700 dark:bg-gray-950 dark:text-white dark:focus:border-blue-400 dark:focus:ring-blue-900/40">
+                    <select className="w-full rounded-lg border border-[#E2E8F0] bg-[#FFFFFF] px-4 py-3 text-sm text-[#0F172A] outline-none transition focus:border-[#14B8A6] focus:ring-2 focus:ring-[#14B8A6]/20">
                       <option value="">Select timeline</option>
                       <option value="asap">As soon as possible</option>
                       <option value="1-2-months">1 - 2 months</option>
@@ -157,13 +157,13 @@ export default function ContactUsPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                  <label className="text-sm font-medium text-[#0F172A]">
                     Project Overview
                   </label>
                   <textarea
                     rows={6}
                     placeholder="Describe your goals, current challenges, and what success looks like for your project."
-                    className="w-full resize-none rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:border-gray-700 dark:bg-gray-950 dark:text-white dark:focus:border-blue-400 dark:focus:ring-blue-900/40"
+                    className="w-full resize-none rounded-lg border border-[#E2E8F0] bg-[#FFFFFF] px-4 py-3 text-sm text-[#0F172A] outline-none transition focus:border-[#14B8A6] focus:ring-2 focus:ring-[#14B8A6]/20"
                   />
                 </div>
 
@@ -177,7 +177,7 @@ export default function ContactUsPage() {
                   </Button>
                 </div>
 
-                <p className="text-xs text-gray-500 dark:text-gray-400">
+                <p className="text-xs text-[#475569]">
                   By submitting this form, you agree to be contacted regarding
                   your project inquiry.
                 </p>
@@ -186,37 +186,37 @@ export default function ContactUsPage() {
           </div>
 
           <div className="space-y-6">
-            <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            <div className="rounded-2xl border border-[#E2E8F0] bg-[#FFFFFF] p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-[#0F172A]">
                 Contact Information
               </h3>
               <div className="mt-5 space-y-4 text-sm">
-                <div className="flex items-start gap-3 text-gray-600 dark:text-gray-300">
-                  <Mail className="mt-0.5 h-4 w-4 text-blue-600 dark:text-blue-400" />
+                <div className="flex items-start gap-3 text-[#475569]">
+                  <Mail className="mt-0.5 h-4 w-4 text-[#14B8A6]" />
                   <span>hello@concoretech.com</span>
                 </div>
-                <div className="flex items-start gap-3 text-gray-600 dark:text-gray-300">
-                  <Phone className="mt-0.5 h-4 w-4 text-blue-600 dark:text-blue-400" />
+                <div className="flex items-start gap-3 text-[#475569]">
+                  <Phone className="mt-0.5 h-4 w-4 text-[#14B8A6]" />
                   <span>+1 (555) 123-4567</span>
                 </div>
-                <div className="flex items-start gap-3 text-gray-600 dark:text-gray-300">
-                  <MapPin className="mt-0.5 h-4 w-4 text-blue-600 dark:text-blue-400" />
+                <div className="flex items-start gap-3 text-[#475569]">
+                  <MapPin className="mt-0.5 h-4 w-4 text-[#14B8A6]" />
                   <span>San Francisco, CA</span>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            <div className="rounded-2xl border border-[#E2E8F0] bg-[#FFFFFF] p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-[#0F172A]">
                 Engagement Process
               </h3>
               <div className="mt-5 space-y-4">
                 {processItems.map((item) => (
                   <div key={item.title}>
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                    <p className="text-sm font-semibold text-[#0F172A]">
                       {item.title}
                     </p>
-                    <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                    <p className="mt-1 text-sm text-[#475569]">
                       {item.description}
                     </p>
                   </div>
@@ -224,8 +224,8 @@ export default function ContactUsPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 p-6 text-white">
-              <p className="text-sm font-medium text-blue-100">
+            <div className="rounded-2xl bg-[#0F172A] p-6 text-white">
+              <p className="text-sm font-medium text-[#F8F9F5]/75">
                 Prefer scheduling directly?
               </p>
               <div className="mt-3 flex items-center gap-2 text-lg font-semibold">
@@ -235,7 +235,7 @@ export default function ContactUsPage() {
               <Button
                 asChild
                 variant="secondary"
-                className="mt-5 w-full rounded-lg bg-white text-blue-700 hover:bg-blue-50"
+                className="mt-5 w-full rounded-lg bg-[#14B8A6] text-[#FFFFFF] hover:bg-[#14B8A6]"
               >
                 <Link href="mailto:hello@concoretech.com?subject=Consultation%20Call%20Request">
                   Schedule Now

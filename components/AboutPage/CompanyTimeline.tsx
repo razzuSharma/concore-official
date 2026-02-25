@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 const CompanyTimeline = () => {
   const milestones = [
@@ -41,51 +41,48 @@ const CompanyTimeline = () => {
   ];
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-950">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+    <section className="bg-[#F8F9F5] py-16 md:py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-16 text-center">
+          <h2 className="mb-6 text-3xl font-bold text-[#0F172A] md:text-4xl">
             Our Journey
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-base text-[#475569] md:text-lg">
             A quick look at the milestones that shaped Concore Technologies.
           </p>
         </div>
 
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-600 rounded-full"></div>
+          <div className="absolute left-1/2 h-full w-1 -translate-x-1/2 transform rounded-full bg-[#E2E8F0]" />
 
           <div className="space-y-12">
             {milestones.map((milestone, index) => (
               <div
                 key={index}
                 className={`relative flex items-center ${
-                  index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                  index % 2 === 0 ? "flex-row" : "flex-row-reverse"
                 }`}
               >
-                {/* Timeline dot */}
-                <div className={`absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white dark:border-gray-950 ${
+                <div className={`absolute left-1/2 z-10 h-6 w-6 -translate-x-1/2 transform rounded-full border-4 border-[#F8F9F5] ${
                   milestone.highlight 
-                    ? 'bg-gradient-to-r from-blue-500 to-purple-600' 
-                    : 'bg-gray-300 dark:bg-gray-600'
-                } z-10`}></div>
+                    ? "bg-[#14B8A6]"
+                    : "bg-[#334155]"
+                }`} />
 
-                {/* Content */}
-                <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                  <div className={`bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 ${
-                    milestone.highlight ? 'ring-2 ring-blue-500 ring-opacity-50' : ''
+                <div className={`w-5/12 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}>
+                  <div className={`rounded-2xl border border-[#E2E8F0] bg-[#FFFFFF] p-6 shadow-sm transition-all duration-300 hover:shadow-md ${
+                    milestone.highlight ? "ring-2 ring-[#14B8A6]/35" : ""
                   }`}>
-                    <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                    <div className="mb-2 text-2xl font-bold text-[#14B8A6]">
                       {milestone.year}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                    <h3 className="mb-3 text-xl font-bold text-[#0F172A]">
                       {milestone.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    <p className="mb-4 text-sm leading-relaxed text-[#475569]">
                       {milestone.description}
                     </p>
-                    <div className="relative w-full h-32 rounded-xl overflow-hidden">
+                    <div className="relative h-32 w-full overflow-hidden rounded-xl">
                       <Image
                         src={milestone.image}
                         alt={milestone.title}

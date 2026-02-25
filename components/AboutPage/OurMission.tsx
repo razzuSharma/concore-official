@@ -1,5 +1,5 @@
-import React from 'react';
-import { Target, Users, Lightbulb, Heart } from 'lucide-react';
+import React from "react";
+import { Target, Users, Lightbulb, Heart } from "lucide-react";
 
 const OurMission = () => {
   const values = [
@@ -8,59 +8,59 @@ const OurMission = () => {
       title: "Our Mission",
       description:
         "Build dependable digital products that solve real business problems and create measurable outcomes for our clients.",
-      color: "from-blue-500 to-blue-600"
+      color: "bg-[#14B8A6]"
     },
     {
       icon: Users,
       title: "Our Vision",
       description:
         "Be the most trusted technology partner for teams that want to move fast without compromising quality.",
-      color: "from-purple-500 to-purple-600"
+      color: "bg-[#14B8A6]"
     },
     {
       icon: Lightbulb,
       title: "Innovation",
       description:
         "We experiment thoughtfully, adopt tools with clear value, and turn new ideas into practical product improvements.",
-      color: "from-green-500 to-green-600"
+      color: "bg-[#14B8A6]"
     },
     {
       icon: Heart,
       title: "Our Values",
       description:
         "Integrity, accountability, and collaboration guide every engagement. We communicate clearly and deliver what we promise.",
-      color: "from-orange-500 to-orange-600"
-    }
+      color: "bg-[#14B8A6]"
+    },
   ];
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-950">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+    <section className="bg-[#F8F9F5] py-16 md:py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-16 text-center">
+          <h2 className="mb-6 text-3xl font-bold text-[#0F172A] md:text-4xl">
             Our Mission & Values
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-base text-[#475569] md:text-lg">
             The principles behind how we build, collaborate, and support our
             partners from discovery to delivery.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {values.map((value, index) => (
             <div
               key={index}
-              className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600"
+              className="group rounded-2xl border border-[#E2E8F0] bg-[#FFFFFF] p-8 shadow-sm transition-all duration-300 hover:shadow-md"
             >
-              <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${value.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`mb-6 inline-flex rounded-2xl p-4 ${value.color} transition-transform duration-300 group-hover:scale-110`}>
                 <value.icon className="h-8 w-8 text-white" />
               </div>
-              
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+
+              <h3 className="mb-4 text-xl font-bold text-[#0F172A]">
                 {value.title}
               </h3>
-              
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+
+              <p className="text-sm leading-relaxed text-[#475569]">
                 {value.description}
               </p>
             </div>

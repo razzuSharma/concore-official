@@ -91,8 +91,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmSans.variable} ${bebasNeue.variable} ${dmMono.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <div className="min-h-screen bg-[#070b12]">
+        <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
+          <div className="min-h-screen bg-[#F8F9F5]">
             <div className="fixed inset-x-0 top-0 z-50">
               <Navbar />
             </div>

@@ -26,23 +26,23 @@ const timeline = [
 
 export default function ProcessSection() {
   return (
-    <Section id="process" className="bg-[#070b12]">
+    <Section id="process" className="bg-[#F8F9F5]">
       <Container>
         <div className="mb-10 max-w-3xl">
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8eabdb]">Engagement model</p>
-          <h2 className="mt-3 text-5xl leading-[0.95] text-white md:text-6xl">WHAT WEEK 1-5 LOOKS LIKE</h2>
-          <p className="mt-4 text-base leading-relaxed text-[#b4c3df] md:text-lg">
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#475569]">Engagement model</p>
+          <h2 className="mt-3 text-5xl leading-[0.95] text-[#0F172A] md:text-6xl">WHAT WEEK 1-5 LOOKS LIKE</h2>
+          <p className="mt-4 text-base leading-relaxed text-[#475569] md:text-lg">
             No black box. You see scope, progress, risks, and decisions in writing every week.
           </p>
         </div>
 
-        <div className="relative border-l border-[#2e4b79] pl-6">
+        <div className="relative border-l border-[#E2E8F0] pl-6">
           {timeline.map((step) => (
             <article key={step.week} className="relative mb-8 last:mb-0">
-              <span className="absolute -left-[30px] top-1 h-3 w-3 border border-[#5d7eb0] bg-[#0a1222]" />
-              <p className="font-mono text-xs uppercase tracking-[0.16em] text-[#8eabdb]">{step.week}</p>
-              <h3 className="mt-2 text-3xl leading-[0.95] text-white">{step.title}</h3>
-              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[#c1d1ec]">{step.detail}</p>
+              <span className="absolute -left-[30px] top-1 h-3 w-3 border border-[#14B8A6] bg-[#FFFFFF]" />
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-[#475569]">{step.week}</p>
+              <h3 className="mt-2 text-3xl leading-[0.95] text-[#0F172A]">{step.title}</h3>
+              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[#475569]">{step.detail}</p>
             </article>
           ))}
         </div>

@@ -47,71 +47,71 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.21 0.006 285.885);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
+  --background: #f8f9f5;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #14b8a6;
+  --primary-foreground: #ffffff;
+  --secondary: #f0fdfa;
+  --secondary-foreground: #0f172a;
+  --muted: #f8f9f5;
+  --muted-foreground: #334155;
+  --accent: #f0fdfa;
+  --accent-foreground: #0f172a;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.705 0.015 286.067);
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #14b8a6;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.21 0.006 285.885);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.705 0.015 286.067);
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #14b8a6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f0fdfa;
+  --sidebar-accent-foreground: #0f172a;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #14b8a6;
 }
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.92 0.004 286.32);
-  --primary-foreground: oklch(0.21 0.006 285.885);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: #f8f9f5;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #14b8a6;
+  --primary-foreground: #ffffff;
+  --secondary: #f0fdfa;
+  --secondary-foreground: #0f172a;
+  --muted: #f8f9f5;
+  --muted-foreground: #334155;
+  --accent: #f0fdfa;
+  --accent-foreground: #0f172a;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.552 0.016 285.938);
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #14b8a6;
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.552 0.016 285.938);
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #14b8a6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f0fdfa;
+  --sidebar-accent-foreground: #0f172a;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #14b8a6;
 }
 
 @layer base {
@@ -121,8 +121,10 @@
 
   body {
     @apply bg-background font-sans text-foreground;
-    background-color: #070b12;
-    color: #e7edf8;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-size: 17px;
+    line-height: 1.65;
   }
 
   h1,
@@ -131,32 +133,58 @@
   h4,
   h5,
   h6 {
-    @apply font-display tracking-[0.01em] text-white;
+    @apply text-foreground font-display tracking-[0.01em];
     letter-spacing: 0.02em;
+  }
+
+  p {
+    color: #334155;
+    font-weight: 500;
+  }
+
+  /* Prevent legacy inline accent spans from tinting random words inside body copy. */
+  p span {
+    color: inherit;
+    font-weight: inherit;
   }
 }
 
 @layer utilities {
+  .text-xs {
+    font-size: 0.82rem !important;
+    line-height: 1.32rem !important;
+  }
+
+  .text-sm {
+    font-size: 1rem !important;
+    line-height: 1.58rem !important;
+  }
+
+  .text-base {
+    font-size: 1.1rem !important;
+    line-height: 1.75rem !important;
+  }
+
   .noise-layer {
-    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 0.6px, transparent 0.6px);
+    background-image: radial-gradient(rgba(15, 23, 42, 0.08) 0.6px, transparent 0.6px);
     background-size: 3px 3px;
     opacity: 0.03;
   }
 
   .blueprint-grid {
-    background-image: linear-gradient(rgba(48, 84, 141, 0.25) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(48, 84, 141, 0.25) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(226, 232, 240, 0.8) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(226, 232, 240, 0.8) 1px, transparent 1px);
     background-size: 42px 42px;
   }
 
   .editorial-card {
-    border: 1px solid rgba(130, 164, 220, 0.22);
-    background: linear-gradient(180deg, rgba(13, 20, 35, 0.88) 0%, rgba(9, 14, 26, 0.9) 100%);
-    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.36);
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
   }
 
   .accent-text {
-    color: #e8d5a3;
+    color: #14b8a6;
   }
 
   .font-quote {
