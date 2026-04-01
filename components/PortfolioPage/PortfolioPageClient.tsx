@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import PortfolioHero from "@/components/PortfolioPage/PortfolioHero";
 import ProjectsGrid from "@/components/PortfolioPage/ProjectsGrid";
 import CaseStudyView from "@/components/PortfolioPage/CaseStudyView";
@@ -9,6 +10,17 @@ import { projects, Project } from "@/components/PortfolioPage/projectsData";
 
 export default function PortfolioPageClient() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (selectedProject) return;
+    const projectId = searchParams.get("projectId");
+    if (!projectId) return;
+    const matchedProject = projects.find((project) => project.id === Number(projectId));
+    if (matchedProject) {
+      setSelectedProject(matchedProject);
+    }
+  }, [searchParams, selectedProject]);
 
   if (selectedProject) {
     return (

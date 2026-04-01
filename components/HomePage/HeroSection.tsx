@@ -3,169 +3,69 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Container from "@/components/HomePage/Container";
 import Section from "@/components/HomePage/Section";
-import ScribbleWord from "@/components/HomePage/ScribbleWord";
-
-const team = ["RD", "NB", "DB", "SN"];
 
 export default function HeroSection() {
   return (
-    <Section className="relative overflow-hidden bg-[#F0FAFA] pb-8 pt-20 md:pt-24">
-      <div className="blueprint-grid pointer-events-none absolute inset-0 opacity-40" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(20,184,166,0.05),transparent_42%)]" />
+    <Section className="relative overflow-hidden border-b border-[#E2E8F0] bg-[#F6F7F2] pt-14 md:pt-[4.5rem]">
+      <div className="blueprint-grid pointer-events-none absolute inset-0 opacity-70" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_22%_28%,rgba(255,255,255,0.85),transparent_34%),radial-gradient(circle_at_76%_50%,rgba(20,184,166,0.05),transparent_28%)]" />
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-px bg-[linear-gradient(180deg,transparent,rgba(226,232,240,0.9),transparent)] lg:block" />
 
       <Container className="relative">
-        <div className="mx-auto max-w-[980px] text-center">
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#14B8A6]">
-            Software Engineering Studio • Kathmandu, Nepal
-          </p>
+        <div className="grid min-h-[calc(100vh-7rem)] items-center gap-16 py-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(420px,0.95fr)] lg:gap-8 lg:py-16">
+          <div className="max-w-[40rem]">
+            <h1 className="text-[clamp(4.5rem,11vw,8.8rem)] leading-[0.84] tracking-[-0.06em] text-[#1F2933]">
+              CUSTOM
+              <span className="block">SOFTWARE</span>
+              <span className="block">FOR REAL</span>
+              <span className="block text-[#3F7C7A]">OPERATIONS.</span>
+            </h1>
 
-          <h1 className="mt-6 text-[clamp(3.2rem,8.8vw,8.8rem)] leading-[0.9] text-[#0F172A]">
-            BUILT AT THE CORE,
-            <span className="block text-[#14B8A6]">TESTED IN REALITY,</span>
-            <span className="block text-[#475569]">
-              TRUSTED IN{" "}
-              <ScribbleWord className="inline-block mb-2 pb-2" strokeClassName="stroke-[#14B8A6]">
-                PRODUCTION.
-              </ScribbleWord>
-            </span>
-          </h1>
-
-          <p className="mx-auto mt-8 max-w-[760px] text-[1.18rem] leading-8 text-[#334155] md:text-[1.28rem]">
-            Web, mobile, and AI systems built with documented architecture, visible delivery, and long-term maintainability.
-          </p>
-
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <Button asChild size="lg" className="rounded-[9px] bg-[#14B8A6] text-[#FFFFFF] hover:bg-[#0D9488]">
-              <Link href="/contact-us" className="group">
-                Book a Call
-                <ArrowRight className="h-4 w-4 transition-transform duration-200 ease-out group-hover:translate-x-1 motion-reduce:transform-none" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="rounded-[9px] border-[#CBD5E1] bg-transparent text-[#64748B] hover:bg-[#F8FAFC] hover:text-[#0F172A]"
-            >
-              <Link href="/contact-us">Get Estimate</Link>
-            </Button>
-          </div>
-
-          <div className="mx-auto mt-14 max-w-3xl rounded-xl border border-[#DCE7E5] bg-[#FFFFFF]/80 px-5 py-4 shadow-[0_8px_26px_rgba(15,23,42,0.06)] backdrop-blur-sm">
-            <div className="mb-3 flex flex-wrap items-center justify-center gap-3 border-b border-[#E2E8F0] pb-3">
-              <div className="flex -space-x-3">
-              {team.map((member) => (
-                <span
-                  key={member}
-                  className="font-mono inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#CBD5E1] bg-[#FFFFFF] text-xs text-[#334155]"
-                >
-                  {member}
-                </span>
-              ))}
-              </div>
-              <p className="text-sm text-[#475569]">Raju Sharma Dahal · Ngamesh Bhandari · Dipesh Bhanadari · Saurav Niroula</p>
-            </div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-[#334155]">
-              Talk directly to founder and lead engineers • No account-manager layer
+            <p className="mt-8 max-w-[31rem] border-l border-[#D5DDE5] pl-5 text-[1.08rem] leading-[1.55] text-[#667085]">
+              We build custom web platforms, internal tools, and AI-enabled systems for companies that need reliable
+              software delivery, clear communication, and maintainable systems.
             </p>
-          </div>
 
-          <div className="mt-8 flex justify-center">
-            <Link
-              href="/#services"
-              className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-[#64748B] transition-colors hover:text-[#0F172A]"
-            >
-              Scroll to explore
-              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-[#CBD5E1] transition-transform duration-200 ease-out group-hover:translate-y-0.5 motion-reduce:transform-none">
-                ↓
-              </span>
-            </Link>
-          </div>
-        </div>
-
-        <div className="mx-auto mt-14 max-w-6xl">
-          <div className="relative overflow-hidden border border-[#E2E8F0] bg-[#FFFFFF]">
-            <div className="flex items-center justify-between border-b border-[#E2E8F0] bg-[#F0FDFA] px-4 py-2">
-              <div className="flex items-center gap-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#14B8A6]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#334155]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#E2E8F0]" />
-              </div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#475569]">
-                app.arsbarista.edu.np/dashboard
+            <div className="mt-6 max-w-[34rem] border border-[#DCE3E8] bg-[#FBFCFA]/92 px-5 py-4">
+              <p className="mt-2 text-[1rem] leading-[1.6] text-[#475467]">
+                Concore Technologies builds custom software for growing companies that need better operations, faster
+                execution, and dependable long-term systems.
               </p>
-              <span className="w-14" />
             </div>
 
-            <div className="grid gap-0 md:grid-cols-[220px_1fr]">
-              <aside className="border-r border-[#E2E8F0] bg-[#FFFFFF] p-4">
-                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#475569]">ARS Barista Institute</p>
-                <div className="mt-4 space-y-2">
-                  {[
-                    "Dashboard",
-                    "Students",
-                    "Schedule",
-                    "Assessments",
-                    "Certificates",
-                  ].map((item, idx) => (
-                    <p
-                      key={item}
-                      className={`font-mono rounded border px-2 py-1 text-[10px] uppercase tracking-[0.12em] ${
-                        idx === 0
-                          ? "border-[#14B8A6] bg-[#F0FDFA] text-[#14B8A6]"
-                          : "border-[#E2E8F0] text-[#475569]"
-                      }`}
-                    >
-                      {item}
-                    </p>
-                  ))}
-                </div>
-              </aside>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <Button
+                asChild
+                className="h-11 rounded-none border border-[#1B4E52] bg-[#1B4E52] px-5 font-mono text-[11px] uppercase tracking-[0.16em] text-white hover:bg-[#163F42]"
+              >
+                <Link href="/contact-us" className="group inline-flex items-center gap-2">
+                  Start A Project
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+                </Link>
+              </Button>
 
-              <div className="p-5">
-                <div className="grid gap-3 sm:grid-cols-3">
-                  <div className="border border-[#E2E8F0] bg-[#FFFFFF] p-3">
-                    <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#475569]">Enrolled</p>
-                    <p className="mt-1 text-xl text-[#0F172A]">42</p>
-                  </div>
-                  <div className="border border-[#E2E8F0] bg-[#FFFFFF] p-3">
-                    <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#475569]">Graduating</p>
-                    <p className="mt-1 text-xl text-[#0F172A]">08</p>
-                  </div>
-                  <div className="border border-[#E2E8F0] bg-[#F0FDFA] p-3">
-                    <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#14B8A6]">Admin Load</p>
-                    <p className="mt-1 text-xl text-[#14B8A6]">-60%</p>
-                  </div>
-                </div>
+              <Link
+                href="/#services"
+                className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#7B8794] transition hover:text-[#1F2933]"
+              >
+                View Services
+              </Link>
+            </div>
+          </div>
 
-                <div className="mt-4 overflow-hidden border border-[#E2E8F0] bg-[#FFFFFF]">
-                  <div className="grid grid-cols-4 border-b border-[#E2E8F0] bg-[#F0FDFA] px-3 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-[#475569]">
-                    <span>Student</span>
-                    <span>Batch</span>
-                    <span>Attendance</span>
-                    <span>Assessment</span>
-                  </div>
-                  {[
-                    { name: "A. Shrestha", batch: "Thamel-Q1", attendance: "92%", score: "A-" },
-                    { name: "R. Karki", batch: "Thamel-Q1", attendance: "88%", score: "B+" },
-                    { name: "M. Gurung", batch: "Lalitpur-Q2", attendance: "95%", score: "A" },
-                    { name: "S. Adhikari", batch: "Lalitpur-Q2", attendance: "90%", score: "A-" },
-                  ].map((row) => (
-                    <div
-                      key={row.name}
-                      className="grid grid-cols-4 border-b border-[#E2E8F0] px-3 py-2 text-sm text-[#0F172A] last:border-b-0"
-                    >
-                      <span>{row.name}</span>
-                      <span className="text-[#475569]">{row.batch}</span>
-                      <span>{row.attendance}</span>
-                      <span>{row.score}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+          <div className="relative hidden min-h-[560px] lg:block">
+            <div className="absolute inset-[10%] rotate-45 border border-[#E8EDF1]" />
+            <div className="absolute inset-[24%] border border-[#EDF2F6]" />
+            <div className="absolute left-1/2 top-[14%] h-[72%] w-px -translate-x-1/2 bg-[#D5DDE5]" />
+            <div className="absolute left-[18%] top-1/2 h-px w-[64%] -translate-y-1/2 bg-[#D5DDE5]" />
+
+            <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 border border-[#94A3B8] bg-[#FBFCFA] shadow-[0_0_0_10px_rgba(255,255,255,0.72)]">
+              <div className="absolute inset-[0.65rem] border border-[#3F7C7A]" />
+              <div className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#3F7C7A] bg-[#3F7C7A]" />
+              <div className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F6F7F2]" />
             </div>
 
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-[#F8F9F5] to-transparent" />
+            <div className="absolute inset-y-[22%] left-1/2 w-[8.5rem] -translate-x-1/2 bg-[radial-gradient(circle,rgba(255,255,255,0.9),rgba(255,255,255,0))]" />
           </div>
         </div>
       </Container>

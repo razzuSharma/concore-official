@@ -39,8 +39,8 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects, onProjectClick })
           Project Library
         </h2>
         <p className="mt-4 font-sans text-base leading-relaxed text-[#475569]">
-          Use filters to quickly find relevant case studies. Every project includes business context,
-          solution strategy, system architecture, and measurable outcomes.
+          Use filters to quickly find relevant projects. Each entry includes the business context,
+          delivery approach, technical structure, and measurable result.
         </p>
       </div>
 
