@@ -1,26 +1,26 @@
 import Container from "@/components/HomePage/Container";
 import Section from "@/components/HomePage/Section";
 
-const rows = [
+const reasons = [
   {
-    label: "Engineering ownership",
-    concore: "Senior engineers involved from discovery to deployment",
-    typical: "Freelance or rotating contributors with fragmented context",
+    title: "Direct communication with engineers",
+    detail: "Clients work directly with the team planning architecture and shipping the product, without an account-manager relay.",
   },
   {
-    label: "Communication model",
-    concore: "Direct Slack/Meet access with delivery lead and engineers",
-    typical: "Account-manager relay and delayed technical decisions",
+    title: "Clear scope and delivery",
+    detail: "Work is framed with defined priorities, concrete deliverables, and visible progress across each phase of execution.",
   },
   {
-    label: "Architecture quality",
-    concore: "Documented system design, code reviews, release checklists",
-    typical: "Feature-first delivery with limited long-term maintainability",
+    title: "Maintainable codebase",
+    detail: "Systems are built to be understandable, documented, and safe to extend after launch.",
   },
   {
-    label: "Timezone reliability",
-    concore: "Planned overlap windows for APAC, EU, and US teams",
-    typical: "Inconsistent overlap and async bottlenecks",
+    title: "Fast iteration",
+    detail: "Short feedback loops keep decisions moving and reduce rework during active delivery.",
+  },
+  {
+    title: "Post-launch support",
+    detail: "Deployment, fixes, and ongoing support are part of the delivery model, not an afterthought.",
   },
 ];
 
@@ -29,29 +29,19 @@ export default function OffshoreComparisonSection() {
     <Section className="bg-[#F8F9F5]">
       <Container>
         <div className="mb-8 max-w-4xl">
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#475569]">Differentiation</p>
-          <h2 className="mt-3 text-5xl leading-[0.95] text-[#0F172A] md:text-6xl">WHY TEAMS PICK CONCORE OVER GENERIC OFFSHORE</h2>
+          <h2 className="mt-3 text-5xl leading-[0.95] text-[#0F172A] md:text-6xl">Why Companies Hire Us</h2>
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#475569] md:text-lg">
+            A practical delivery model for companies that need reliable software work, not presentation-heavy process.
+          </p>
         </div>
 
-        <div className="overflow-hidden border border-[#E2E8F0]">
-          <table className="w-full border-collapse text-left">
-            <thead className="bg-[#F0FDFA] font-mono text-xs uppercase tracking-[0.14em] text-[#475569]">
-              <tr>
-                <th className="px-4 py-3">Criteria</th>
-                <th className="px-4 py-3">Concore</th>
-                <th className="px-4 py-3">Typical offshore setup</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((row) => (
-                <tr key={row.label} className="border-t border-[#E2E8F0] bg-[#FFFFFF] align-top text-sm">
-                  <td className="px-4 py-4 font-medium text-[#0F172A]">{row.label}</td>
-                  <td className="px-4 py-4 text-[#475569]">{row.concore}</td>
-                  <td className="px-4 py-4 text-[#475569]">{row.typical}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+          {reasons.map((reason) => (
+            <article key={reason.title} className="border border-[#E2E8F0] bg-[#FFFFFF] p-5">
+              <h3 className="text-2xl leading-[0.98] text-[#0F172A]">{reason.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-[#475569]">{reason.detail}</p>
+            </article>
+          ))}
         </div>
       </Container>
     </Section>

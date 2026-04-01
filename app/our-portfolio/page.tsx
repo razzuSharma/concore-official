@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import PortfolioPageClient from "@/components/PortfolioPage/PortfolioPageClient";
 
 export const metadata: Metadata = {
-  title: "Portfolio of Custom Web Application Projects",
+  title: "Selected Software Projects",
   description:
-    "Review real client case studies by Concore Technologies, including business websites, operations platforms, and scalable custom web app builds.",
+    "Review selected client projects by Concore Technologies, including operations platforms, business systems, and custom software builds.",
   alternates: {
     canonical: "/our-portfolio",
   },

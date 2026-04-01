@@ -9,13 +9,13 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
-  const primaryResult = project.results[0] ?? "Impact details available in full case study";
+  const primaryResult = project.results[0] ?? "Impact details available in the full project view";
 
   return (
     <button
       className="group w-full cursor-pointer text-left transition-all duration-300 hover:-translate-y-1"
       onClick={onClick}
-      aria-label={`Open detailed case study for ${project.title}`}
+      aria-label={`Open project details for ${project.title}`}
       type="button"
     >
       <article className="relative overflow-hidden rounded-2xl border border-[#E2E8F0] bg-[#FFFFFF] shadow-sm transition-all duration-300 group-hover:border-[#14B8A6] group-hover:shadow-lg">
@@ -53,7 +53,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
               {project.category}
             </p>
             <span className="font-mono rounded-md border border-[#E2E8F0] bg-[#F0FDFA] px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] text-[#14B8A6]">
-              Case Study
+              Project
             </span>
           </div>
 
@@ -92,7 +92,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
           </div>
 
           <p className="font-mono mt-5 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.12em] text-[#14B8A6]">
-            Read Full Case Study
+            View Project Details
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
           </p>
         </div>

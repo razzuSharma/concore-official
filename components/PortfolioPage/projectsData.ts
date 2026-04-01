@@ -5,6 +5,9 @@ export interface ProjectPhase {
 
 export interface Project {
   id: number;
+  status: string;
+  shippedAt: string;
+  clientName: string;
   title: string;
   category: string;
   description: string;
@@ -38,6 +41,9 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
+    status: "Shipped",
+    shippedAt: "2024-11-08",
+    clientName: "ARS Barista Institute",
     title: "Barista Student Management System",
     category: "Education Technology",
     description:
@@ -128,6 +134,9 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    status: "Shipped",
+    shippedAt: "2024-08-22",
+    clientName: "Tourgasm Travels",
     title: "Tourgasm Experience Booking Platform",
     category: "Travel & Tourism",
     description:
@@ -218,6 +227,9 @@ export const projects: Project[] = [
   },
   {
     id: 3,
+    status: "Shipped",
+    shippedAt: "2024-06-18",
+    clientName: "Shibam Marble & Furniture",
     title: "Shibam Premium Catalog Commerce",
     category: "Interior Commerce",
     description:
@@ -305,6 +317,9 @@ export const projects: Project[] = [
   },
   {
     id: 4,
+    status: "Shipped",
+    shippedAt: "2024-03-12",
+    clientName: "Dipak Suppliers",
     title: "Dipak Suppliers Digital Presence Platform",
     category: "B2B Supplier Platform",
     description:
@@ -392,6 +407,9 @@ export const projects: Project[] = [
   },
   {
     id: 5,
+    status: "Shipped",
+    shippedAt: "2023-12-15",
+    clientName: "Yatharoop Construction",
     title: "Yatharoop Construction Portfolio Platform",
     category: "Construction Portfolio",
     description:
