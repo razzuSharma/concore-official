@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+<defs>
+<radialGradient id="coreHalo" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#14B8A6" stop-opacity="0.55"></stop>
+<stop offset="55%" stop-color="#14B8A6" stop-opacity="0.14"></stop>
+<stop offset="100%" stop-color="#14B8A6" stop-opacity="0"></stop>
+</radialGradient>
+<radialGradient id="accentHalo" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#FF4D00" stop-opacity="0.7"></stop>
+<stop offset="60%" stop-color="#FF4D00" stop-opacity="0.18"></stop>
+<stop offset="100%" stop-color="#FF4D00" stop-opacity="0"></stop>
+</radialGradient>
+<filter id="dotDepth" x="-40%" y="-40%" width="180%" height="180%">
+<feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0c0c0a" flood-opacity="0.16"></feDropShadow>
+</filter>
+<filter id="accentGlow" x="-120%" y="-120%" width="340%" height="340%">
+<feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#FF4D00" flood-opacity="0.9"></feDropShadow>
+</filter>
+<style>
+.halo-core { transform-box: fill-box; transform-origin: center; animation: breathe 4.6s ease-in-out infinite; }
+.halo-accent { transform-box: fill-box; transform-origin: center; animation: breathe 2.9s ease-in-out infinite; }
+.core-dot { transform-box: fill-box; transform-origin: center; animation: pulse 4.6s ease-in-out infinite; }
+.accent-dot { transform-box: fill-box; transform-origin: center; animation: pulse 2.9s ease-in-out infinite; }
+@keyframes breathe { 0%, 100% { transform: scale(0.82); opacity: 0.5; } 50% { transform: scale(1.12); opacity: 0.95; } }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+@media (prefers-reduced-motion: reduce) {
+.halo-core, .halo-accent, .core-dot, .accent-dot { animation: none; }
+.halo-core { opacity: 0.7; }
+.halo-accent { opacity: 0.7; }
+}
+</style>
+</defs>
+<circle cx="300" cy="300" r="110" fill="url(#coreHalo)" class="halo-core"></circle>
+<circle cx="300" cy="27" r="46" fill="url(#accentHalo)" class="halo-accent"></circle>
+<g>
+<circle cx="300" cy="300" r="120" fill="none" stroke="#0c0c0a" stroke-width="1" stroke-opacity="0.18"></circle>
+<circle cx="300" cy="300" r="186" fill="none" stroke="#0c0c0a" stroke-width="1" stroke-opacity="0.18"></circle>
+<circle cx="300" cy="300" r="252" fill="none" stroke="#0c0c0a" stroke-width="1" stroke-opacity="0.18"></circle>
+<circle cx="300" cy="300" r="294" fill="none" stroke="#0c0c0a" stroke-width="1" stroke-opacity="0.18" stroke-dasharray="2 4"></circle>
+<line x1="0" y1="300" x2="600" y2="300" stroke="#0c0c0a" stroke-width="1" stroke-opacity="0.126"></line>
+<line x1="300" y1="0" x2="300" y2="600" stroke="#0c0c0a" stroke-width="1" stroke-opacity="0.126"></line>
+</g>
+<g filter="url(#dotDepth)">
+<circle cx="300.00" cy="237.00" r="7.80" fill="#0c0c0a"></circle>
+<circle cx="300.00" cy="165.00" r="14.40" fill="#0c0c0a"></circle>
+<circle cx="300.00" cy="96.00" r="19.80" fill="#0c0c0a"></circle>
+<circle cx="344.55" cy="255.45" r="7.80" fill="#0c0c0a"></circle>
+<circle cx="395.46" cy="204.54" r="14.40" fill="#0c0c0a"></circle>
+<circle cx="444.25" cy="155.75" r="19.80" fill="#0c0c0a"></circle>
+<circle cx="493.04" cy="106.96" r="27.60" fill="#0c0c0a"></circle>
+<circle cx="363.00" cy="300.00" r="7.80" fill="#0c0c0a"></circle>
+<circle cx="435.00" cy="300.00" r="14.40" fill="#0c0c0a"></circle>
+<circle cx="504.00" cy="300.00" r="19.80" fill="#0c0c0a"></circle>
+<circle cx="573.00" cy="300.00" r="27.60" fill="#0c0c0a"></circle>
+<circle cx="344.55" cy="344.55" r="7.80" fill="#0c0c0a"></circle>
+<circle cx="395.46" cy="395.46" r="14.40" fill="#0c0c0a"></circle>
+<circle cx="444.25" cy="444.25" r="19.80" fill="#0c0c0a"></circle>
+<circle cx="493.04" cy="493.04" r="27.60" fill="#0c0c0a"></circle>
+<circle cx="300.00" cy="363.00" r="7.80" fill="#0c0c0a"></circle>
+<circle cx="300.00" cy="435.00" r="14.40" fill="#0c0c0a"></circle>
+<circle cx="300.00" cy="504.00" r="19.80" fill="#0c0c0a"></circle>
+<circle cx="300.00" cy="573.00" r="27.60" fill="#0c0c0a"></circle>
+<circle cx="255.45" cy="344.55" r="7.80" fill="#0c0c0a"></circle>
+<circle cx="204.54" cy="395.46" r="14.40" fill="#0c0c0a"></circle>
+<circle cx="155.75" cy="444.25" r="19.80" fill="#0c0c0a"></circle>
+<circle cx="106.96" cy="493.04" r="27.60" fill="#0c0c0a"></circle>
+<circle cx="237.00" cy="300.00" r="7.80" fill="#0c0c0a"></circle>
+<circle cx="165.00" cy="300.00" r="14.40" fill="#0c0c0a"></circle>
+<circle cx="96.00" cy="300.00" r="19.80" fill="#0c0c0a"></circle>
+<circle cx="27.00" cy="300.00" r="27.60" fill="#0c0c0a"></circle>
+<circle cx="255.45" cy="255.45" r="7.80" fill="#0c0c0a"></circle>
+<circle cx="204.54" cy="204.54" r="14.40" fill="#0c0c0a"></circle>
+<circle cx="155.75" cy="155.75" r="19.80" fill="#0c0c0a"></circle>
+<circle cx="106.96" cy="106.96" r="27.60" fill="#0c0c0a"></circle>
+<circle cx="332.15" cy="222.39" r="7.80" fill="#0c0c0a"></circle>
+<circle cx="363.14" cy="147.56" r="12.60" fill="#0c0c0a"></circle>
+<circle cx="391.84" cy="78.27" r="18.00" fill="#0c0c0a"></circle>
+<circle cx="377.61" cy="267.85" r="7.80" fill="#0c0c0a"></circle>
+<circle cx="452.44" cy="236.86" r="12.60" fill="#0c0c0a"></circle>
+<circle cx="521.73" cy="208.16" r="18.00" fill="#0c0c0a"></circle>
+<circle cx="377.61" cy="332.15" r="7.80" fill="#0c0c0a"></circle>
+<circle cx="452.44" cy="363.14" r="12.60" fill="#0c0c0a"></circle>
+<circle cx="521.73" cy="391.84" r="18.00" fill="#0c0c0a"></circle>
+<circle cx="332.15" cy="377.61" r="7.80" fill="#0c0c0a"></circle>
+<circle cx="363.14" cy="452.44" r="12.60" fill="#0c0c0a"></circle>
+<circle cx="391.84" cy="521.73" r="18.00" fill="#0c0c0a"></circle>
+<circle cx="267.85" cy="377.61" r="7.80" fill="#0c0c0a"></circle>
+<circle cx="236.86" cy="452.44" r="12.60" fill="#0c0c0a"></circle>
+<circle cx="208.16" cy="521.73" r="18.00" fill="#0c0c0a"></circle>
+<circle cx="222.39" cy="332.15" r="7.80" fill="#0c0c0a"></circle>
+<circle cx="147.56" cy="363.14" r="12.60" fill="#0c0c0a"></circle>
+<circle cx="78.27" cy="391.84" r="18.00" fill="#0c0c0a"></circle>
+<circle cx="222.39" cy="267.85" r="7.80" fill="#0c0c0a"></circle>
+<circle cx="147.56" cy="236.86" r="12.60" fill="#0c0c0a"></circle>
+<circle cx="78.27" cy="208.16" r="18.00" fill="#0c0c0a"></circle>
+<circle cx="267.85" cy="222.39" r="7.80" fill="#0c0c0a"></circle>
+<circle cx="236.86" cy="147.56" r="12.60" fill="#0c0c0a"></circle>
+<circle cx="208.16" cy="78.27" r="18.00" fill="#0c0c0a"></circle>
+</g>
+<circle cx="300.00" cy="300.00" r="30.00" fill="#0c0c0a" filter="url(#dotDepth)" class="core-dot"></circle>
+<circle cx="300.00" cy="27.00" r="27.60" fill="#FF4D00" filter="url(#accentGlow)" class="accent-dot"></circle>
+</svg>

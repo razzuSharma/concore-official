@@ -4,6 +4,11 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
+import IntroSplash from "@/components/Layout/IntroSplash";
+
+// Runs before paint: flag a first visit so the intro splash shows immediately
+// (and only then). Returning visitors and reduced-motion users skip it.
+const introFlagScript = `try{if(!localStorage.getItem('concore-intro-seen')&&!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)){document.documentElement.classList.add('intro-pending')}}catch(e){}`;
 
 const siteName = "Concore Technologies";
 const siteUrl = "https://www.concoretechnologies.com";
@@ -91,18 +96,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmSans.variable} ${bebasNeue.variable} ${dmMono.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
+        <script dangerouslySetInnerHTML={{ __html: introFlagScript }} />
         <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
           <div className="relative min-h-screen overflow-hidden bg-[#F8F9F5]">
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(203,213,225,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(203,213,225,0.3)_1px,transparent_1px)] bg-[size:42px_42px] opacity-40" />
             <div className="fixed inset-x-0 top-0 z-50">
               <Navbar />
             </div>
-            <main className="relative z-10 pt-28">{children}</main>
+            <main className="relative z-10 pt-[4.5rem]">{children}</main>
             <div className="relative z-10">
               <Footer />
             </div>
           </div>
         </ThemeProvider>
+        <IntroSplash />
       </body>
     </html>
   );

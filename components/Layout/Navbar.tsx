@@ -20,16 +20,14 @@ export default function Navbar() {
     <header className="border-b border-[#DDE6E3] bg-[#F8F9F5]/95 backdrop-blur supports-[backdrop-filter]:bg-[#F8F9F5]/88">
       <nav className="mx-auto flex h-[4.5rem] max-w-[1280px] items-center justify-between px-6 lg:px-8" aria-label="Main navigation">
         <Link href="/" className="flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#14B8A6]">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-[8px] bg-[#0F2E45]">
-            <Image
-              src="/logos/only-logo-white.png"
-              alt="Concore Technologies logo"
-              width={18}
-              height={18}
-              className="h-[1.15rem] w-[1.15rem] object-contain"
-              priority
-            />
-          </span>
+          <Image
+            src="/logos/only-logo-black.png"
+            alt="Concore Technologies logo"
+            width={32}
+            height={32}
+            className="h-8 w-8 object-contain"
+            priority
+          />
           <span className="font-mono text-sm font-semibold uppercase tracking-[0.14em] text-[#0F172A] md:hidden">Concore</span>
           <span className="hidden font-mono text-base font-semibold uppercase tracking-[0.06em] text-[#0F172A] md:inline">
             CONCORE TECHNOLOGIES
@@ -49,7 +47,10 @@ export default function Navbar() {
         </div>
 
         <div className="hidden items-center md:flex">
-          <Button asChild className="h-10 rounded-[8px] bg-[#123F43] px-5 text-white hover:bg-[#0F3538]">
+          <Button
+            asChild
+            className="h-10 rounded-none border border-[#123F43] bg-[#123F43] px-5 font-mono text-[11px] uppercase tracking-[0.16em] text-white hover:bg-[#0F3538]"
+          >
             <Link href="/contact-us">Book a Call</Link>
           </Button>
         </div>
@@ -79,7 +80,10 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <Button asChild className="mt-2 h-10 rounded-[8px] bg-[#14B8A6] text-white hover:bg-[#0D9488]">
+            <Button
+              asChild
+              className="mt-2 h-10 rounded-none border border-[#123F43] bg-[#123F43] px-5 font-mono text-[11px] uppercase tracking-[0.16em] text-white hover:bg-[#0F3538]"
+            >
               <Link href="/contact-us" onClick={() => setIsMenuOpen(false)}>
                 Book a Call
               </Link>

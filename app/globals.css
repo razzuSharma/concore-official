@@ -177,6 +177,48 @@
     background-size: 42px 42px;
   }
 
+  .blueprint-grid-fade {
+    -webkit-mask-image: radial-gradient(ellipse 65% 55% at 50% 30%, black, transparent 75%);
+    mask-image: radial-gradient(ellipse 65% 55% at 50% 30%, black, transparent 75%);
+  }
+
+  .hero-rise {
+    animation: hero-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* Concore mark: static by default. The "loader" variant auto-plays an inward
+     energy wave — outer nodes flash teal first and the pulse ripples toward the
+     core, which flares last. A shared 2800ms period keeps every node in phase. */
+  .cm-energy,
+  .cm-core,
+  .cm-halo-core {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .cm-loader .cm-energy {
+    animation: cm-spike-loop 2800ms ease-in-out var(--cm-delay, 0ms) infinite;
+  }
+
+  .cm-loader .cm-core {
+    animation: cm-core-flare-loop 2800ms ease-in-out var(--cm-delay, 1100ms) infinite;
+  }
+
+  .cm-loader .cm-halo-core {
+    animation: cm-halo-pop-loop 2800ms ease-in-out var(--cm-delay, 1100ms) infinite;
+  }
+
+  /* First-visit intro splash: hidden by default; shown only when the pre-paint
+     head script flags a first visit by adding .intro-pending to <html>. This
+     keeps returning visitors (and no-JS) flash-free. */
+  .intro-splash {
+    display: none;
+  }
+
+  html.intro-pending .intro-splash {
+    display: flex;
+  }
+
   .editorial-card {
     border: 1px solid #e2e8f0;
     background: #ffffff;
@@ -208,9 +250,89 @@
   }
 }
 
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cm-spike-loop {
+  0% {
+    transform: scale(1);
+    fill: #0c0c0a;
+  }
+  8% {
+    transform: scale(1.24);
+    fill: #14b8a6;
+  }
+  20% {
+    transform: scale(1);
+    fill: #0c0c0a;
+  }
+  100% {
+    transform: scale(1);
+    fill: #0c0c0a;
+  }
+}
+
+@keyframes cm-core-flare-loop {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.2);
+  }
+  28% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes cm-halo-pop-loop {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.35;
+  }
+  10% {
+    transform: scale(1.3);
+    opacity: 0.9;
+  }
+  34% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.35;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .scribble-path {
     animation: none;
     stroke-dashoffset: 0;
+  }
+
+  .hero-rise {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .cm-loader .cm-energy,
+  .cm-loader .cm-core,
+  .cm-loader .cm-halo-core {
+    animation: none;
+  }
+
+  .cm-loader .cm-halo-core {
+    opacity: 0.7;
   }
 }
