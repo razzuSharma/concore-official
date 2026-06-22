@@ -71,19 +71,28 @@ function inwardDelay(cx: number, cy: number) {
 }
 
 // "static" (default): no motion. "loader": auto-plays the inward energy loop.
-type ConcoreMarkVariant = "static" | "loader";
+// "reveal": plays the inward assemble once on mount — rim nodes first, core flares last.
+type ConcoreMarkVariant = "static" | "loader" | "reveal";
 
 export default function ConcoreMark({
   className,
   variant = "static",
+  monochrome = false,
 }: {
   className?: string;
   variant?: ConcoreMarkVariant;
+  // Drop the teal core halo and render the mark as pure black nodes only.
+  monochrome?: boolean;
 }) {
   return (
     <svg
       viewBox="-32 -32 664 664"
-      className={cn("cm-root", variant === "loader" && "cm-loader", className)}
+      className={cn(
+        "cm-root",
+        variant === "loader" && "cm-loader",
+        variant === "reveal" && "cm-reveal",
+        className,
+      )}
       role="img"
       aria-label="The Concore mark: a fixed core with nodes converging inward"
     >
@@ -98,14 +107,16 @@ export default function ConcoreMark({
         </filter>
       </defs>
 
-      <circle
-        cx="300"
-        cy="300"
-        r="110"
-        fill="url(#cmCoreHalo)"
-        className="cm-halo-core"
-        style={{ "--cm-delay": `${CORE_DELAY}ms` } as React.CSSProperties}
-      />
+      {!monochrome && (
+        <circle
+          cx="300"
+          cy="300"
+          r="110"
+          fill="url(#cmCoreHalo)"
+          className="cm-halo-core"
+          style={{ "--cm-delay": `${CORE_DELAY}ms` } as React.CSSProperties}
+        />
+      )}
 
       <g>
         <circle cx="300" cy="300" r="120" fill="none" stroke="#0c0c0a" strokeWidth="1" strokeOpacity="0.18" />

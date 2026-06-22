@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <header className="border-b border-[#DDE6E3] bg-[#F8F9F5]/95 backdrop-blur supports-[backdrop-filter]:bg-[#F8F9F5]/88">
-      <nav className="mx-auto flex h-[4.5rem] max-w-[1280px] items-center justify-between px-6 lg:px-8" aria-label="Main navigation">
+      <nav className="mx-auto flex h-[4.5rem] max-w-[1180px] items-center justify-between px-6" aria-label="Main navigation">
         <Link href="/" className="flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#14B8A6]">
           <Image
             src="/logos/only-logo-black.png"
@@ -39,7 +39,7 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-[0.95rem] font-medium capitalize tracking-[0.01em] text-[#475569] transition hover:text-[#0F172A]"
+              className="text-[0.95rem] font-medium capitalize leading-none tracking-[0.01em] text-[#475569] transition-colors hover:text-[#0F172A]"
             >
               {item.label}
             </Link>
@@ -49,7 +49,7 @@ export default function Navbar() {
         <div className="hidden items-center md:flex">
           <Button
             asChild
-            className="h-10 rounded-none border border-[#123F43] bg-[#123F43] px-5 font-mono text-[11px] uppercase tracking-[0.16em] text-white hover:bg-[#0F3538]"
+            className="h-11 rounded-none border border-[#123F43] bg-[#123F43] px-6 font-mono text-[11px] uppercase tracking-[0.18em] text-white transition-colors hover:bg-[#0F3538]"
           >
             <Link href="/contact-us">Book a Call</Link>
           </Button>
