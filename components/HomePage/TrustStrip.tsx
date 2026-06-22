@@ -20,7 +20,7 @@ export default function TrustStrip() {
             {signals.map((signal) => (
               <span
                 key={signal}
-                className="inline-flex items-center rounded-full border border-[#DCE3E8] bg-[#FFFFFF] px-3 py-1.5 text-sm text-[#334155]"
+                className="inline-flex items-center rounded-full border border-[#DCE3E8] bg-[#FFFFFF] px-4 py-1.5 text-sm leading-none text-[#334155]"
               >
                 {signal}
               </span>

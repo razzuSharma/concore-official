@@ -208,6 +208,17 @@
     animation: cm-halo-pop-loop 2800ms ease-in-out var(--cm-delay, 1100ms) infinite;
   }
 
+  /* Hero reveal: the constellation assembles once on load. Rim nodes arrive
+     first and the wave converges inward, the core flaring last with its halo. */
+  .cm-reveal .cm-energy,
+  .cm-reveal .cm-core {
+    animation: cm-node-in 700ms cubic-bezier(0.16, 1, 0.3, 1) var(--cm-delay, 0ms) both;
+  }
+
+  .cm-reveal .cm-halo-core {
+    animation: cm-halo-in 900ms ease-out var(--cm-delay, 1100ms) both;
+  }
+
   /* First-visit intro splash: hidden by default; shown only when the pre-paint
      head script flags a first visit by adding .intro-pending to <html>. This
      keeps returning visitors (and no-JS) flash-free. */
@@ -242,6 +253,23 @@
   .scribble-path-delay {
     animation-delay: 0.22s;
   }
+
+  .bp-field .bp-spin,
+  .bp-field .bp-spin-rev {
+    transform-box: fill-box;
+  }
+
+  .bp-field-animate .bp-spin {
+    animation: bp-spin 120s linear infinite;
+  }
+
+  .bp-field-animate .bp-spin-rev {
+    animation: bp-spin-rev 160s linear infinite;
+  }
+
+  .bp-pulse {
+    animation: bp-pulse 3s ease-in-out var(--bp-delay, 0s) infinite;
+  }
 }
 
 @keyframes scribble-draw {
@@ -258,6 +286,28 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes bp-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bp-spin-rev {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes bp-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
   }
 }
 
@@ -295,6 +345,32 @@
   }
 }
 
+@keyframes cm-node-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cm-halo-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  60% {
+    opacity: 0.9;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+
 @keyframes cm-halo-pop-loop {
   0% {
     transform: scale(0.95);
@@ -328,11 +404,23 @@
 
   .cm-loader .cm-energy,
   .cm-loader .cm-core,
-  .cm-loader .cm-halo-core {
+  .cm-loader .cm-halo-core,
+  .cm-reveal .cm-energy,
+  .cm-reveal .cm-core,
+  .cm-reveal .cm-halo-core {
     animation: none;
+    opacity: 1;
+    transform: none;
   }
 
-  .cm-loader .cm-halo-core {
+  .cm-loader .cm-halo-core,
+  .cm-reveal .cm-halo-core {
     opacity: 0.7;
+  }
+
+  .bp-field-animate .bp-spin,
+  .bp-field-animate .bp-spin-rev,
+  .bp-pulse {
+    animation: none;
   }
 }
