@@ -15,7 +15,7 @@ export default function HeroSection() {
       <HeroGraphic />
 
       <Container className="relative">
-        <div className="grid min-h-[calc(100vh-9rem)] items-center gap-16 pb-12 pt-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.82fr)] lg:gap-8 lg:pb-16 lg:pt-10">
+        <div className="grid min-h-[calc(100vh-4.5rem)] items-center gap-16 py-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.82fr)] lg:gap-8 lg:py-10">
           <div className="max-w-[38rem]">
             <h1 className="text-[clamp(4rem,9vw,7.5rem)] leading-[0.9] tracking-[-0.05em] text-[#1F2933]">
               <span className="hero-rise block">CUSTOM</span>
