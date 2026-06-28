@@ -46,10 +46,10 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden items-center md:flex">
+        <div className="hidden h-full items-center md:flex">
           <Button
             asChild
-            className="h-11 rounded-none border border-[#123F43] bg-[#123F43] px-6 font-mono text-[11px] uppercase tracking-[0.18em] text-white transition-colors hover:bg-[#0F3538]"
+            className="h-10 rounded-none border border-[#123F43] bg-[#123F43] px-6 font-mono text-[11px] uppercase leading-none tracking-[0.18em] text-white transition-colors hover:bg-[#0F3538]"
           >
             <Link href="/contact-us">Book a Call</Link>
           </Button>

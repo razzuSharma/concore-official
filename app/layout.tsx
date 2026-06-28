@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, DM_Mono, DM_Sans, Space_Grotesk } from "next/font/google";
+import { Bebas_Neue, DM_Mono, DM_Sans, Fraunces, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Layout/Navbar";
@@ -43,6 +43,14 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -95,7 +103,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} ${bebasNeue.variable} ${dmMono.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
+      <body className={`${dmSans.variable} ${bebasNeue.variable} ${dmMono.variable} ${spaceGrotesk.variable} ${fraunces.variable} font-sans antialiased`}>
         <script dangerouslySetInnerHTML={{ __html: introFlagScript }} />
         <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
           <div className="relative min-h-screen overflow-hidden bg-[#F8F9F5]">

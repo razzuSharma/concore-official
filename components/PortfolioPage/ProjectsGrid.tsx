@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import { Search, SlidersHorizontal, X } from "lucide-react";
-import ProjectCard from "./ProjectCard";
+import { Search } from "lucide-react";
+import ProjectRow from "./ProjectRow";
 import { Project } from "./projectsData";
 
 interface ProjectsGridProps {
@@ -33,87 +33,79 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects, onProjectClick })
   }, [activeCategory, projects, searchQuery]);
 
   return (
-    <section id="projects" className="mx-auto max-w-7xl px-6 pb-20 pt-12 sm:px-8">
-      <div className="mb-8 max-w-4xl">
-        <h2 className="font-display text-3xl font-semibold leading-[1.1] tracking-[-0.02em] text-[#0F172A] md:text-4xl">
-          Project Library
-        </h2>
-        <p className="mt-4 font-sans text-base leading-relaxed text-[#475569]">
-          Use filters to quickly find relevant projects. Each entry includes the business context,
-          delivery approach, technical structure, and measurable result.
-        </p>
-      </div>
+    <section id="projects" className="bg-[#F5F4EF]">
+      <div className="mx-auto max-w-[1180px] px-6 pb-24 sm:px-8">
+        {/* Quiet filter bar: category as text links, search as a single underline */}
+        <div className="flex flex-col gap-6 py-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+            {categories.map((category) => {
+              const isActive = activeCategory === category;
+              return (
+                <button
+                  key={category}
+                  type="button"
+                  onClick={() => setActiveCategory(category)}
+                  className={`relative pb-1 font-mono text-[11px] uppercase tracking-[0.16em] transition-colors focus-visible:outline-none ${
+                    isActive ? "text-[#16201D]" : "text-[#9C988A] hover:text-[#16201D]"
+                  }`}
+                >
+                  {category}
+                  {isActive && (
+                    <span className="absolute inset-x-0 bottom-0 h-px bg-[#9A7B4F]" aria-hidden="true" />
+                  )}
+                </button>
+              );
+            })}
+          </div>
 
-      <div className="mb-8 rounded-2xl border border-[#E2E8F0] bg-[#FFFFFF] p-4 backdrop-blur sm:p-5">
-        <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-center">
-          <label className="relative block">
-            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#0F172A]/45" aria-hidden="true" />
+          <label className="relative flex items-center border-b border-[#D8D5C8] focus-within:border-[#123B36] lg:w-72">
+            <Search className="h-4 w-4 shrink-0 text-[#9C988A]" aria-hidden="true" />
             <input
               value={searchQuery}
               onChange={(event) => setSearchQuery(event.target.value)}
               type="search"
-              placeholder="Search by project title, service, or tech"
-              className="w-full rounded-lg border border-[#E2E8F0] bg-[#F8F9F5] px-10 py-2.5 font-sans text-sm text-[#0F172A] outline-none transition focus:border-[#14B8A6] focus:ring-2 focus:ring-[#14B8A6]/20"
+              placeholder="Search work"
               aria-label="Search projects"
+              className="w-full bg-transparent px-3 py-2 font-sans text-sm text-[#16201D] placeholder:text-[#9C988A] focus:outline-none"
             />
           </label>
+        </div>
 
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-2 rounded-md border border-[#E2E8F0] bg-[#F8F9F5] px-3 py-2 font-mono text-xs uppercase tracking-[0.12em] text-[#475569]">
-              <SlidersHorizontal className="h-3.5 w-3.5" aria-hidden="true" />
-              Filter
-            </span>
-            {categories.map((category) => (
-              <button
-                key={category}
-                type="button"
-                onClick={() => setActiveCategory(category)}
-                className={`rounded-md border px-3 py-2 font-mono text-xs uppercase tracking-[0.1em] transition ${
-                  activeCategory === category
-                    ? "border-[#14B8A6] bg-[#F0FDFA] text-[#14B8A6]"
-                    : "border-[#E2E8F0] bg-[#F8F9F5] text-[#475569] hover:border-[#E2E8F0] hover:text-[#0F172A]"
-                }`}
-              >
-                {category}
-              </button>
+        <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.18em] text-[#9C988A]">
+          {String(filteredProjects.length).padStart(2, "0")}{" "}
+          {filteredProjects.length === 1 ? "project" : "projects"}
+        </p>
+
+        {filteredProjects.length > 0 ? (
+          <div className="border-b border-[#E2E0D6]">
+            {filteredProjects.map((project, index) => (
+              <ProjectRow
+                key={project.id}
+                project={project}
+                index={index}
+                onClick={() => onProjectClick(project)}
+              />
             ))}
           </div>
-        </div>
-      </div>
-
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-        <p className="font-mono text-xs uppercase tracking-[0.12em] text-[#475569]">
-          {filteredProjects.length} Results
-        </p>
-        {(searchQuery || activeCategory !== "All") && (
-          <button
-            type="button"
-            onClick={() => {
-              setSearchQuery("");
-              setActiveCategory("All");
-            }}
-            className="inline-flex items-center gap-2 rounded-md border border-[#E2E8F0] bg-[#FFFFFF] px-3 py-2 font-mono text-xs uppercase tracking-[0.1em] text-[#475569] transition hover:border-[#E2E8F0] hover:text-[#0F172A]"
-          >
-            <X className="h-3.5 w-3.5" aria-hidden="true" />
-            Clear Filters
-          </button>
+        ) : (
+          <div className="border-y border-[#E2E0D6] py-20 text-center">
+            <p className="font-serif text-2xl text-[#16201D]">Nothing matches that yet</p>
+            <p className="mt-3 font-sans text-sm text-[#5E6B63]">
+              Try a broader term, or clear the filter to see every build.
+            </p>
+            <button
+              type="button"
+              onClick={() => {
+                setSearchQuery("");
+                setActiveCategory("All");
+              }}
+              className="mt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-[#9A7B4F] underline-offset-4 hover:underline"
+            >
+              Clear filter
+            </button>
+          </div>
         )}
       </div>
-
-      <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-        {filteredProjects.map((project: Project) => (
-          <ProjectCard key={project.id} project={project} onClick={() => onProjectClick(project)} />
-        ))}
-      </div>
-
-      {filteredProjects.length === 0 && (
-        <div className="mt-8 rounded-2xl border border-[#E2E8F0] bg-[#FFFFFF] px-6 py-10 text-center">
-          <p className="font-display text-2xl text-[#0F172A]">No matching projects found</p>
-          <p className="mt-2 font-sans text-sm text-[#475569]">
-            Try a broader search term or switch to a different category.
-          </p>
-        </div>
-      )}
     </section>
   );
 };

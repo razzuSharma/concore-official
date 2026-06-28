@@ -34,15 +34,13 @@ export default function PortfolioPageClient() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F8F9F5]">
+    <div className="min-h-screen bg-[#F5F4EF]">
       <PortfolioHero />
       <ProjectsGrid
         projects={projects}
         onProjectClick={setSelectedProject}
       />
-      <div className="mx-auto max-w-7xl px-8">
-        <PortfolioCTA />
-      </div>
+      <PortfolioCTA />
     </div>
   );
 }
