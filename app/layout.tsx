@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, DM_Mono, DM_Sans, Fraunces, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -54,6 +54,24 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: siteName,
+  url: siteUrl,
+  logo: `${siteUrl}/logos/only-logo-white.png`,
+  image: `${siteUrl}${defaultOgImage}`,
+  description: defaultDescription,
+  email: "contact@concoretechnologies.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Kathmandu",
+    addressCountry: "NP",
+  },
+  areaServed: "Worldwide",
+  sameAs: [],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -62,6 +80,7 @@ export const metadata: Metadata = {
   },
   description: defaultDescription,
   applicationName: siteName,
+  manifest: "/manifest.webmanifest",
   keywords: [
     "web development company Nepal",
     "custom web app development",
@@ -71,6 +90,17 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   openGraph: {
     type: "website",
@@ -96,6 +126,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#123F43",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -104,6 +138,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmSans.variable} ${bebasNeue.variable} ${dmMono.variable} ${spaceGrotesk.variable} ${fraunces.variable} font-sans antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <script dangerouslySetInnerHTML={{ __html: introFlagScript }} />
         <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
           <div className="relative min-h-screen overflow-hidden bg-[#F8F9F5]">
