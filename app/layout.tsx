@@ -80,6 +80,16 @@ export const metadata: Metadata = {
   },
   description: defaultDescription,
   applicationName: siteName,
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/logos/only-logo-white.png", type: "image/png", sizes: "192x192" },
+    ],
+    shortcut: "/logos/only-logo-white.png",
+    apple: [
+      { url: "/logos/only-logo-white.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   manifest: "/manifest.webmanifest",
   keywords: [
     "web development company Nepal",
