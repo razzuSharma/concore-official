@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -18,7 +20,6 @@ import { Project } from "./projectsData";
 
 interface CaseStudyViewProps {
   project: Project;
-  onBack: () => void;
 }
 
 interface ExpandableTextProps {
@@ -85,7 +86,7 @@ function CollapsibleList({
   );
 }
 
-const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, onBack }) => {
+const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project }) => {
   const [readingProgress, setReadingProgress] = useState(0);
 
   const readTimeMinutes = useMemo(() => {
@@ -154,14 +155,13 @@ const CaseStudyView: React.FC<CaseStudyViewProps> = ({ project, onBack }) => {
         />
       </div>
 
-      <button
-        type="button"
-        onClick={onBack}
+      <Link
+        href="/our-portfolio"
         className="font-mono mb-7 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-[0.08em] text-[#14B8A6] transition hover:text-[#14B8A6]"
       >
         <ChevronLeft className="h-4 w-4" />
         Back to Portfolio
-      </button>
+      </Link>
 
       <div className={`mb-8 rounded-2xl border border-[#E2E8F0] bg-gradient-to-br ${project.color} p-8`}>
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">

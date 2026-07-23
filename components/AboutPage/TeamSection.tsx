@@ -8,6 +8,7 @@ const teamMembers = [
   {
     name: "Raju Sharma Dahal",
     role: "CEO & Founder",
+    focus: ["Strategy", "Partnerships"],
     image: "/about/team/sarah-johnson.jpg",
     description:
       "Leads company strategy and client partnerships with a focus on sustainable digital growth.",
@@ -16,6 +17,7 @@ const teamMembers = [
   {
     name: "Ngamesh Bhandari",
     role: "CTO",
+    focus: ["Architecture", "Technical direction"],
     image: "/about/team/michael-chen.jpg",
     description:
       "Owns technical direction, architecture, and engineering quality across product delivery.",
@@ -24,6 +26,7 @@ const teamMembers = [
   {
     name: "Dipesh Bhanadari",
     role: "Lead Engineer",
+    focus: ["Delivery", "Implementation"],
     image: "/about/team/emily-rodriguez.jpg",
     description:
       "Leads delivery execution and engineering implementation quality across client systems.",
@@ -34,12 +37,14 @@ const teamMembers = [
 function TeamMemberCard({
   name,
   role,
+  focus,
   image,
   description,
   social,
 }: {
   name: string;
   role: string;
+  focus: string[];
   image: string;
   description: string;
   social: { linkedin: string; twitter: string };
@@ -47,8 +52,8 @@ function TeamMemberCard({
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className="group rounded-2xl border border-[#E2E8F0] bg-[#FFFFFF] p-6 shadow-sm transition-all duration-300 hover:shadow-md">
-      <div className="relative mb-6 h-64 w-full overflow-hidden rounded-xl bg-[#FFFFFF]">
+    <div className="group border border-[#E2E8F0] bg-[#FFFFFF] p-6 shadow-[0_8px_24px_rgba(15,23,42,0.03)] transition-shadow duration-300 hover:shadow-[0_12px_32px_rgba(15,23,42,0.06)]">
+      <div className="relative mb-6 h-64 w-full overflow-hidden bg-[#F8F9F5]">
         {!isLoaded ? (
           <Skeleton className="absolute inset-0 h-full w-full" />
         ) : null}
@@ -61,15 +66,33 @@ function TeamMemberCard({
           }`}
           onLoad={() => setIsLoaded(true)}
         />
+        {/* Blueprint register marks — the site's technical-drawing motif, applied to each portrait */}
+        <span className="pointer-events-none absolute left-3 top-3 h-4 w-4 border-l-2 border-t-2 border-[#14B8A6] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <span className="pointer-events-none absolute right-3 top-3 h-4 w-4 border-r-2 border-t-2 border-[#14B8A6] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <span className="pointer-events-none absolute bottom-3 left-3 h-4 w-4 border-b-2 border-l-2 border-[#14B8A6] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <span className="pointer-events-none absolute bottom-3 right-3 h-4 w-4 border-b-2 border-r-2 border-[#14B8A6] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       </div>
 
-      <h3 className="mb-2 text-xl font-bold text-[#0F172A]">{name}</h3>
+      <h3 className="mb-1.5 text-xl font-bold text-[#0F172A]">{name}</h3>
 
-      <p className="mb-3 font-semibold text-[#14B8A6]">{role}</p>
+      <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#14B8A6]">
+        {role}
+      </p>
 
-      <p className="mb-4 text-sm leading-relaxed text-[#475569]">
+      <p className="mb-4 mt-3 text-sm leading-relaxed text-[#475569]">
         {description}
       </p>
+
+      <div className="mb-5 flex flex-wrap gap-2">
+        {focus.map((item) => (
+          <span
+            key={item}
+            className="font-mono rounded border border-[#E2E8F0] bg-[#F8F9F5] px-2 py-0.5 text-[10px] uppercase tracking-[0.08em] text-[#475569]"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
 
       <div className="flex space-x-3">
         <a

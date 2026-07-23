@@ -7,10 +7,9 @@ import { Project } from "./projectsData";
 
 interface ProjectsGridProps {
   projects: Project[];
-  onProjectClick: (project: Project) => void;
 }
 
-const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects, onProjectClick }) => {
+const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
 
@@ -83,7 +82,6 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects, onProjectClick })
                 key={project.id}
                 project={project}
                 index={index}
-                onClick={() => onProjectClick(project)}
               />
             ))}
           </div>

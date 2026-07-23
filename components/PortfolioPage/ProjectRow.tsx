@@ -1,23 +1,22 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Project } from "./projectsData";
 
 interface ProjectRowProps {
   project: Project;
   index: number;
-  onClick: () => void;
 }
 
-const ProjectRow: React.FC<ProjectRowProps> = ({ project, index, onClick }) => {
+const ProjectRow: React.FC<ProjectRowProps> = ({ project, index }) => {
   const year = new Date(project.shippedAt).getFullYear();
   const yearLabel = Number.isNaN(year) ? "—" : `’${String(year).slice(2)}`;
   const primaryResult = project.results[0] ?? "Outcome detailed in the full case study";
 
   return (
-    <button
-      type="button"
-      onClick={onClick}
+    <Link
+      href={`/our-portfolio/${project.slug}`}
       aria-label={`Open case study for ${project.title}`}
       style={{ animationDelay: `${index * 70}ms` }}
       className="hero-rise group block w-full cursor-pointer border-t border-[#E2E0D6] text-left transition-colors duration-300 hover:bg-[#EFEDE2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9A7B4F] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F5F4EF]"
@@ -70,7 +69,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({ project, index, onClick }) => {
           </div>
         </div>
       </div>
-    </button>
+    </Link>
   );
 };
 
