@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import PortfolioPageClient from "@/components/PortfolioPage/PortfolioPageClient";
+import PortfolioHero from "@/components/PortfolioPage/PortfolioHero";
+import ProjectsGrid from "@/components/PortfolioPage/ProjectsGrid";
+import PortfolioCTA from "@/components/PortfolioPage/PortfolioCTA";
+import { projects } from "@/components/PortfolioPage/projectsData";
 
 export const metadata: Metadata = {
   title: "Selected Software Projects",
@@ -11,5 +14,11 @@ export const metadata: Metadata = {
 };
 
 export default function PortfolioPage() {
-  return <PortfolioPageClient />;
+  return (
+    <div className="min-h-screen bg-[#F5F4EF]">
+      <PortfolioHero />
+      <ProjectsGrid projects={projects} />
+      <PortfolioCTA />
+    </div>
+  );
 }

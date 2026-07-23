@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
 import IntroSplash from "@/components/Layout/IntroSplash";
+import { Analytics } from '@vercel/analytics/next';
 
 // Runs before paint: flag a first visit so the intro splash shows immediately
 // (and only then). Returning visitors and reduced-motion users skip it.
@@ -70,6 +71,40 @@ const organizationJsonLd = {
   },
   areaServed: "Worldwide",
   sameAs: [],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteName,
+  url: siteUrl,
+  description: defaultDescription,
+  publisher: {
+    "@type": "Organization",
+    name: siteName,
+    url: siteUrl,
+  },
+};
+
+const siteNavigationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SiteNavigationElement",
+  name: [
+    "Services",
+    "Portfolio",
+    "About",
+    "Team",
+    "Careers",
+    "Contact",
+  ],
+  url: [
+    `${siteUrl}/services`,
+    `${siteUrl}/our-portfolio`,
+    `${siteUrl}/about`,
+    `${siteUrl}/team`,
+    `${siteUrl}/careers`,
+    `${siteUrl}/contact-us`,
+  ],
 };
 
 export const metadata: Metadata = {
@@ -152,6 +187,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationJsonLd) }}
+        />
         <script dangerouslySetInnerHTML={{ __html: introFlagScript }} />
         <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
           <div className="relative min-h-screen overflow-hidden bg-[#F8F9F5]">
@@ -160,6 +203,7 @@ export default function RootLayout({
               <Navbar />
             </div>
             <main className="relative z-10 pt-[4.5rem]">{children}</main>
+            <Analytics />
             <div className="relative z-10">
               <Footer />
             </div>

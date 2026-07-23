@@ -5,6 +5,7 @@ export interface ProjectPhase {
 
 export interface Project {
   id: number;
+  slug: string;
   status: string;
   shippedAt: string;
   clientName: string;
@@ -41,6 +42,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
+    slug: "barista-student-management-system",
     status: "Shipped",
     shippedAt: "2024-11-08",
     clientName: "ARS Barista Institute",
@@ -134,6 +136,7 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    slug: "tourgasm-experience-booking-platform",
     status: "Shipped",
     shippedAt: "2024-08-22",
     clientName: "Tourgasm Travels",
@@ -227,6 +230,7 @@ export const projects: Project[] = [
   },
   {
     id: 3,
+    slug: "shibam-premium-catalog-commerce",
     status: "Shipped",
     shippedAt: "2024-06-18",
     clientName: "Shibam Marble & Furniture",
@@ -317,6 +321,7 @@ export const projects: Project[] = [
   },
   {
     id: 4,
+    slug: "dipak-suppliers-digital-presence-platform",
     status: "Shipped",
     shippedAt: "2024-03-12",
     clientName: "Dipak Suppliers",
@@ -407,6 +412,7 @@ export const projects: Project[] = [
   },
   {
     id: 5,
+    slug: "yatharoop-construction-portfolio-platform",
     status: "Shipped",
     shippedAt: "2023-12-15",
     clientName: "Yatharoop Construction",

@@ -4,9 +4,11 @@ import { Mail, MapPin } from "lucide-react";
 import Container from "@/components/HomePage/Container";
 
 const links = [
-  { href: "/#services", label: "Services" },
-  { href: "/#work", label: "Work" },
+  { href: "/services", label: "Services" },
+  { href: "/our-portfolio", label: "Portfolio" },
   { href: "/about", label: "About" },
+  { href: "/team", label: "Team" },
+  { href: "/careers", label: "Careers" },
   { href: "/contact-us", label: "Contact" },
 ];
 
