@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${project.title} | Concore Technologies`,
       description: project.description,
-      url: `https://www.concoretechnologies.com/our-portfolio/${project.slug}`,
+      url: `https://www.concoretechnologies.com.np/our-portfolio/${project.slug}`,
       type: "article",
     },
   };

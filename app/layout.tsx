@@ -12,8 +12,8 @@ import { Analytics } from '@vercel/analytics/next';
 const introFlagScript = `try{if(!localStorage.getItem('concore-intro-seen')&&!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)){document.documentElement.classList.add('intro-pending')}}catch(e){}`;
 
 const siteName = "Concore Technologies";
-const siteUrl = "https://www.concoretechnologies.com";
-const defaultTitle = "Concore Technologies | Web Development Company in Nepal";
+const siteUrl = "https://www.concoretechnologies.com.np";
+const defaultTitle = "Concore Technologies | Custom Web Platforms & Engineering";
 const defaultDescription =
   "Concore Technologies builds custom web applications, business websites, and scalable software for startups and growing companies.";
 const defaultOgImage = "/opengraph-image";
@@ -57,10 +57,11 @@ const fraunces = Fraunces({
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
   name: siteName,
+  legalName: siteName,
   url: siteUrl,
-  logo: `${siteUrl}/logos/only-logo-white.png`,
+  logo: `${siteUrl}/icon-512.png`,
   image: `${siteUrl}${defaultOgImage}`,
   description: defaultDescription,
   email: "contact@concoretechnologies.com",
@@ -70,6 +71,11 @@ const organizationJsonLd = {
     addressCountry: "NP",
   },
   areaServed: "Worldwide",
+  knowsAbout: ["Software Development", "Web Platforms", "AI Systems"],
+  brand: {
+    "@type": "Brand",
+    name: siteName,
+  },
   sameAs: [],
 };
 
@@ -118,11 +124,14 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
-      { url: "/logos/only-logo-white.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-48.png", type: "image/png", sizes: "48x48" },
+      { url: "/icon-96.png", type: "image/png", sizes: "96x96" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
     ],
-    shortcut: "/logos/only-logo-white.png",
+    shortcut: "/icon-96.png",
     apple: [
-      { url: "/logos/only-logo-white.png", sizes: "180x180", type: "image/png" },
+      { url: "/icon-180.png", sizes: "180x180", type: "image/png" },
     ],
   },
   manifest: "/manifest.webmanifest",

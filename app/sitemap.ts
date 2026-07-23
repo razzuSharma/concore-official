@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/components/PortfolioPage/projectsData";
 
-const siteUrl = "https://www.concoretechnologies.com";
+const siteUrl = "https://www.concoretechnologies.com.np";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [

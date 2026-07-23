@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "Careers | Concore Technologies",
     description:
       "Join Concore Technologies and help build production-grade web, mobile, and AI systems.",
-    url: "https://www.concoretechnologies.com/careers",
+    url: "https://www.concoretechnologies.com.np/careers",
   },
 };
 

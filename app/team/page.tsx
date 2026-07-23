@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: "Our Team | Concore Technologies",
     description:
       "Meet the leadership and engineering team behind Concore Technologies.",
-    url: "https://www.concoretechnologies.com/team",
+    url: "https://www.concoretechnologies.com.np/team",
   },
 };
 
