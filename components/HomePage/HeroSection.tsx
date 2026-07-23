@@ -17,7 +17,10 @@ export default function HeroSection() {
       <Container className="relative">
         <div className="grid min-h-[calc(100vh-4.5rem)] items-center gap-16 py-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.82fr)] lg:gap-8 lg:py-10">
           <div className="max-w-[38rem]">
-            <h1 className="text-[clamp(4rem,9vw,7.5rem)] leading-[0.9] tracking-[-0.05em] text-[#1F2933]">
+            <p className="hero-rise font-mono text-[11px] uppercase tracking-[0.32em] text-[#3F7C7A]">
+              Concore Technologies
+            </p>
+            <h1 className="mt-5 text-[clamp(4rem,9vw,7.5rem)] leading-[0.9] tracking-[-0.05em] text-[#1F2933]">
               <span className="hero-rise block">CUSTOM</span>
               <span className="hero-rise block [animation-delay:80ms]">
                 SOFTWARE
