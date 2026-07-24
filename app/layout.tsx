@@ -83,6 +83,7 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: siteName,
+  alternateName: ["Concore", "Concore Tech"],
   url: siteUrl,
   description: defaultDescription,
   publisher: {
